@@ -10,17 +10,31 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # 1) Checkout
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Java 17
+      # 2) Java for Sonar
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
+      # 3) Make sure MSBuild/NuGet are available
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.3
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+
+      # 4) Install .NET Framework 4.6.1 Developer Pack (reference assemblies)
+      - name: Install .NET Framework 4.6.1 dev pack
+        run: choco install netfx-4.6.1-devpack -y
+
+      # 5) SonarScanner for .NET
       - name: Install SonarScanner for .NET
         run: dotnet tool install --global dotnet-sonarscanner
 
@@ -28,6 +42,7 @@ jobs:
         shell: bash
         run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
+      # 6) Begin analysis
       - name: SonarCloud Begin
         run: >
           dotnet sonarscanner begin
@@ -36,12 +51,16 @@ jobs:
           /d:sonar.host.url="https://sonarcloud.io"
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
+      # 7) Find the .sln and build (PowerShell, no globs)
       - name: Restore and Build with MSBuild
         shell: pwsh
         run: |
-          nuget restore
-          msbuild **/*.sln /t:Rebuild /p:Configuration=Release
+          $sln = Get-ChildItem -Recurse -Filter *.sln | Select-Object -First 1
+          if (-not $sln) { Write-Error "No .sln file found in repo"; exit 1 }
+          nuget restore $sln.FullName
+          msbuild $sln.FullName /t:Rebuild /p:Configuration=Release /m
 
+      # 8) End analysis
       - name: SonarCloud End
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
