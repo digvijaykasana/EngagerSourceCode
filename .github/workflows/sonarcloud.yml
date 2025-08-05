@@ -1,4 +1,4 @@
-name: SonarCloud Analysis (.NET Framework)
+ame: SonarCloud Analysis (.NET Framework)
 
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
         shell: pwsh
         run: |
           nuget restore
-          msbuild /t:Rebuild /p:Configuration=Release
+          msbuild **/*.sln /t:Rebuild /p:Configuration=Release
 
       - name: SonarCloud End
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
