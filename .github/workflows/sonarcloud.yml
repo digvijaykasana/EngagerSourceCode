@@ -1,0 +1,47 @@
+name: SonarCloud Analysis (.NET Framework)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-and-analyze:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install SonarScanner for .NET
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Add dotnet tools to PATH
+        shell: bash
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: SonarCloud Begin
+        run: >
+          dotnet sonarscanner begin
+          /k:"digvijaykasana_EngagerSourceCode"
+          /o:"engagersourcecode"
+          /d:sonar.host.url="https://sonarcloud.io"
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+      - name: Restore and Build with MSBuild
+        shell: pwsh
+        run: |
+          nuget restore
+          msbuild /t:Rebuild /p:Configuration=Release
+
+      - name: SonarCloud End
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
