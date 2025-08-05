@@ -1,0 +1,120 @@
+﻿@model PagedList.IPagedList<EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder>
+@using PagedList.Mvc;
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.ApplicationCore.Cris;
+@using EngagerMark4.Common.Configs;
+
+
+@{
+    var urlString = Server.UrlEncode("/WorkOrder?CurrentPage=" + Model.PageNumber + "&Column=" + ViewBag.Column + "&OrderBy=" + ViewBag.OrderBy + "&DataType=" + ViewBag.DataType + "&Customers=" + ViewBag.CustomerId + "&Vessels=" + ViewBag.VesselId + "&FromDate=" + ViewBag.FromDate + "&ToDate=" + ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId);
+    var urlHeader = "&Customers=" + ViewBag.CustomerId + "&Vessels=" + ViewBag.VesselId + "&FromDate=" + ViewBag.FromDate + "&ToDate=" + ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId;
+    int pageCount = (ApplicationConfig.PAGE_SIZE * Model.PageNumber) - 50;
+}
+
+<input id="headerParameters" value="@urlHeader" class="hidden" />
+<div class="table-responsive">
+
+    <a href="~/WorkOrder/Details?returnUrl=@urlString" class="btn btn-lg btn-block btn-primary"><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New Work Order</a>
+    <br />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th class="text-left" style="font-size:12px;">No.</th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="ReferenceNoNumber" orderBy='@BaseCri.GetOrderString("ReferenceNoNumber",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.Int64.ToString()">Work Order No.</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="ShortText4" orderBy='@BaseCri.GetOrderString("ShortText4",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Company Name</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="ShortText1" orderBy='@BaseCri.GetOrderString("ShortText1",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Vessel</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="PickUpdateDate" orderBy='@BaseCri.GetOrderString("PickUpdateDate", ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.DateTime.ToString()">Pick up Date Time</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="PickUpPoint" orderBy='@BaseCri.GetOrderString("PickUpPoint",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Pick up Point</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="DropPoint" orderBy='@BaseCri.GetOrderString("DropPoint",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Drop Off Point</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="Drivers" orderBy='@BaseCri.GetOrderString("Drivers",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Drivers</a></th>
+                <th class="text-left" style="font-size:12px;">Created By</th>
+                <th class="text-left" style="font-size:12px;">Created</th>
+                <th class="text-left" style="font-size:12px;">Order Status</th>
+                <th class="text-center " style="font-size:12px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entity in Model)
+            {
+                //var fontWeight = entity.HasPendingNotification ? "bold" : "normal";
+                pageCount++;
+
+                <tr id="@entity.Id">
+
+                    <td class="text-center" style="font-size:12px;">
+                        @pageCount
+                    </td>
+
+                    @if (entity.HasPendingNotification)
+                    {
+                        <td style="font-size:12px;color:red;">@Html.DisplayFor(m => entity.RefereneceNo)</td>
+                    }
+                    else
+                    {
+                        <td style="font-size:12px;">@Html.DisplayFor(m => entity.RefereneceNo)</td>
+                    }
+
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.ShortText4)</td>
+                    
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.ShortText1)</td>
+                    
+                    <td style="font-size:12px;">
+                        @Html.DisplayFor(m => entity.PickUpDateStr)
+                        @Html.HiddenFor(m => entity.PickUpdateDate)
+                    </td>
+                    
+                    <td style="font-size:12px;">
+                        @Html.DisplayFor(m => entity.PickUpPoint)
+                    </td>
+                    
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.DropPoint)</td>
+                    
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.Drivers)</td>
+                    
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.CreatedByName)</td>
+                    
+                    <td style="font-size:12px;">@Html.DisplayFor(m => entity.CreatedStr)</td>
+
+                    <td style="background-color: @entity.StatusColor; color: white; font-size:12px;">
+                        @if (entity.InvoiceId != null)
+                        {
+                            <label id="status_@entity.InvoiceId">@entity.Status</label>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(m => entity.Status)
+                        }
+
+                    </td>
+
+                    <td style="font-size:12px;">
+                        @using (Html.BeginForm("Delete", "WorkOrder", FormMethod.Post, new { id = "form" + entity.Id }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@entity.Id" />
+                            <a class="btn btn-info" href="~/WorkOrder/Details?id=@entity.Id&ReturnUrl=@urlString&CurrentId=@entity.Id"> <i class="fa fa-pencil fa-lg"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("List", new { CurrentPage = page, Column = ViewBag.Column, OrderBy = ViewBag.OrderBy, DataType = ViewBag.DataType, Customers = ViewBag.CustomerId, Vessels = ViewBag.VesselId, FromDate = ViewBag.FromDate, ToDate = ViewBag.ToDate, Status = ViewBag.Status, DriverId = ViewBag.DriverId}))
+
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_DeleteDialog")
+
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        var currentId = "@ViewBag.CurrentId";
+        if (currentId == null || currentId == "") {
+            currentId = 0;
+        }
+        location.href = "#" + currentId;
+    });
+</script>
+
+<script src="~/Scripts/Custom/WorkOrder/List.js"></script>

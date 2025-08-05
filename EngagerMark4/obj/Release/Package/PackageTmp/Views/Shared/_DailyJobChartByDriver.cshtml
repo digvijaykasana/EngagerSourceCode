@@ -1,0 +1,36 @@
+﻿<div ng-controller="driverCtrl">
+    <canvas id="driverLine" class="@ViewBag.ChartTypeStr" chart-data="data"
+            chart-labels="labels" chart-legend="true" chart-series="series"
+            chart-click="onClick"></canvas>
+</div>
+
+<script>
+    app.config(["ChartJsProvider", function (ChartJsProvider) {
+        ChartJsProvider.setOptions('driverCtrl', { colors: ['#4D5360', '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1'] });
+    }]).controller('driverCtrl', function ($scope, $http) {
+        var month = $('#Month').val();
+        var year = $('#Year').val();
+        var url = "/DailyJobByDriverApi/GetData?Month=" + month + "&Year=" + year;
+        $http.post(url)
+            .success(function (response) {
+                $scope.labels = response.LabelsStr.split(',');
+                $scope.series = response.SeriesStr.split(',');
+                //prepare Two dimensional array.
+                var points = [];
+                var array1 = response.PointsStr.split(']');
+
+                for (i = 0; i < array1.length; i++) {
+                    var values1 = [];
+                    var array2 = array1[i].split(',');
+                    for (j = 0; j < array2.length; j++) {
+                        values1[j] = array2[j];
+                    }
+                    points[i] = values1;
+                }
+                $scope.data = points;
+                $scope.onClick = function (points, evt) {
+                    console.log(points, evt);
+                };
+            });
+    });
+</script>

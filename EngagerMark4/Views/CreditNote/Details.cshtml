@@ -1,0 +1,201 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.CreditNotes.CreditNote
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+@{
+    ViewBag.Title = "Credit Note";
+    int detailsCount = 0;
+    int count = 0;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Credit Note</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            </div>
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.VesselId)
+                    @Html.HiddenFor(model => model.VesselName)
+                    @Html.HiddenFor(model=> model.CustomerId)
+                    @Html.HiddenFor(model => model.InvoiceTotalAmount)
+                    <br />
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Credit Note No</label>
+                            <div class="col-sm-3" data-role="input-control">
+                                <input type="text" value="@Model.CreditNoteNo" disabled="disabled" class="form-control" />
+                                @if (Model.Id == 0)
+                                {
+                                    <input type="hidden" id="Code" name="Code" value="TBD" />
+                                }
+                                else
+                                {
+                                    @Html.HiddenFor(m => m.CreditNoteNo)
+                                }
+                                @Html.ValidationMessageFor(m => m.CreditNoteNo, null, new { @class = "text-danger" })
+                            </div>
+
+                            <label class="control-label col-sm-2">Date</label>
+                            <div class="col-sm-3" data-role="input-control">
+                                @Html.TextBoxFor(x => x.CreditNoteDateStr, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Work Order No.</label>
+                            <div class="col-sm-3" data-role="input-control">
+                                @Html.DropDownList("OrderId", null, "N/A", new { @class = "form-control" })
+                            </div>
+
+                            <label class="control-label col-sm-2">Discount Type</label>
+                            <div class="col-sm-3" data-role="input-control">
+                                @Html.DropDownList("DiscountType", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Company Address</label>
+                            <div class="col-sm-8" data-role="input-control">
+                                @Html.TextAreaFor(m => m.CompanyAddress, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <!--Credit Note Details-->
+                        <br />
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                @Html.LinkToAddNestedForm("Add a Credit Note Item", "#DetailsContainer", ".Details", "Details", typeof(EngagerMark4.ApplicationCore.SOP.Entities.CreditNotes.CreditNoteDetails), new { @class = "btn btn-primary clsAddDetails" })
+                            </div>                            
+                        </div>
+
+                        <fieldset>
+                            <legend></legend>
+                            <div class="table-responsive">
+                                <table id="detailsTable" class="table table-bordered table-striped" style="font-size:11px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-sm-2 text-center">Action</th>
+                                            <th class="col-sm-4 text-left">Description</th>
+                                            <th class="col-sm-2 text-right">Price</th>
+                                            <th class="col-sm-2 text-right">Qty</th>
+                                            <th class="col-sm-2 text-right">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="DetailsContainer" style="font-size:11px;">
+                                        @foreach (var detail in Model.Details.Where(x =>x.Delete == false))
+                                        {
+                                        <tr class="Details" tableIndex="Details_@detailsCount.ToString()__">
+                                            <td class="text-center">
+                                                <input type="hidden" id="Details_@detailsCount.ToString()__Id" name="Details[@detailsCount.ToString()].Id" value="@detail.Id" />
+                                                <input type="hidden" id="Details_@detailsCount.ToString()__CreditNoteId" name="Details[@detailsCount.ToString()].CreditNoteId" value="@detail.CreditNoteId" />
+                                                <input type="hidden" id="Details_@detailsCount.ToString()__SerialNo" name="Details[@detailsCount.ToString()].SerialNo" value="@detail.SerialNo" />
+                                                <label>
+                                                    <input type="hidden" id="Details_@detailsCount.ToString()__Delete" class="mark-for-delete" name="Details[@detailsCount.ToString()].Delete" value="@detail.Delete.ToString()" />
+                                                    <a href="#" class="btn btn-info btnEditDetails" style="font-size:11px;">Edit</a>
+                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.Details", "input.mark-for-delete", new { @class = "btn btn-danger deleteRecord", style = "font-size:11px;" })
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="Details_@detailsCount.ToString()__Description" name="Details[@detailsCount.ToString()].Description" value="@detail.Description" style="font-size:11px;" class="form-control" readonly="readonly" />
+                                            </td>
+                                            <td>
+                                                <input type="text" id="Details_@detailsCount.ToString()__Price" name="Details[@detailsCount.ToString()].Price" value="@detail.Price" style="font-size:11px;" class="form-control" readonly="readonly" />
+                                            </td>
+                                            <td>
+                                                <input type="text" id="Details_@detailsCount.ToString()__Qty" name="Details[@detailsCount.ToString()].Qty" value="@detail.Qty" style="font-size:11px;" class="form-control" readonly="readonly" />
+                                            </td>
+                                            <td>
+                                                <input type="text" id="Details_@detailsCount.ToString()__TotalAmount" name="Details[@detailsCount.ToString()].TotalAmount" value="@detail.TotalAmount" style="font-size:11px;" class="form-control totalAmt" readonly="readonly" />
+                                            </td>
+                                        </tr>
+                                            detailsCount++;
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3" class="text-right">
+                                                <label class="control-label">Subtotal</label>
+                                            </td>
+                                            <td colspan="2" class="text-right">
+                                                @Html.TextBoxFor(x => x.SubTotal, new { @class = "form-control text-right", @readonly = "readonly", style = "font-size:11px;text-align:right;" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class="text-right">
+                                                <select id="GSTId" name="GSTId" class="form-control" style="font-size:11px;width:150px;float:right;text-align:right;">
+                                                    @foreach (var gst in ViewBag.GSTs as List<EngagerMark4.ApplicationCore.Account.Entities.GST>)
+                                                    {
+                                                        if (Model.GSTId > 0)
+                                                        {
+                                                            if (Model.GSTId == gst.Id)
+                                                            {
+                                                                <option value="@gst.Id" gstPercent="@gst.GSTPercent" selected>@gst.Name</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@gst.Id" gstPercent="@gst.GSTPercent">@gst.Name</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (gst.isDefault)
+                                                            {
+                                                                <option value="@gst.Id" gstPercent="@gst.GSTPercent" selected>@gst.Name</option>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@gst.Id" gstPercent="@gst.GSTPercent">@gst.Name</option>
+                                                            }
+                                                        }
+                                                    }
+                                                    @Html.HiddenFor(x => x.GSTPercent)
+                                                </select>
+                                            </td>
+                                            <td colspan="2" class="text-right">
+                                                @Html.TextBoxFor(x => x.GSTAmount, new { @class = "form-control text-right", @readonly = "readonly", style = "font-size:11px;text-align:right;" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class="text-right">
+                                                <label class="control-label">Total</label>
+                                            </td>
+                                            <td colspan="2" class="text-right">
+                                                @Html.TextBoxFor(x => x.GrandTotal, new { @class = "form-control text-right", @readonly = "readonly", style = "font-size:11px;text-align:right;" })
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_cnDetailsModal")
+
+<script src="~/Scripts/Custom/CreditNote/Details.js"></script>

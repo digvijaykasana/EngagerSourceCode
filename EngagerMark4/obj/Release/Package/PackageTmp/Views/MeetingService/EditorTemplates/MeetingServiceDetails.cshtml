@@ -1,0 +1,29 @@
+﻿@model EngagerMark4.ApplicationCore.Dummy.Entities.MeetingServices.MeetingServiceDetails
+@using EngagerMark4.HtmlExtension;
+
+<tr class="MeetingServiceDetails" tableIndex="nestedObject_">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.MeetingServiceId)
+    @Html.HiddenFor(x => x.Serial)
+
+    <td>
+        @Html.TextBoxFor(x => x.NoOfPax, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.MinPax, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.MaxPax, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Charges, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+
+    <td class="col-sm-2">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            <a href="#" class="btn btn-info btnEdit">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.MeetingServiceDetails", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

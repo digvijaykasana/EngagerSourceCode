@@ -1,0 +1,37 @@
+﻿@model  EngagerMark4.ApplicationCore.Inventory.Cris.PriceCri
+@{
+    ViewBag.Title = "Return Trip Charges Generation sby Company";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-info">
+        <div class="panel-heading">Return Trip Charges Generation By Company</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Customers: </label>
+                        <div class="col-sm-4">
+                            <div class='input-group col-sm-12' id='divCustomers'>
+                                @Html.DropDownList("CustomerId", null, "All", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button id="btnImportReturnTrips" value="Generate Return Trips" class="btn btn-primary">Generate Return Trips</button>
+        </div>
+    </div>
+
+}
+
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/ViceVersaPriceImport/Index.js"></script>

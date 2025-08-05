@@ -1,0 +1,98 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Configurations.Location
+
+@{
+    ViewBag.Title = "Location";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Location</div>
+        <div class="panel-body">
+                <div class="form-group">
+                    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                </div>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Code</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Code, new { @placeholder = "Code", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Code, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Name</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Postal Code</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.PostalCode, new { @placeholder = "Postal Code", @class = "form-control" })
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Address</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Address, new { @placeholder = "Address", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">City</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.City, new { @placeholder = "City", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Country</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Country, new { @placeholder = "Country", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Latitude</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Latitude, new { @placeholder = "Latitude", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Longitude</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Longitude, new { @placeholder = "Longitude", @class = "form-control" })
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/Location/Details.js"></script>

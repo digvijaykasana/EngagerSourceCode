@@ -1,0 +1,48 @@
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.SqlServer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\System.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EFCache.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.Common.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.SqlServer.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\System.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.csproj.AssemblyReference.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.csproj.CoreCompileInputs.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerM.31AE736A.Up2Date
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.dll.config
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.Job.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.Common.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.SqlServer.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\System.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EFCache.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EngagerMark4.Common.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\EntityFramework.SqlServer.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\System.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.csproj.AssemblyReference.cache
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.csproj.CoreCompileInputs.cache
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.csproj.CopyComplete
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Job\obj\Release\EngagerMark4.ApplicationCore.Job.pdb

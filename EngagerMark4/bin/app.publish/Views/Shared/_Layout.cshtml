@@ -1,0 +1,281 @@
+﻿@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Utils;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Engager</title>
+    @*@Styles.Render("~/Content/bootstrap")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap")
+        <script src="~/ckeditor/ckeditor.js"></script>*@
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-submenu.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="/Content/custombootstrap.css" rel="stylesheet" />
+    <link href="~/Content/angularjs/angular-chart.css" rel="stylesheet" />
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+
+    <script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="/Scripts/moment.min.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/bootstrap-submenu.min.js"></script>
+    <script src="/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="/Scripts/respond.js"></script>
+    <script src="/Scripts/Custom/Common.js"></script>
+    <script src="~/Scripts/bootstrap-autocomplete.min.js"></script>
+
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/AngularJS/angular.min.js"></script>
+    <script src="~/Scripts/AngularJS/Chart.js"></script>
+    <script src="~/Scripts/AngularJS/angular-chart.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/DataTables/datatables.min.css" />
+    <script type="text/javascript" src="~/Content/DataTables/datatables.min.js"></script>
+
+
+</head>
+<body>
+    @if (Request.IsAuthenticated)
+    {
+        <nav class="navbar navbar-default menubar" style="border-radius:0px">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="~/" style="color:white;">MTS</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                    @Html.GenerateSetupMenu()
+
+                    @Html.GenerateTransactionMenu()
+
+                    @Html.GenerateAccountingMenu()
+
+                    @Html.GenerateReportMenu()
+
+                    @Html.GenerateImportMenu()
+
+                    @*<li class="dropdown">
+        <a tabindex="0" data-toggle="dropdown" data-submenu>
+            <i class="fa fa-cog fa-fw"></i>&nbsp;Setup&nbsp;<span class="caret"></span>
+        </a>*@
+
+                    @*<ul class="dropdown-menu">*@
+                    @*<li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-cogs fa-fw"></i> Application </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Function"> <i class="fa fa-wrench fa-fw"></i> Functions </a></li>
+                <li><a href="~/Module"> <i class="fa fa-archive fa-fw"></i> Modules </a></li>
+                <li><a href="~/SystemSetting"> System Settings </a></li>
+                <li><a href="~/SMTP/Details"><i class="fa fa-mail-forward fa-fw" ></i> STMP</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-cogs fa-fw"></i> Common </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/ConfigurationGroup"> <i class="fa fa-group fa-fw"></i> Configuration Group </a></li>
+                <li><a href="~/CommonConfiguration"> <i class="fa fa-code fa-fw"></i> Common Configuration </a></li>
+                <li><a href="~/Location"> <i class="fa fa-map fa-fw"></i> Location </a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-key fa-fw"></i> Memberships </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Role"> <i class="fa fa-star fa-fw"></i> Roles </a></li>
+                <li><a href="~/User"> <i class="fa fa-users fa-fw"></i> Users </a></li>
+                <li><a href="~/AccessControl"> <i class="fa fa-hand-stop-o fa-fw"></i> Access Control </a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-asterisk fa-fw"></i> Assets </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Vehicle"> <i class="fa fa-car fa-fw"></i> Vehicle </a></li>
+                <li><a href="~/Stock"> <i class="fa fa-dollar fa-fw"></i> Stock </a></li>
+
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-pencil fa-fw"> </i> Accounting </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/GST"> <i class="fa fa-money fa-fw"></i> GST </a></li>
+                <li><a href="~/GLCode"><i class="fa fa-book fa-fw"></i> General Ledger </a></li>
+                <li><a href="~/Currency"><i class="fa fa-money fa-fw"></i> Currency </a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-money fa-fw"> </i> Currency </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Currency"><i class="fa fa-money fa-fw"></i> Currency </a></li>
+                <li><a href="~/CurrencyRate"><i class="fa fa-money fa-fw"></i> Currency Rate</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-industry fa-fw"></i> Operation </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/CheckList"><i class="fa fa-info fa-fw"></i> Checklist </a></li>
+                <li><a href="~/MeetingService"><i class="fa fa-calendar fa-fw"></i> Meeting Service </a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-smile-o fa-fw"></i> SOP </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Customer"> <i class="fa fa-suitcase fa-fw"></i> Customer </a></li>
+                <li><a href="~/MeetingService"><i class="fa fa-calendar fa-fw"></i> Meeting Service </a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="0"> <i class="fa fa-support fa-fw"></i> POP </a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Supplier"> <i class="fa fa-suitcase fa-fw"></i> Supplier </a></li>
+                <li><a href="~/MeetingService"><i class="fa fa-calendar fa-fw"></i> Meeting Service </a></li>
+            </ul>
+        </li>*@
+
+                    <!--</ul>-->
+                    <!--</li>-->
+                    @*<li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu>
+                            <i class="fa fa-car fa-fw"></i>&nbsp;Ops&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu>
+                            <i class="fa fa-money fa-fw"></i>&nbsp;Accounts&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu>
+                            <i class="fa fa-book fa-fw"></i>&nbsp;Report&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu>
+                            <i class="fa fa-upload fa-fw"></i>&nbsp;Import&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>*@
+                    @*<li class="dropdown">
+            <a tabindex="0" data-toggle="dropdown" data-submenu>
+                <i class="fa fa-download fa-fw"></i>&nbsp;Export&nbsp;<span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                @Html.GenerateExportMenu()
+            </ul>
+        </li>*@
+                </ul>
+                <div class="container">
+                    @Html.Partial("_LoginPartial")
+                </div>
+
+                @*<ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a tabindex="0" data-toggle="dropdown" data-submenu>
+                                Dropdown 3<span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a tabindex="0">Action</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="0">Sub action</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a tabindex="0">Another sub action</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a tabindex="0">Sub action</a></li>
+                                                <li><a tabindex="0">Another sub action</a></li>
+                                                <li><a tabindex="0">Something else here</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a tabindex="0">Something else here</a></li>
+                                        <li class="disabled"><a tabindex="-1">Disabled action</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a tabindex="0">Another action</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a tabindex="0">Sub action</a></li>
+                                                <li><a tabindex="0">Another sub action</a></li>
+                                                <li><a tabindex="0">Something else here</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-header">Dropdown header</li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="0">Another action</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="0">Sub action</a></li>
+                                        <li><a tabindex="0">Another sub action</a></li>
+                                        <li><a tabindex="0">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li><a tabindex="0">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="0">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>*@
+            </div>
+        </nav>
+    }
+
+
+    <div class="content">
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    </div>
+    <footer style="text-align:center;font-family:Cambria; color:royalblue;">
+        Engager
+    </footer>
+
+    <style>
+        .content {
+            min-height: calc(100vh - 70px);
+        }
+
+        .footer {
+            height: 50px;
+        }
+    </style>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $('[data-submenu]').submenupicker();
+        });
+    </script>
+</body>
+</html>
+

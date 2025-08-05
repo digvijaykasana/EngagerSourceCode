@@ -1,0 +1,311 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.SalesInvoices.SalesInvoice
+@using EngagerMark4.HtmlExtension;
+
+@{
+    ViewBag.Title = "Sales Invoice";
+    int detailsCount = 0;
+    var returnUrl = ViewBag.ReturnUrl;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+    @Html.HiddenFor(x => x.ReferenceNoNumber)
+    <input type="hidden" name="ReturnUrl" value="@returnUrl" />
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Sales Invoice</div>
+        <div class="panel-body">
+                <div class="form-group">
+                    @if (string.IsNullOrEmpty(returnUrl))
+                    {
+                        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                    }
+                    else
+                    {
+                        <a href="@returnUrl" class="btn btn-info">Back to List</a>
+                    }
+                </div>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#info" data-toggle="tab">Sales Invoice Info</a></li>
+                            <li><a href="#tabDetails" data-toggle="tab">Details</a></li>
+                        </ul>
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.VesselId)
+                        @Html.HiddenFor(model => model.VesselName)
+                        @Html.HiddenFor(model => model.ReferenceNoNumber)
+                        @Html.HiddenFor(model => model.VersionNumber)
+                        @Html.HiddenFor(model => model.ShortText1)
+                        @Html.HiddenFor(model => model.ShortText2)
+                        @Html.HiddenFor(model => model.LongText1)
+                        @Html.HiddenFor(model => model.WorkOrderId)
+                        @Html.HiddenFor(model => model.CustomerId)
+                        @Html.HiddenFor(model => model.SalesInvoiceSummaryId)
+                        @Html.HiddenFor(x => x.DiscountAmount)
+                        @Html.HiddenFor(x => x.DiscountPercent)
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="info">
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 required">Reference No.</label>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            <input type="text" value="@Model.ReferenceNo" disabled="disabled" class="form-control" />
+                                            @if (Model.Id == 0)
+                                            {
+                                                <input type="hidden" id="ReferenceNo" name="ReferenceNo" value="TBA" />
+                                            }
+                                            else
+                                            {
+                                                @Html.HiddenFor(m => m.ReferenceNo)
+                                            }
+                                            @Html.ValidationMessageFor(m => m.ReferenceNo, null, new { @class = "text-danger" })
+                                        </div>
+                                        <label class="control-label col-sm-2">Work Order Date</label>
+                                        <div class='col-sm-4'>
+                                            <div class='input-group' id='divInvoiceDate'>
+                                                @Html.TextBoxFor(x => x.InvoiceDateStr, new { @class = "form-control" })
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 required">Customer</label>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            @Html.DropDownList("CustomerId", null, "N/A", new { @class = "form-control", @disabled = "disabled" })
+                                            @Html.ValidationMessageFor(m => m.CustomerId, null, new { @class = "text-danger" })
+                                        </div>
+                                        <label class="control-label col-sm-2 required">Work Order</label>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            @*@Html.DropDownList("WorkOrderId", null, "N/A", new { @class = "form-control", @disabled = "disabled" })*@
+                                            @Html.TextBoxFor(x => x.WorkOrderNo, new { @class = "form-control", @disabled = "disabled" })
+                                            @Html.ValidationMessageFor(m => m.WorkOrderId, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*<label class="control-label col-sm-2">Meeting Service Serial No</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            @Html.TextBoxFor(x => x.MeetingService, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.MeetingService, null, new { @class = "text-danger" })
+                        </div>*@
+                                        <label class="control-label col-sm-2">Company Address</label>
+                                        <div class="col-sm-10" data-role="input-control">
+                                            @Html.TextAreaFor(x => x.CompanyAddress, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.CompanyAddress, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Status</label>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            @Html.EnumDropDownListFor(x => x.Status, null, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Status, null, new { @class = "text-danger" })
+                                        </div>
+                                        <label class="control-label col-sm-2">Discount Type</label>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            @Html.EnumDropDownListFor(x => x.DisType, null, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Status, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Remark</label>
+                                        <div class="col-sm-10" data-role="input-control">
+                                            @Html.TextAreaFor(x => x.Remark, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Remark, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="tabDetails" class="tab-pane fade">
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add", "#DetailsContainer", ".Details", "Details", typeof(EngagerMark4.ApplicationCore.SOP.Entities.SalesInvoices.SalesInvoiceDetails), new { @class = "btn btn-primary clsAddDetails" })
+                                        </div>
+                                    </div>
+
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="detailsTable" class="table table-bordered table-striped" style="font-size:11px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:120px;">GST Essentials</th>
+                                                        <th style="width:50px;">Order</th>
+                                                        <th style="width:150px;">Code</th>
+                                                        <th> Description</th>
+                                                        <th style="width:70px;text-align:right;"> Qty</th>
+                                                        <th style="width:100px;text-align:right;"> Price</th>
+                                                        <th style="width:150px;text-align:right;"> Total Amt</th>
+                                                        <th style="width:80px;text-align:right;"> Discount %</th>
+                                                        <th style="width:100px;text-align:right;"> Discount Amt</th>
+                                                        <th style="width:150px;text-align:right;"> Net Amt</th>
+                                                        <th style="width:130px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="DetailsContainer">
+                                                    @foreach (var detail in Model.Details.Where(x => x.Delete == false))
+                                                    {
+                                                        <tr class="Details" tableIndex="Details_@detailsCount.ToString()__">
+                                                            <td>
+                                                                <input type="hidden" id="Details_@detailsCount.ToString()__Id" name="Details[@detailsCount.ToString()].Id" value="@detail.Id" />
+                                                                <input type="hidden" id="Details_@detailsCount.ToString()__PriceId" name="Details[@detailsCount.ToString()].PriceId" value="@detail.PriceId" />
+                                                                <input type="hidden" id="Details_@detailsCount.ToString()__Type" name="Details[@detailsCount.ToString()].Type" value="@detail.Type" />
+                                                                <input type="hidden" id="Details_@detailsCount.ToString()__Taxable" name="Details[@detailsCount.ToString()].Taxable" value="@detail.Taxable.ToString()" />
+                                                                @if (detail.GSTEssentials)
+                                                                {
+                                                                    <input type="checkbox" id="Details_@detailsCount.ToString()__GSTEssentials" name="Details[@detailsCount.ToString()].GSTEssentials" value="True" checked readonly="readonly" class="chkGST" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <input type="checkbox" id="Details_@detailsCount.ToString()__GSTEssentials" name="Details[@detailsCount.ToString()].GSTEssentials" value="False" readonly="readonly" class="chkGST" />
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__SortOrder" name="Details[@detailsCount.ToString()].SortOrder" value="@detail.SortOrder" readonly="readonly" style="font-size:11px;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__Code" name="Details[@detailsCount.ToString()].Code" value="@detail.Code" readonly="readonly" style="font-size:11px;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__Description" name="Details[@detailsCount.ToString()].Description" value="@detail.Description" readonly="readonly" style="font-size:11px;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__Qty" name="Details[@detailsCount.ToString()].Qty" value="@detail.Qty" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__Price" name="Details[@detailsCount.ToString()].Price" value="@detail.Price" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__TotalAmt" name="Details[@detailsCount.ToString()].TotalAmt" value="@detail.TotalAmt" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control totalAmt" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__DiscountPercent" name="Details[@detailsCount.ToString()].DiscountPercent" value="@detail.DiscountPercent" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__DiscountAmount" name="Details[@detailsCount.ToString()].DiscountAmount" value="@detail.DiscountAmount" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control discountAmt" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Details_@detailsCount.ToString()__TotalNetAmount" name="Details[@detailsCount.ToString()].TotalNetAmount" value="@detail.TotalNetAmount" readonly="readonly" style="font-size:11px;text-align:right;" class="form-control netAmount" />
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="hidden" id="Details_@detailsCount.ToString()__Delete" class="mark-for-delete" name="Details[@detailsCount.ToString()].Delete" value="@detail.Delete.ToString()" />
+                                                                    <a href="#" class="btn btn-info btnEditDetails" style="font-size:11px;">Edit</a>
+                                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.Details", "input.mark-for-delete", new { @class = "btn btn-danger deleteRecord", style = "font-size:11px;" })
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        detailsCount++;
+                                                    }
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="8" style="text-align:right;">Total Amt.</td>
+                                                        <td colspan="2" style="text-align:right;">@Html.TextBoxFor(x => x.TotalAmt, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;text-align:right;" })</td>
+                                                    </tr>
+
+                                                    @*<tr>
+                                        <td colspan="8" style="text-align:right;">
+                                            Discount Amt
+                                        </td>
+                                        <td colspan="2" style="text-align:right;">
+                                            @Html.TextBoxFor(x => x.DiscountAmount, new { @class = "form-control", @readonly = "readonly", style="font-size:11px;text-align:right;" })
+                                        </td>
+                                    </tr>*@
+                                                    <tr>
+                                                        <td colspan="8" style="text-align:right;">
+                                                            <select id="GSTId" name="GSTId" class="form-control" style="font-size: 11px; width: 150px; float: right; text-align: right;">
+                                                                @foreach (var gst in ViewBag.GSTs as List<EngagerMark4.ApplicationCore.Account.Entities.GST>)
+                                                                {
+                                                                    if (Model.GSTId.HasValue && Model.GSTId.Value > 0)
+                                                                    {
+                                                                        if (Model.GSTId.Value == gst.Id)
+                                                                        {
+                                                                            <option value="@gst.Id" gstPercent="@gst.GSTPercent" selected>@gst.Name</option>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@gst.Id" gstPercent="@gst.GSTPercent">@gst.Name</option>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (gst.isDefault)
+                                                                        {
+                                                                            <option value="@gst.Id" gstPercent="@gst.GSTPercent" selected>@gst.Name</option>
+
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@gst.Id" gstPercent="@gst.GSTPercent">@gst.Name</option>
+                                                                        }
+                                                                    }
+
+                                                                }
+                                                            </select>
+                                                        </td>
+                                                        <td colspan="2" style="text-align:right;">
+                                                            @Html.TextBoxFor(x => x.GSTAmount, new { @class = "form-control", @readonly = "readonly", style = "text-align:right;font-size:11px;" })
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="8" style="text-align:right;">
+                                                            Total Non Taxable
+                                                        </td>
+                                                        <td colspan="2" style="text-align:right;">
+                                                            @Html.TextBoxFor(x => x.TotalNonTaxable, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;text-align:right;" })
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="8" style="text-align:right;">
+                                                            Total Net Amount
+                                                        </td>
+                                                        <td colspan="2" style="text-align:right;">
+                                                            @Html.TextBoxFor(x => x.TotalNetAmount, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;text-align:right;" })
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+            @if (string.IsNullOrEmpty(returnUrl))
+            {
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            }
+            else
+            {
+                <a href="@returnUrl" class="btn btn-info">Back to List</a>
+            }
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_SalesInvoiceDetailsModal")
+<script src="~/Scripts/Custom/SalesInvoice/Details.js"></script>

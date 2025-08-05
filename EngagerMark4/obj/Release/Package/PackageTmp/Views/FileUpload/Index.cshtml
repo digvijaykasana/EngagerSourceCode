@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="~/" id="baseUrl" rel="" style="visibility:hidden" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="product" content="Metro UI CSS Framework">
+        <meta name="description" content="Simple responsive css framework">
+
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/custombootstrap.css" rel="stylesheet" /><link href="~/Content/custombootstrap.css" rel="stylesheet" />
+        @Styles.Render("~/Content/themes/base/css")
+        <link href="~/Content/dropzone/dropzone.css" rel="stylesheet" />
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/dropzone")
+        <script src="~/Scripts/bootstrap.js"></script>
+       
+		<link rel="stylesheet" href="~/fonts/font-awesome-4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <script type="text/javascript">
+        function LoadFiles() {
+          
+        var tempFolder = $('#tempFolder').val();
+        var findByReference = $('#findByReference').val();
+        if (findByReference == 1)
+            findByReference = true;
+        else
+            findByReference = false;
+        var entityType = $('#entityType').val();
+        var referenceId = $('#referenceId').val();
+        var status = $('#status').val();
+        $('#fileUploadedResult').load('/FileUpload/GetFiles?tempFolder=' + tempFolder + "&findByReference=" + findByReference + "&entityType=" + entityType + "&referenceId=" + referenceId + "&status=" + status);
+    }
+
+    $(document).ready(function (e) {
+        LoadFiles();
+    });
+
+  
+    // maxFiles and parallelUploads must be match to allow multiple file upload. Currently the max files upload per time is 5.
+    Dropzone.options.myDropzone = {
+        maxFiles: 5,
+        maxFilesize: 5.0,
+        parallelUploads: 5,
+        uploadMultiple: true,
+        autoProcessQueue: true,
+        init: function () {
+            var thisDropzone = this;
+            this.on("sending", function (file, response) {
+                $("#divLoading").modal('show');
+            });
+
+            this.on("success", function (file, response) {
+                $("#divLoading").modal('hide');
+                thisDropzone.removeAllFiles(true);
+                LoadFiles();
+            });
+
+            this.on("error", function (file, response) {
+                $("#divLoading").modal('hide');
+            });
+
+   
+        }
+    };
+            </script>
+        
+            <form action="~/FileUpload/Upload" method="post" class="dropzone" id="my-dropzone">
+                <input type="hidden" id="tempFolder" name="tempFolder" value="@ViewBag.tempFolder" />
+                <input type="hidden" id="findByReference" name="findByReference" value="@ViewBag.findByReference" />
+                <input type="hidden" id="entityType" name="entityType" value="@ViewBag.entityType" />
+                <input type="hidden" id="referenceId" name="referenceId" value="@ViewBag.referenceId" />
+                <input type="hidden" id="status" name="status" value="@ViewBag.status" />
+            </form>
+       
+        <div id="divLoading" class="modal fade" role="progressbar">
+            <div class="col-lg-offset-6">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>
+            </div>
+        </div>
+            <div id="fileUploadedResult">
+
+            </div>
+    </body>
+</html>

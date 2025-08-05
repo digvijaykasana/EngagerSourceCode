@@ -1,0 +1,19 @@
+﻿
+@model EngagerMark4.ApplicationCore.Entities.Users.UserRole
+@using EngagerMark4.HtmlExtension;
+
+<tr class="Roles">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.UserId)
+    @Html.HiddenFor(x => x.RoleId)
+    @Html.HiddenFor(x => x.Role.Code)
+    <td>
+        @Html.TextBoxFor(x => x.Role.Name, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td class="col-sm-1">
+        <label>
+            @Html.HiddenFor(x => x.Delete, new { @class = "mark-for-delete" })
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Roles", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

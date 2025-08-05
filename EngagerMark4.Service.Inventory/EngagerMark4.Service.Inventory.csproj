@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EngagerMark4.Service.Inventory</RootNamespace>
+    <AssemblyName>EngagerMark4.Service.Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Price\PriceLocationService.cs" />
+    <Compile Include="Price\PriceService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore.Account\EngagerMark4.ApplicationCore.Account.csproj">
+      <Project>{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}</Project>
+      <Name>EngagerMark4.ApplicationCore.Account</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore.Inventory\EngagerMark4.ApplicationCore.Inventory.csproj">
+      <Project>{88c3a22b-8bdd-4fcf-92b0-1dc84906daec}</Project>
+      <Name>EngagerMark4.ApplicationCore.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore\EngagerMark4.ApplicationCore.csproj">
+      <Project>{9e3eebc4-863c-41c2-9c07-d9e84be5ab28}</Project>
+      <Name>EngagerMark4.ApplicationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.Common\EngagerMark4.Common.csproj">
+      <Project>{884A9670-AB7C-4861-BFC0-30F949DBEB34}</Project>
+      <Name>EngagerMark4.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.Infrastructure.Inventory\EngagerMark4.Infrastructure.Inventory.csproj">
+      <Project>{19defe2e-4506-4c4d-8bf1-fed00fcb9f1f}</Project>
+      <Name>EngagerMark4.Infrastructure.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.Infrasturcture\EngagerMark4.Infrasturcture.csproj">
+      <Project>{bd3dd520-5316-43de-9f1c-40b2a5f99b20}</Project>
+      <Name>EngagerMark4.Infrasturcture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.Service\EngagerMark4.Service.csproj">
+      <Project>{c66e9f2c-86bf-46d6-b763-a392d8de10e3}</Project>
+      <Name>EngagerMark4.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,54 @@
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.SqlServer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\System.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EFCache.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.Common.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.SqlServer.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\System.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.csproj.AssemblyReference.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.csproj.CoreCompileInputs.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerM.4E812212.Up2Date
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.Common.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.SqlServer.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\System.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EFCache.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EngagerMark4.Common.pdb
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\EntityFramework.SqlServer.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\System.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.csproj.AssemblyReference.cache
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.csproj.CoreCompileInputs.cache
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.csproj.CopyComplete
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\Git Mariteam\EngagerMark4.ApplicationCore.Mariteam\obj\Release\EngagerMark4.ApplicationCore.Mariteam.pdb

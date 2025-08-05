@@ -1,0 +1,172 @@
+﻿@model EngagerMark4.ApplicationCore.Dummy.Entities.MeetingServices.MeetingService
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+@{
+    ViewBag.Title = "Meeting Service";
+    var count = 0;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Meeting Service</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            </div>
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    @Html.HiddenFor(model => model.Id)
+
+                    <br />
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Company</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.DropDownList("CustomerId", null, "N/A", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.CustomerId, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Name</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Name, new { @placeholder = "Meeting Service Name", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Description</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Description, new { @placeholder = "Description", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Is Default</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.CheckBoxFor(m => m.IsDefault)
+                            </div>
+                        </div>
+
+                        <h4>Prices</h4>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Additional Person Charge (per pax)</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.AdditionalPersonCharge, new { @placeholder = "0.00", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Last Minute Charge</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.LastMinuteCharge, new { @placeholder = "0.00", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Overnight Charge</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.OvernightCharge, new { @placeholder = "0.00", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Major Amendment Charge</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.MajorAmendmentCharge, new { @placeholder = "0.00", @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Is High Charge</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.CheckBoxFor(m => m.IsHighCharge)
+                            </div>
+                        </div>
+
+
+                        <!--Meeting Service Details-->
+                        <br />
+                        <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            @Html.LinkToAddNestedForm("Add a Meeting Service Detail", "#msDetailsContainer", ".MeetingServiceDetails", "MeetingServiceDetails", typeof(EngagerMark4.ApplicationCore.Dummy.Entities.MeetingServices.MeetingServiceDetails), new { @class = "btn btn-primary clsAddmsDetails" })
+                        </div>
+
+                        <fieldset>
+                            <legend></legend>
+                            <div class="table-responsive">
+                                <table id="msDetailsTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:10px;">Description</th>
+                                            <th style="width:10px;">Min Pax.</th>
+                                            <th style="width:10px;">Max Pax.</th>
+                                            <th style="width:110px;">Charges</th>
+                                            <th class="col-sm-2">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="msDetailsContainer">
+
+                                        @foreach (var msDetail in Model.MeetingServiceDetails.Where(x => x.Delete == false))
+                                        {
+                                            <tr class="MeetingServiceDetails" tableIndex="MeetingServiceDetails_@count.ToString()__">
+                                                <input type="hidden" id="MeetingServiceDetails_@count.ToString()__Id" name="MeetingServiceDetails[@count.ToString()].Id" value="@msDetail.Id" />
+                                                <input type="hidden" id="MeetingServiceDetails_@count.ToString()__MeetingServiceId" name="MeetingServiceDetails[@count.ToString()].MeetingServiceId" value="@msDetail.MeetingServiceId" />
+                                                <input type="hidden" id="MeetingServiceDetails_@count.ToString()__Serial" name="MeetingServiceDetails[@count.ToString()].Serial" value="@msDetail.Serial" />
+
+                                                <td>
+                                                    <input type="text" id="MeetingServiceDetails_@count.ToString()__NoOfPax" name="MeetingServiceDetails[@count.ToString()].NoOfPax" value="@msDetail.NoOfPax" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="MeetingServiceDetails_@count.ToString()__MinPax" name="MeetingServiceDetails[@count.ToString()].MinPax" value="@msDetail.MinPax" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="MeetingServiceDetails_@count.ToString()__MaxPax" name="MeetingServiceDetails[@count.ToString()].MaxPax" value="@msDetail.MaxPax" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="MeetingServiceDetails_@count.ToString()__Charges" name="MeetingServiceDetails[@count.ToString()].Charges" value="@msDetail.Charges" class="form-control" readonly />
+                                                </td>
+
+                                                <td class="col-sm-2">
+                                                    <label>
+                                                        <input type="hidden" id="MeetingServiceDetails_@count.ToString()__Delete" class="mark-for-delete" name="MeetingServiceDetails[@count.ToString()].Delete" value="@msDetail.Delete.ToString()" />
+                                                        @*@Html.HiddenFor(m => msDetail.Delete, new { @class = "mark-for-delete" })*@
+                                                        <a href="#" class="btn btn-info btnEdit">Edit</a>
+                                                        @Html.LinkToRemoveNestedForm("Delete", "tr.MeetingServiceDetails", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            count++;
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_msDetailsModal")
+
+<script src="~/Scripts/Custom/MeetingService/Details.js"></script>

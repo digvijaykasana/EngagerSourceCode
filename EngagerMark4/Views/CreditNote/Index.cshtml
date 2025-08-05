@@ -1,0 +1,54 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.CreditNoteCri
+@{
+    ViewBag.Title = "Credit Note";
+}
+
+@Html.Partial("_ListMessage")
+
+<form method="post" action="/CreditNotePDF/Download">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Credit Note</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-2">
+                        Customer
+                        @Html.DropDownList("Customers", null, "All", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-2">
+                        Vessel
+                        @Html.DropDownList("Vessels", null, "All", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-1">
+                        <br />
+                        <input type="submit" id="btnSearch" class="btn btn-success" value="Search" />
+                    </div>
+                </div>
+                <hr />
+            </div>
+            @*<div class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-3">
+                        @Html.EnumDropDownListFor(x => x.ActionThing, new { @class = "form-control" })
+                        <input type="hidden" id="TaxInclude" name="TaxInclude" />
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="submit" id="btnDownload" class="btn btn-primary" value="Action" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <a href="~/CreditNote/Details" class="btn btn-lg btn-block btn-primary"><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New Credit Note </a>
+            </div>*@
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</form>
+
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/CreditNote/Index.js"></script>

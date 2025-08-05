@@ -1,0 +1,17 @@
+﻿@model EngagerMark4.ApplicationCore.Dummy.Entities.Users.UserVehicle
+@using EngagerMark4.HtmlExtension;
+
+<tr class="Vehicles">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.UserId)
+    @Html.HiddenFor(x => x.VehicleId)
+    <td>
+        @Html.TextBoxFor(m => m.VehicleNo, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td class="col-sm-1">
+        <label>
+            @Html.HiddenFor(x => x.Delete, new { @class = "mark-for-delete" })
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Vehicles", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

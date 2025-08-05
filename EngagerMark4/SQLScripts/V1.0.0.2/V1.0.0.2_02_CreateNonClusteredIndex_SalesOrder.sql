@@ -1,0 +1,1 @@
+CREATE NONCLUSTERED INDEX [nci_wi_Tb_SalesOrder_DA0336F4C7BD9EDB9A53DF8D74B73401] ON [SOP].[Tb_SalesOrder] ([ParentCompanyId], [Status]) INCLUDE ([PickUpdateDate]) WITH (ONLINE = ON)

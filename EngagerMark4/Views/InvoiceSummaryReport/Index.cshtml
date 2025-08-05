@@ -1,0 +1,57 @@
+﻿@model  EngagerMark4.ApplicationCore.SOP.Cris.SalesInvoiceCri
+@{
+    ViewBag.Title = "Sales Invoice Summary";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-info">
+        <div class="panel-heading">Sales Invoice Summary</div>
+        <div class="panel-body">
+           <div class="form-horizontal">
+               <fieldset>
+                   <legend></legend>
+
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">Start Date: </label>
+                       <div class="col-sm-4">
+                           <div class='input-group col-sm-12' id='divFromDate'>
+                               <input type="text" id="txtFromDate" name="FromDate" value="@ViewBag.FromDate" class="form-control" />
+                               <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+               
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">End Date: </label>
+                       <div class="col-sm-4">
+                           <div class='input-group col-sm-12' id='divToDate'>
+                               <input type="text" id="txtToDate" name="ToDate" value="@ViewBag.ToDate" class="form-control" />
+                               <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">Report Type:</label>
+                       <div class="col-sm-4">
+                           @Html.EnumDropDownListFor(m => m.GeneratedReportType, null, new { @class = "form-control" })
+                       </div>
+                   </div>
+               </fieldset>
+           </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnGenerateReport" value="Generate Report" class="btn btn-primary">Generate Report</button>
+        </div>
+    </div>
+
+}
+
+<script src="~/Scripts/Custom/InvoiceSummaryReport/Index.js"></script>

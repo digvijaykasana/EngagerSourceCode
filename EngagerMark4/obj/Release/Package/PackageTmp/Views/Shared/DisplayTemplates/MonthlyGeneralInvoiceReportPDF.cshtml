@@ -1,0 +1,100 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.PDFs.MonthlyGeneralInvoiceReportPDF
+
+@{
+    int currentIndex = 0;
+    int maxRecord = 30;
+    int currentRecord = 1;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Invoice Record (@Model.MonthStr'@Model.YearStr)</title>
+    <style>
+        .invoice-box {
+            max-width: 900px;
+            width: 900px;
+            height: 665px;
+            max-height: 665px;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+    @do
+    {
+        <div class="invoice-box">
+            <div style="margin:5px;margin-right:5px;width:900px;text-align:center;font-size:14px;">
+                <label><b> Invoice Record (@Model.MonthStr'@Model.YearStr) </b></label>
+            </div>
+            <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;height:600px;">
+                <thead>
+                    <tr style="border-bottom:1px solid black;height:30px;background-color:silver;border-top:1px solid black;">
+                        <td style="text-align:center;width:70px;border-right:1px solid black;">
+                            Date
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            Invoice no
+                        </td>
+                        <td style="text-align:center;width:280px;border-right:1px solid black;">
+                            Company Name
+                        </td>
+                        <td style="text-align:center;width:60px;border-right:1px solid black;">
+                            PRICE
+                        </td>
+                        <td style="text-align:center;width:60px;border-right:1px solid black;">
+                            GST
+                        </td>
+                        <td style="text-align:center;width:60px;border-right:1px solid black;">
+                            TOTAL AMOUNT
+                        </td>
+                        <td style="text-align:center;width:60px;border-right:1px solid black;">
+                            CN
+                        </td>
+                        <td style="text-align:center;width:60px;border-right:1px solid black;">
+                            GST
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            TOTAL AMOUNT
+                        </td>
+                        <td style="text-align:center;width:90px;border-right:1px solid black;">
+                            NET
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @while (currentIndex < Model.Invoices.Count)
+                    {
+                        if (currentRecord > maxRecord)
+                        {
+                            currentRecord = 0;
+                            break;
+                        }
+
+                    <tr style="height:10px;">
+                        <td style="width:70px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;">@Model.Invoices[currentIndex].InvoiceDateStr</label></td>
+                        <td style="width:80px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;"> @Model.Invoices[currentIndex].ReferenceNo</label></td>
+                        <td style="width:250px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;"> @Model.Invoices[currentIndex].CustomerName</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-left:2px;">$  @Model.Invoices[currentIndex].Price.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-left:2px;">$  @Model.Invoices[currentIndex].GST.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-left:2px;">$  @Model.Invoices[currentIndex].InvoiceTotalNetAmount.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-right:2px;">$  @Model.Invoices[currentIndex].CNAmount.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-right:2px;">$  @Model.Invoices[currentIndex].CNGST.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-right:2px;">$  @Model.Invoices[currentIndex].CreditNoteTotalAmount.ToString("0.00")</label></td>
+                        <td style="width:60px;border-right:1px solid black;text-align:right;border-bottom:1px solid black;"><label style="margin-right:2px;">$  @Model.Invoices[currentIndex].CreditNoteTotalNetAmount.ToString("0.00") </label></td>
+                    </tr>
+                        currentIndex++;
+                        currentRecord++;
+                    }
+                </tbody>
+            </table>
+            <div style="width:900px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:5px;">
+                <label style="margin-top:5px;"><b>THIS IS THE COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+            </div>
+        </div>
+    } while (currentIndex < Model.Invoices.Count);
+</body>
+</html>

@@ -1,0 +1,221 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.WorkOrderCri
+
+@{
+    ViewBag.Title = "Generate Invoice / Credit Note";
+}
+
+@Html.Partial("_ListMessage")
+<input type="hidden" id="orderPage" value="@ViewBag.orderPage" />
+<input type="hidden" id="orderColumn" value="@ViewBag.orderColumn" />
+<input type="hidden" id="orderOrderBy" value="@ViewBag.orderOrderBy" />
+<input type="hidden" id="orderDataType" value="@ViewBag.orderDataType" />
+<input type="hidden" id="CurrentId" value="@ViewBag.CurrentId" />
+
+<form action="/GenerateInvoice/GenerateInvoice" method="post" id="frmGenerate">
+    <input type="hidden" id="TaxInclude" name="TaxInclude" checked />
+    <input type="hidden" id="ExcelFormat" name="ExcelFormat" checked />
+    <div class="panel panel-info">
+        <div class="panel-heading">Generate Invoice / Credit Note</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.ActionLink("Back to List", "Index", "InvoiceSummary", new { }, new { @class = "btn btn-info" })
+            </div>
+            <div class="panel panel-success col-sm-12" style="padding:0px;">
+                <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                    <label>1. Filter work orders to include in the invoice.</label>
+                    <a data-toggle="collapse" href="#collapse1" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:10px;">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Invoice No :
+                                @Html.TextBoxFor(x => x.SalesInvoiceSummaryNo, new { @class = "form-control", placeholder = "Invoice No", @disabled = "disabled" })
+                                @Html.HiddenFor(x => x.SalesInvoiceSummaryNo)
+                            </div>
+                            <div class="col-lg-4">
+                                <br />
+                                <i class="" style="font-size:11px;"> Leave empty when generating new invoices. </i>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                Customer :
+
+                                @if (Model.CustomerId == 0)
+                                {
+                                    @Html.DropDownList("Customers", null, "All", new { @class = "form-control" })
+                                }
+                                else
+                                {
+                                    @Html.DropDownList("Customers", null, "All", new { @class = "form-control", @disabled = "disabled" })
+                                }
+                                @Html.HiddenFor(x => x.CustomerId)
+                            </div>
+                            <div class="col-lg-2">
+                                Vessel :
+
+                                @if (Model.VesselId == 0)
+                                {
+                                    @Html.DropDownList("Vessels", null,"All", new { @class = "form-control" })
+                                }
+                                else
+                                {
+                                    @Html.DropDownList("Vessels", null, "All", new { @class = "form-control", @disabled = "disabled" })
+                                }
+
+                                @Html.HiddenFor(x => x.VesselId)
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                From Date :
+                                <div class='input-group' id='divFromDate'>
+                                    <input type="text" id="txtFromDate" value="@ViewBag.FromDate" class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                To Date :
+                                <div class='input-group' id='divToDate'>
+                                    <input type="text" id="txtToDate" class="form-control" value="@ViewBag.ToDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                Status :
+                                @Html.DropDownList("Status", null, new { @class = "form-control" })
+                            </div>
+                            <div class="col-lg-2">
+                                Driver :
+                                @Html.DropDownList("DriverId", null, "All", new { @class = "form-control" })
+                            </div>
+                            <div class="col-lg-1">
+                                <br />
+                                <input type="submit" id="btnSearch" class="btn btn-block btn-success" value="Filter" />
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-success col-sm-12" style="padding:0px;">
+                <div class="panel-heading" data-toggle="collapse" href="#collapse2">
+                    <label>2. Choose work orders to be included in the invoice.</label>
+                    <a data-toggle="collapse" href="#collapse2" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:10px;">
+
+                        <div class="row">
+                            <i class="col-lg-12"> Before generation, check @Html.ActionLink("Price Lists", "Index", new { controller = "Price" }, new { target = "_blank" }) for prices and credit values. Changes in the price list afterwards will not the reflected in the already generated invoices. </i>
+                            <br />
+                        </div>
+                        <br />
+                        <div id="result">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-success col-sm-12" style="padding:0px;">
+                <div class="panel-heading" data-toggle="collapse" href="#collapse3">
+                    <label>3. Update custom invoice details if necessary and save.</label>
+                    <a data-toggle="collapse" href="#collapse3" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:10px;">
+                        <div class="row">
+                            <i class="col-lg-12"> Before generation, check @Html.ActionLink("Price Lists", "Index", new { controller = "Price" }, new { target = "_blank" }) for prices and credit values. Changes in the price list afterwards will not the reflected in the already generated invoices. </i>
+                            <br />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                Invoice Date :
+                                <div class='input-group' id='divInvoiceDate'>
+                                    <input type="text" id="txtInvoiceDate" placeholder="Invoice Date" name="InvoiceDate" class="form-control" value="@ViewBag.InvoiceDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Html.CheckBoxFor(x => x.IncludeTax)  Include Tax
+                                </div>
+                            </div>
+
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                Attn:
+                                @Html.TextBoxFor(x => x.AttnStr, new { @class = "form-control", placeholder = "ATTN" })
+                                @Html.HiddenFor(x => x.AttnStr)
+                            </div>
+
+                            <div class="col-lg-2">
+                                DN No. :
+                                @Html.TextBoxFor(x => x.DNNo, new { @class = "form-control", placeholder = "DN No" })
+                                @Html.HiddenFor(x => x.DNNo)
+                            </div>
+                            <div class="col-lg-2">
+                                <br />
+                                <input type="submit" id="btnGenerate" class="btn btn-block btn-primary" style="font-size:15px;" value="Save" />
+                            </div>
+                        </div>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-success col-sm-12" style="padding:0px;" id="divDownloadReport">
+                <div class="panel-heading" data-toggle="collapse" href="#collapse4">
+                    <label>4. Download invoice / credit note. </label>
+                    <a data-toggle="collapse" href="#collapse4" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:10px;">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Html.CheckBoxFor(x => x.IncludeVesselInFrontOfCompanyName)  Include Vessel In Front Of Company Name
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Html.CheckBoxFor(x => x.IsExcel) Excel Format?
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <input type="submit" id="btnDownloadInvoice" class="btn btn-block btn-primary" style="font-size:15px;" value="Download Invoice" />
+                            </div>
+                            <div class="col-lg-2">
+                                <input type="submit" id="btnGenerateCreditNote" class="btn btn-block btn-primary" style="font-size:15px;" value="Download Credit Note" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/GenerateInvoice/Index.js"></script>
+

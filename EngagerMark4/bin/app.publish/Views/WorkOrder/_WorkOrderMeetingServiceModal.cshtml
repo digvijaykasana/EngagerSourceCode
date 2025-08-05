@@ -1,0 +1,109 @@
+﻿
+<div id="workOrderMeetingServiceModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnMeetingServiceClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Work Order Meeting Service</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 required">Airport Meeting Service</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="hidden" id="tableMeetingServiceIndex" />
+                            @Html.DropDownList("MeetingServices", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Vessel</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            @Html.DropDownList("Vessels", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Flight No.</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMeetingServiceFlightNo" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Passenger In Charge</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            @Html.DropDownList("MeetingServicePassengers", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Is Last Minute Charge?</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="checkbox" id="chkLastMinuteCharge" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Last Minute Charge</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtLastMinuteCharge" class="form-control textValidate" allowedCharacters="NUMERIC" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Overnight Charge</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtOvernightCharge" class="form-control textValidate" allowedCharacters="NUMERIC" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Is Major Amendment Change?</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="checkbox" id="chkMajorAmendmentCharge" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Major Amendment Charge</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMajorAmendmentCharge" class="form-control textValidate" allowedCharacters="NUMERIC" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">No of Pax</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMeetingServiceNoOfPax" class="form-control textValidate" allowedCharacters="NUMERIC" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="txtMeetingServiceDetailId" />
+                        <input type="hidden" id="txtMaxPaxRange" />
+                        <label class="control-label col-sm-4" id="lblPerPaxChargeLabel">-</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtPerPaxCharge" class="form-control textValidate" allowedCharacters="NUMERIC" value="0" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Additional Person Charge (Per Pax)</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtAdditionalPersonCharge" class="form-control textValidate" allowedCharacters="NUMERIC" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Total Pax Charge</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtTotalPaxCharge" class="form-control textValidate" allowedCharacters="NUMERIC" value="0" readonly="readonly"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Charges</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMeetingServiceCharges" class="form-control textValidate" allowedCharacters="NUMERIC" readonly ="readonly" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAddMeetingService" class="btn btn-info" value="Add">Add</button>
+                <button id="btnEditMeetingService" class="btn btn-info" style="display:none;">Edit</button>
+                <button id="btnCancelMeetingService" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

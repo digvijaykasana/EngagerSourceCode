@@ -1,0 +1,18 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Application.ModulePermission
+@using EngagerMark4.HtmlExtension;
+   
+<tr class="Functions">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.ModuleId)
+    @Html.HiddenFor(x => x.PermissionId)
+    @Html.HiddenFor(x => x.Permission.Controller)
+    <td>
+        @Html.TextBoxFor(x => x.Permission.Name, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td class="col-sm-1">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Functions", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

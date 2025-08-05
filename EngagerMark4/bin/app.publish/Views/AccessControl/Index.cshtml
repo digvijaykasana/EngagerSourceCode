@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Access Control";
+}
+
+@{
+    int count = 1;
+    int countBody = 1;
+    List<EngagerMark4.ApplicationCore.Entities.Users.RolePermission> selectedFunctions = ViewBag.SelectedFunctions as List<EngagerMark4.ApplicationCore.Entities.Users.RolePermission>;
+}
+@Html.Partial("_ListMessage")
+
+@using (Html.BeginForm())
+{
+        @Html.AntiForgeryToken()
+        if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+        {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+        }
+        <div class="panel panel-info">
+            <div class="panel-heading">Access Control</div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2 required">Role</label>
+                        <div class="col-sm-6" data-role="input-control" >
+                            @Html.DropDownList("UserRoleId", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        
+                        <ul class="nav nav-tabs">
+                            @foreach(var module in ViewBag.Modules as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.Module>)
+                            {
+                                if(count == 1)
+                                {
+                                    <li class="active"><a href="#@module.Id" data-toggle="tab" >@module.Name</a> </li>
+                                }
+                                else
+                                {
+                                    <li ><a href="#@module.Id" data-toggle="tab" >@module.Name</a> </li>
+                                }
+                                count++;
+                            }
+                        </ul>
+
+                        <div class="tab-content">
+                            @foreach(var module in ViewBag.Modules as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.Module>)
+                            {
+                                if(countBody==1)
+                                {
+                                    <div class="tab-pane fade in active" id="@module.Id">
+                                        <br/>
+                                        @foreach (var function in (ViewBag.Functions as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.ModulePermission>).Where(x => x.ModuleId == module.Id).OrderBy(x => x.Permission.SerialNo)) 
+                                        {
+                                            var rolePermission = selectedFunctions.FirstOrDefault(x => x.PermissionId == function.PermissionId);
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-1"></div>
+                                                <div class="col-sm-6">
+                                                    @if (selectedFunctions.FirstOrDefault(x => x.PermissionId == function.PermissionId) == null)
+                                                    {
+                                                        <input type="checkbox"  name="selectedFunctions" id="@function.Permission.Name" value="@function.PermissionId" allAccess="false" roleId="@ViewBag.UserRoleId" /><a href="#" allAccess="false" roleId="@ViewBag.UserRoleId" permissionId="@function.PermissionId" class="permissionDetails" for="@function.Permission.Name">@function.Permission.Name</a> 
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="checkbox" name="selectedFunctions" checked id="@function.Permission.Name" value="@function.PermissionId" allAccess="@rolePermission.AllAccessStr" roleId="@rolePermission.RoleId" /><a allAccess="@rolePermission.AllAccess" roleId="@rolePermission.RoleId" href="#" permissionId="@function.PermissionId" class="permissionDetails" for="@function.Permission.Name">@function.Permission.Name</a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="tab-pane fade" id="@module.Id">
+                                        <br/>
+                                        @foreach (var function in (ViewBag.Functions as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.ModulePermission>).Where(x => x.ModuleId == module.Id).OrderBy(x => x.Permission.SerialNo))
+                                        {
+                                            var rolePermission = selectedFunctions.FirstOrDefault(x => x.PermissionId == function.PermissionId);
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-sm-1"></div>
+                                                    <div class="col-sm-6">
+                                                        @if (selectedFunctions.FirstOrDefault(x => x.PermissionId == function.PermissionId) == null)
+                                                        {
+                                                            <input type="checkbox" name="selectedFunctions" id="@function.Permission.Name" value="@function.PermissionId" /><a href="#" allAccess="false" roleId="@ViewBag.UserRoleId" permissionId="@function.PermissionId" class="permissionDetails" for="@function.Permission.Name">@function.Permission.Name</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="checkbox" name="selectedFunctions" checked id="@function.Permission.Name" value="@function.PermissionId"  /><a href="#" class="permissionDetails" allAccess="@rolePermission.AllAccessStr" roleId="@rolePermission.RoleId" permissionId="@function.PermissionId" for="@function.Permission.Name">@function.Permission.Name</a>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                countBody++;
+                            }
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="col-sm-2"></div>
+                    <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+}
+
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_AccessDetailsDialog")
+
+<script src="~/Scripts/Custom/AccessControl/Index.js"></script>

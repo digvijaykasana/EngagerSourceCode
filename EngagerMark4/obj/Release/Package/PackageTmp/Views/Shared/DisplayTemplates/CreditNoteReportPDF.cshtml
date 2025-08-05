@@ -1,0 +1,155 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.ViewModels.CreditNoteReportPDF
+
+@{
+    int currentIndex = 0;
+    int currentRecord = 1;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CN</title>
+    <style>
+        .invoice-box {
+            max-width: 695px;
+            width: 695px;
+            height: 1014px;
+            max-height: 1014px;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+    @do
+    {
+        Model.CurrentPage++;
+        <div class="invoice-box">
+            <div style="margin:5px;margin-right:5px;">
+                <img src="@Url.Action(Model.HeaderLogo, "Images\\Company", null, Request.Url.Scheme)" style="width:680px;" />
+            </div>
+            <table style="font-family:Tahoma;font-size:11px;">
+                <tr style="height:80px;">
+                    <td style="width:390px;vertical-align:top;">
+                        <table style="font-family:Tahoma;font-size:11px;">
+                            <tr>
+                                <td style="width:90px;vertical-align:top;"><label style="margin-left:5px;"> <b>MESSRS :</b> </label></td>
+                                <td>
+                                    @Model.Customer
+                                    <br />
+                                    @Model.Address
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width:390px;vertical-align:top;">
+                        <table style="font-family:Tahoma;font-size:11px;">
+                            <tr>
+                                <td style="width:200px;text-align:right;">
+                                    <b>DATE: </b>
+                                </td>
+                                <td>
+                                    <label style="margin-left:10px;">
+                                        @Model.DateStr
+                                    </label>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;margin-right:1px;border-bottom:1px solid black;">
+                <thead>
+                    <tr style="height:30px;border-bottom:1px solid black;background-color:silver;border-top:1px solid black;">
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            Date
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            Invoice No
+                        </td>
+                        <td style="text-align:center;width:380px;border-right:1px solid black;">
+                            Vessel
+                        </td>
+                        <td style="text-align:center;width:160px;">
+                            Amount (S$)
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height:10px;">
+                        <td style="text-align:center;width:160px;border-right:1px solid black;"></td>
+                        <td style="text-align:center;width:160px;border-right:1px solid black;"></td>
+                        <td style="text-align:center;width:380px;border-right:1px solid black;"></td>
+                        <td style="text-align:center;width:160px;"></td>
+                    </tr>
+                    @while (currentIndex < Model.Details.Count)
+    {
+        if (currentRecord > Model.GetMaxRecord())
+        {
+            currentRecord = 0;
+            break;
+        }
+
+                <tr style="height:30px;vertical-align:central;">
+                    <td style="text-align:center;width:80px;border-right:1px solid;">
+                        @if (!string.IsNullOrEmpty(Model.Details[currentIndex].InvoiceDateStr))
+        {
+                <label style="margin-left:5px;"> @Model.Details[currentIndex].InvoiceDateStr</label>
+}
+                    </td>
+                    <td style="text-align:center;width:80px;border-right:1px solid;">
+                        @if (!string.IsNullOrEmpty(Model.Details[currentIndex].InvoiceNo))
+        {
+                <label style="margin-left:5px;"> @Model.Details[currentIndex].InvoiceNo</label>
+}
+                    </td>
+                    <td style="text-align:left;width:380px;border-right:1px solid;">
+                        @if (!string.IsNullOrEmpty(Model.Details[currentIndex].VesselName))
+        {
+                <label style="margin-left:5px;"> @Model.Details[currentIndex].VesselName</label>
+}
+                    </td>
+                    <td style="text-align:center;width:160px;">
+                        <label style="margin-left:5px;"> @Model.Details[currentIndex].TotalAmount.ToString()</label>
+                    </td>
+                </tr>
+
+currentRecord++;
+
+currentIndex++;
+currentRecord++;
+}
+                    @if (Model.IsLastPage)
+    {
+                <tr style="height:25px;">
+                    <td style="border-top:1px solid black;"> </td>
+                    <td style="border-top:1px solid black;"></td>
+                    <td style="border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;"><b>Sub Total</b></label></td>
+                    <td style="border-top:1px solid black;text-align:right;margin-right:5px;"><label style="margin-right:5px;"> @Model.SubTotal.ToString("0.00")</label></td>
+                </tr>
+                <tr style="height:25px;">
+                    <td style="border-top:1px solid black;"> </td>
+                    <td style="border-top:1px solid black;"></td>
+                    <td style="border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;"><b>Add @Model.GSTPercent % GST</b></label></td>
+                    <td style="border-top:1px solid black;text-align:right;margin-right:5px;"><label style="margin-right:5px;"> @Model.GSTAmount.ToString("0.00")</label></td>
+                </tr>
+                <tr style="height:25px;">
+                    <td style="border-top:1px solid black;"> </td>
+                    <td style="border-top:1px solid black;"></td>
+                    <td style="border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;"><b>Grand Total</b></label></td>
+                    <td style="border-top:1px solid black;text-align:right;margin-right:5px;"><label style="margin-right:5px;"> @Model.GrandTotal.ToString("0.00")</label></td>
+                </tr>
+}
+                </tbody>
+            </table>
+            <br />
+            <div style="width:690px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:5px;">
+                <label style="margin-top:5px;"><b>THIS IS A COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+            </div>
+        </div>
+    } while (currentIndex < Model.Details.Count);
+</body>
+</html>

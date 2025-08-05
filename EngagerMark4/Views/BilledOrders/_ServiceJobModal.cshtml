@@ -1,0 +1,91 @@
+﻿
+<div id="serviceJobModal" class="modal fade" role="dialog" style="font-size:11px;">
+    <div class="modal-dialog" style="width:800px;" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnServiceJobClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Job Assignment</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2 required">Staff</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="hidden" id="serviceJobTableIndex"/>
+                            @Html.DropDownList("Staffs", null,"N/A", new { @class = "form-control" })
+                        </div>
+                        <label class="control-label col-sm-2 required">Vehicle</label> 
+                        <div class="col-sm-4" data-role="input-control">
+                            @Html.DropDownList("ServiceJobVehicles", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Custom Detention</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            @Html.DropDownList("CustomDetentions", null, "N/A", new { @class = "form-control" })
+                        </div>
+                        <label class="control-label col-sm-2">Disposal</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtDisposal" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Additional Stops</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtAdditionalStops" class="form-control"/>
+                        </div>
+                        <label class="control-label col-sm-2">Waiting Time</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            @*<input class="form-control basicAutoComplete" type="text"
+                                   data-url="myurl"
+                                   autocomplete="off">*@
+                            <input type="text" id="txtWaitingTime" class="form-control basicAutoComplete" autocomplete="on" data-url="/WaitingTimeApi" />
+                            <script type="text/javascript">
+                                $('.basicAutoComplete').autoComplete();
+                            </script>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Additional Info</label>
+                        <div class="col-sm-10" data-role="input-control">
+                            @foreach (var checklist in ViewBag.Checklists as List<EngagerMark4.ApplicationCore.Job.Entities.CheckList>)
+                            {
+                                <div class="col-lg-3">
+                                    <input type="checkbox" value="@checklist.Id" class="chkAdditionInfo" /> @checklist.Name
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Start Exec Time</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtStartExecTime" disabled class="form-control" />
+                        </div>
+                        <div class="control-label col-sm-2">End Exec Time</div>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtEndExecTime" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Start Exec Place</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtStartExecPlace" disabled class="form-control" />
+                        </div>
+                        <label class="control-label col-sm-2">End Exec Place</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input type="text" id="txtEndExecPlace" disabled class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAddServiceJob" class="btn btn-info" value="Add">Add</button>
+                <button id="btnEditServiceJob" class="btn btn-info" value="Edit">Edit</button>
+                <button id="btnCancelServiceJob" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

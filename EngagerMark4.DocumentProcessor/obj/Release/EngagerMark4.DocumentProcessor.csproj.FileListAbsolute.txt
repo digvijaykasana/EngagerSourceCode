@@ -1,0 +1,82 @@
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.DocumentProcessor.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.DocumentProcessor.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Cells.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Email.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Pdf.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Slides.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Words.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\System.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EFCache.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.Common.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\System.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.csproj.AssemblyReference.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.csproj.CoreCompileInputs.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\obj\Release\EngagerM.57BD586B.Up2Date
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.DocumentProcessor.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.DocumentProcessor.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Cells.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Email.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Pdf.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Slides.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Aspose.Words.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.Common.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\System.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EFCache.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.SOP.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.Common.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Inventory.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.pdb
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\EngagerMark4.ApplicationCore.Account.dll.config
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\System.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.csproj.AssemblyReference.cache
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.csproj.CoreCompileInputs.cache
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.csproj.CopyComplete
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.dll
+C:\Git Mariteam\EngagerMark4.DocumentProcessor\obj\Release\EngagerMark4.DocumentProcessor.pdb

@@ -1,0 +1,80 @@
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.Service.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.Service.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.Service.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EntityFramework.SqlServer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.Cookies.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.OAuth.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Newtonsoft.Json.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\System.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EFCache.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EngagerMark4.Common.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\EntityFramework.SqlServer.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Owin.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.Cookies.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.OAuth.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Newtonsoft.Json.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\System.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\obj\Release\EngagerMark4.Service.csproj.AssemblyReference.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\obj\Release\EngagerMark4.Service.csproj.CoreCompileInputs.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\obj\Release\EngagerM.49E9CF45.Up2Date
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\obj\Release\EngagerMark4.Service.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4.Service\obj\Release\EngagerMark4.Service.pdb
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.Service.dll.config
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.Service.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.Service.pdb
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.Common.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EntityFramework.SqlServer.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Owin.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.Cookies.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.OAuth.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Newtonsoft.Json.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Owin.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\System.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EFCache.dll
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.pdb
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.pdb
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.ApplicationCore.dll.config
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EngagerMark4.Common.pdb
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\EntityFramework.SqlServer.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.Owin.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.Cookies.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.Owin.Security.OAuth.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Newtonsoft.Json.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\System.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Git Mariteam\EngagerMark4.Service\obj\Release\EngagerMark4.Service.csproj.AssemblyReference.cache
+C:\Git Mariteam\EngagerMark4.Service\obj\Release\EngagerMark4.Service.csproj.CoreCompileInputs.cache
+C:\Git Mariteam\EngagerMark4.Service\obj\Release\EngagerMark4.Service.csproj.CopyComplete
+C:\Git Mariteam\EngagerMark4.Service\obj\Release\EngagerMark4.Service.dll
+C:\Git Mariteam\EngagerMark4.Service\obj\Release\EngagerMark4.Service.pdb

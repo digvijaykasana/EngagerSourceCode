@@ -1,0 +1,732 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+
+@{
+    ViewBag.Title = "Work Order";
+    int locationCount = 0;
+    int passengerCount = 0;
+    int meetingServiceCount = 0;
+    int serviceJobCount = 0;
+    var returnUrl = ViewBag.ReturnUrl + "&CurrentId=" + ViewBag.CurrentId;
+}
+
+@Html.Partial("_ListMessage")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    @Html.HiddenFor(x => x.InvoiceId)
+    @Html.HiddenFor(x => x.InvoiceNo)
+    @Html.HiddenFor(x => x.CreditNoteId)
+    @Html.HiddenFor(x => x.CreditNoteNo)
+    @Html.HiddenFor(x => x.ReferenceNoNumber)
+    @Html.HiddenFor(x => x.ShortText1)
+    @Html.HiddenFor(x => x.ShortText2)
+    @Html.HiddenFor(x => x.SalesInvoiceSummaryId)
+    @Html.HiddenFor(x => x.YesNo1)
+    @Html.HiddenFor(x => x.YesNo2)
+    @Html.HiddenFor(x => x.IsOverNightJob)
+    @Html.HiddenFor(model => model.Id)
+
+    <input type="hidden" name="ReturnUrl" value="@returnUrl" />
+    <div class="panel panel-info">
+        <div class="panel-heading">Work Order</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @if (string.IsNullOrEmpty(returnUrl))
+                {
+                    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                }
+                else
+                {
+                    <a href="@returnUrl" class="btn btn-info">Back to List</a>
+                }
+            </div>
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#info" data-toggle="tab">Work Order Info</a></li>
+                        @if ((bool)ViewBag.HasPermissionForWorkOrderFileUpload && Model.Id != 0)
+                        {
+                            <li><a href="#tabFileUpload" data-toggle="tab">Attachments</a></li>
+                        }
+                        <li><a href="#tabJobAssignment" data-toggle="tab">Job Assignment</a></li>
+                        @if (Model.Id != 0 && (bool)ViewBag.HasPermissionForWorkOrderHistory)
+                        {
+                            <li><a href="#tabNotifications" data-toggle="tab">Job Notifications</a></li>
+                        }
+                        @if (Model.Id != 0 && (bool)ViewBag.HasPermissionForWorkOrderHistory)
+                        {
+                            <li><a href="#tabHistories" data-toggle="tab">Job History</a></li>
+                        }
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="info">
+                            <div class="form-horizontal">
+                                <br />
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 required">Reference No.</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        <input type="text" value="@Model.RefereneceNo" disabled="disabled" class="form-control" />
+                                        @if (Model.Id == 0)
+                                        {
+                                            <input type="hidden" id="ReferenceNo" name="ReferenceNo" value="TBD" />
+                                        }
+                                        else
+                                        {
+                                            @Html.HiddenFor(m => m.RefereneceNo)
+                                        }
+                                        @Html.ValidationMessageFor(m => m.RefereneceNo, null, new { @class = "text-danger" })
+                                    </div>
+                                    <label class="control-label col-sm-2">Description</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Description, new { @placeholder = "Description", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Description, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Customer</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        @Html.DropDownList("CustomerId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.CustomerId, null, new { @class = "text-danger" })
+                                    </div>
+                                    <label class="control-label col-sm-2">Agent</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        @Html.DropDownList("AgentId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.AgentId, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Vessel</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        @Html.DropDownList("VesselId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.VesselId, null, new { @class = "text-danger" })
+                                    </div>
+                                    <label class="control-label col-sm-2">Voyage No.</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.VoyageNo, new { @placeHolder = "Voyage No", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.VoyageNo, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Pick up date</label>
+                                    <div class='col-sm-4'>
+                                        <div class='input-group' id='divPickUpDate'>
+                                            @Html.TextBoxFor(x => x.PickUpDateBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2">Pick up time</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group" id="divPickUpTime">
+                                            @Html.TextBoxFor(x => x.PickUpTimeBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Stand By Date</label>
+                                    <div class="col-sm-4">
+                                        <div id="divStandByDate" class="input-group">
+                                            @Html.TextBoxFor(x => x.StandByDateBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2">Stand By Time</label>
+                                    <div class="col-sm-4">
+                                        <div id="divStandByTime" class="input-group">
+                                            @Html.TextBoxFor(x => x.StandByTimeBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Board Type</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownList("BoardTypeId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.BoardTypeId, null, new { @class = "text-danger" })
+                                    </div>
+                                    <label class="control-label col-sm-2">Order Status</label>
+                                    <div class="col-sm-4">
+                                        @Html.EnumDropDownListFor(m => m.Status, null, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Status, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                @if (Model.Id != 0)
+                                {
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Modification Comments</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextAreaFor(m => m.LongText2, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+
+                            @if ((bool)ViewBag.HasPermissionForWorkOrderLocation)
+                            {
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add Location", "#LocationContainer", ".WorkOrderLocations", "WorkOrderLocationList", typeof(EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrderLocation), new { @class = "btn btn-primary clsAddLocation" })
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="locationTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:140px;">Type</th>
+                                                        <th style="width:300px;">Location</th>
+                                                        <th> Description</th>
+                                                        <th class="col-sm-2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="LocationContainer">
+                                                    @foreach (var location in Model.WorkOrderLocationList.Where(x => x.Delete == false))
+                                                    {
+                                                        <tr class="WorkOrderLocations" tableIndex="WorkOrderLocationList_@locationCount.ToString()__">
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Id" name="WorkOrderLocationList[@locationCount.ToString()].Id" value="@location.Id" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__LocationId" name="WorkOrderLocationList[@locationCount.ToString()].LocationId" value="@location.LocationId" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Location_Code" name="WorkOrderLocationList[@locationCount.ToString()].Location.Code" value="TBA" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Location_Name" name="WorkOrderLocationList[@locationCount.ToString()].Location.Name" value="TBA" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Location_PostalCode" name="WorkOrderLocationList[@locationCount.ToString()].Location.PostalCode" value="@location.Location.PostalCode" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Type" name="WorkOrderLocationList[@locationCount.ToString()].Type" value="@location.TypeInt" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__HotelId" name="WorkOrderLocationList[@locationCount.ToString()].HotelId" value="@location.HotelId" />
+                                                            <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Hotel" name="WorkOrderLocationList[@locationCount.ToString()].Hotel" value="@location.Hotel" />
+                                                            <td>
+                                                                <input readonly type="text" id="WorkOrderLocationList_@locationCount.ToString()__TypeStr" name="WorkOrderLocationList[@locationCount.ToString()].TypeStr" value="@location.TypeStr" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                @if (location.HotelId == null)
+                                                                {
+                                                                    <input readonly type="text" id="WorkOrderLocationList_@locationCount.ToString()__Location_Display" name="WorkOrderLocationList[@locationCount.ToString()].Location.Display" value="@location.Location.Display" class="form-control" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <input readonly type="text" id="WorkOrderLocationList_@locationCount.ToString()__Location_Display" name="WorkOrderLocationList[@locationCount.ToString()].Location.Display" value="@location.Location.Display @location.Hotel" class="form-control" />
+                                                                }
+
+                                                            </td>
+                                                            <td>
+                                                                <input readonly type="text" id="WorkOrderLocationList_@locationCount.ToString()__Description" name="WorkOrderLocationList[@locationCount.ToString()].Description" value="@location.Description" class="form-control" />
+                                                            </td>
+                                                            <td class="col-sm-2">
+                                                                <label>
+                                                                    <input type="hidden" id="WorkOrderLocationList_@locationCount.ToString()__Delete" class="mark-for-delete" name="WorkOrderLocationList[@locationCount.ToString()].Delete" value="@location.Delete.ToString()" />
+                                                                    <a href="#" class="btn btn-info btnEditLocation">Edit</a>
+                                                                    @*@Html.HiddenFor(m => location.Delete, new { @class = "mark-for-delete" })*@
+                                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.WorkOrderLocations", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        locationCount++;
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            }
+
+
+                            @if ((bool)ViewBag.HasPermissionForWorkOrderPassenger)
+                            {
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add Passenger", "#PassengerContainer", ".WorkOrderPassengers", "WorkOrderPassengerList", typeof(EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrderPassenger), new { @class = "btn btn-primary clsAddPassenger" })
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="passengerTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:100px;">In Charge</th>
+                                                        <th>Name</th>
+                                                        <th style="width:170px;"> Rank</th>
+                                                        <th style="width:150px;"> Vehicle</th>
+                                                        <th style="width:100px;">No Of Pax</th>
+                                                        @if (Model.Status >= EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.Submitted)
+                                                        {
+                                                            <th>Service Job</th>
+                                                            }
+
+                                                        <th class="col-sm-2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="PassengerContainer">
+                                                    @foreach (var passenger in Model.WorkOrderPassengerList.Where(x => x.Delete == false))
+                                                    {
+                                                    <tr class="WorkOrderPassengers" tableIndex="WorkOrderPassengerList_@passengerCount.ToString()__">
+                                                        <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__Id" name="WorkOrderPassengerList[@passengerCount.ToString()].Id" value="@passenger.Id" />
+                                                        <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__WorkOrderId" name="WorkOrderPassengerList[@passengerCount.ToString()].WorkOrderId" value="@passenger.WorkOrderId" />
+                                                        <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__RankId" name="WorkOrderPassengerList[@passengerCount.ToString()].RankId" value="@passenger.RankId" />
+                                                        <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__VehicleId" name="WorkOrderPassengerList[@passengerCount.ToString()].VehicleId" value="@passenger.VehicleId" />
+                                                        <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__IsSigned" name="WorkOrderPassengerList[@passengerCount.ToString()].IsSigned" value="@passenger.IsSigned" />
+
+                                                        <td>
+                                                            @if (passenger.InCharge)
+                                                            {
+                                                                <input type="checkbox" id="WorkOrderPassengerList_@passengerCount.ToString()__InCharge" name="WorkOrderPassengerList[@passengerCount.ToString()].InCharge" checked="checked" value="true" readonly="readonly" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <input type="checkbox" id="WorkOrderPassengerList_@passengerCount.ToString()__InCharge" name="WorkOrderPassengerList[@passengerCount.ToString()].InCharge" value="false" readonly="readonly" />
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" type="text" id="WorkOrderPassengerList_@passengerCount.ToString()__Name" name="WorkOrderPassengerList[@passengerCount.ToString()].Name" readonly value="@passenger.Name" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" type="text" id="WorkOrderPassengerList_@passengerCount.ToString()__Rank" name="WorkOrderPassengerList[@passengerCount.ToString()].Rank" readonly value="@passenger.Rank" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" type="text" id="WorkOrderPassengerList_@passengerCount.ToString()__Vehicle_VehicleNo" name="WorkOrderPassengerList[@passengerCount.ToString()].Vehicle.VehicleNo" readonly value="@passenger.Vehicle.VehicleNo" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" type="text" id="WorkOrderPassengerList_@passengerCount.ToString()__NoOfPax" name="WorkOrderPassengerList[@passengerCount.ToString()].NoOfPax" readonly value="@passenger.NoOfPax" />
+                                                        </td>
+                                                        @if (Model.Status >= EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.Submitted)
+                                                        {
+                                                            if (Model.Status >= EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.With_Accounts)
+                                                            {
+                                                                <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__ServiceJobId" name="WorkOrderPassengerList[@passengerCount.ToString()].ServiceJobId" value="@passenger.ServiceJobId" />
+
+                                                                <td>
+                                                                    @Html.DropDownList("WorkOrderPassengerList[" + passengerCount.ToString() + "].ServiceJobId", new SelectList(ViewBag.WorkOrderPassengerServiceJobs, "Id", "ReferenceNo", passenger.ServiceJobId), "N/A", new { @id= "WorkOrderPassengerList_"+passengerCount.ToString()+"__ServiceJobId",  @class = "form-control", @disabled = "disabled" })
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+
+                                                                <td>
+                                                                    @Html.DropDownList("WorkOrderPassengerList[" + passengerCount.ToString() + "].ServiceJobId", new SelectList(ViewBag.WorkOrderPassengerServiceJobs, "Id", "ReferenceNo", passenger.ServiceJobId), "N/A", new { @id = "WorkOrderPassengerList_" + passengerCount.ToString() + "__ServiceJobId", @class = "form-control" })
+                                                                </td>
+                                                            }
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__ServiceJobId" name="WorkOrderPassengerList[@passengerCount.ToString()].ServiceJobId" value="@passenger.ServiceJobId" />
+                                                        }
+                                                        <td class="col-sm-2">
+                                                            <label>
+                                                                <input type="hidden" id="WorkOrderPassengerList_@passengerCount.ToString()__Delete" class="mark-for-delete" name="WorkOrderPassengerList[@passengerCount.ToString()].Delete" value="@passenger.Delete.ToString()" />
+                                                                @*@Html.HiddenFor(m => passenger.Delete, new { @class = "mark-for-delete" })*@
+                                                                <a href="#" class="btn btn-info btnEditPassenger">Edit</a>
+                                                                @Html.LinkToRemoveNestedForm("Delete", "tr.WorkOrderPassengers", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                        passengerCount++;
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            }
+
+                            @if ((bool)ViewBag.HasPermissionForWorkOrderMeetingService)
+                            {
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add Meeting Service", "#MeetingServiceContainer", ".WorkOrderMeetingServices", "MeetingServiceList", typeof(EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrderAirportMeetingService), new { @class = "btn btn-primary clsAddMeetingService" })
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="meetingServiceTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:150px;">Meeting Service</th>
+                                                        <th>Vessel</th>
+                                                        <th style="width:170px;"> Flight No</th>
+                                                        <th style="width:150px;text-align:right;"> No of Pax</th>
+                                                        <th style="width:120px;text-align:right;"> Charges</th>
+                                                        <th style="width:120px;"> Meeting Service Form </th>
+                                                        <th class="col-sm-2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="MeetingServiceContainer">
+                                                    @foreach (var meetingService in Model.MeetingServiceList.Where(x => x.Delete == false))
+                                                    {
+                                                        <tr class="WorkOrderMeetingServices" tableIndex="MeetingServiceList_@meetingServiceCount.ToString()__">
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__Id" name="MeetingServiceList[@meetingServiceCount.ToString()].Id" value="@meetingService.Id" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__AirportMeetingServiceId" name="MeetingServiceList[@meetingServiceCount.ToString()].AirportMeetingServiceId" value="@meetingService.AirportMeetingServiceId" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__VesselId" name="MeetingServiceList[@meetingServiceCount.ToString()].VesselId" value="@meetingService.VesselId" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__MeetingServicePassengerInCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].MeetingServicePassengerInCharge" value="@meetingService.MeetingServicePassengerInCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__IsLastMinuteCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].IsLastMinuteCharge" value="@meetingService.IsLastMinuteCharge.ToString()" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__LastMinuteCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].LastMinuteCharge" value="@meetingService.LastMinuteCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__OvernightCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].OvernightCharge" value="@meetingService.OvernightCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__IsMajorAmendment" name="MeetingServiceList[@meetingServiceCount.ToString()].IsMajorAmendment" value="@meetingService.IsMajorAmendment.ToString()" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__MajorAmendmentCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].MajorAmendmentCharge" value="@meetingService.MajorAmendmentCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__PerPaxChargeLabel" name="MeetingServiceList[@meetingServiceCount.ToString()].PerPaxChargeLabel" value="@meetingService.PerPaxChargeLabel" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__PerPaxCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].PerPaxCharge" value="@meetingService.PerPaxCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__MaxPaxRange" name="MeetingServiceList[@meetingServiceCount.ToString()].MaxPaxRange" value="@meetingService.MaxPaxRange" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__MeetingServiceDetailId" name="MeetingServiceList[@meetingServiceCount.ToString()].MeetingServiceDetailId" value="@meetingService.MeetingServiceDetailId" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__AdditionalPersonCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].AdditionalPersonCharge" value="@meetingService.AdditionalPersonCharge" />
+                                                            <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__TotalPaxCharge" name="MeetingServiceList[@meetingServiceCount.ToString()].TotalPaxCharge" value="@meetingService.TotalPaxCharge" />
+                                                            <td>
+                                                                <input id="MeetingServiceList_@meetingServiceCount.ToString()__MeetingService_Name" name="MeetingServiceList[@meetingServiceCount.ToString()].MeetingSerivce.Name" type="text" class="form-control" readonly="readonly" value="@meetingService.MeetingService.Name" />
+                                                            </td>
+                                                            <td>
+                                                                <input id="MeetingServiceList_@meetingServiceCount.ToString()__Vessel" name="MeetingServiceList[@meetingServiceCount.ToString()].Vessel" type="text" class="form-control" readonly="readonly" value="@meetingService.Vessel" />
+                                                            </td>
+                                                            <td>
+                                                                <input id="MeetingServiceList_@meetingServiceCount.ToString()__FlightNo" name="MeetingServiceList[@meetingServiceCount.ToString()].FlightNo" type="text" class="form-control" readonly="readonly" value="@meetingService.FlightNo" />
+                                                            </td>
+                                                            <td>
+                                                                <input id="MeetingServiceList_@meetingServiceCount.ToString()__NoOfPax" name="MeetingServiceList[@meetingServiceCount.ToString()].NoOfPax" type="text" class="form-control" readonly="readonly" value="@meetingService.NoOfPax" style="text-align:right;" />
+                                                            </td>
+                                                            <td>
+                                                                <input id="MeetingServiceList_@meetingServiceCount.ToString()__Charges" name="MeetingServiceList[@meetingServiceCount.ToString()].Charges" type="text" class="form-control" readonly="readonly" value="@meetingService.Charges" style="text-align:right;" />
+                                                            </td>
+                                                            <td>
+                                                                @if (Model.Id != 0 && meetingService.Id != 0 && meetingService.Charges != 0)
+                                                                {
+                                                                    <a href="~/MeetingServicePDF/DownloadMeetingServiceForm?workOrderId=@Model.Id&workOrderMeetingServiceId=@meetingService.Id">Download</a>
+                                                                }
+                                                            </td>
+                                                            <td class="col-sm-2">
+                                                                <label>
+
+                                                                    <input type="hidden" id="MeetingServiceList_@meetingServiceCount.ToString()__Delete" class="mark-for-delete" name="MeetingServiceList[@meetingServiceCount.ToString()].Delete" value="@meetingService.Delete.ToString()" />
+                                                                    @*@Html.HiddenFor(m => meetingService.Delete, new { @class = "mark-for-delete" })*@
+                                                                    <a href="#" class="btn btn-info btnEditMeetingService">Edit</a>
+                                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.WorkOrderMeetingServices", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        meetingServiceCount++;
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            }
+
+                        </div>
+
+
+
+                        @if ((bool)ViewBag.HasPermissionForWorkOrderFileUpload && Model.Id != 0)
+                        {
+                            <div id="tabFileUpload" class="tab-pane fade">
+
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    @Html.GetFileUploadIFrame("", EntityConfig.EntityType.WorkOrder, Model.Id, BlobFile.BlobFileStatus.All, true)
+                                </div>
+
+                            </div>
+                        }
+
+                        <div id="tabJobAssignment" class="tab-pane fade">
+                            <div class="form-horizontal">
+                                <br />
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Admin Remarks to Driver</label>
+                                    <div class="col-sm-6">
+                                        @Html.TextAreaFor(x => x.AdminRemarksToDriver, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Admin Remarks in Voucher</label>
+                                    <div class="col-sm-6">
+                                        @Html.TextAreaFor(x => x.AdminRemarkInVoucher, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        @Html.LinkToAddNestedForm("Add", "#ServiceJobContainer", ".ServiceJobs", "ServiceJobList", typeof(EngagerMark4.ApplicationCore.SOP.Entities.Jobs.ServiceJob), new { @class = "btn btn-primary clsAddServiceJob" })
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="table-responsive">
+                                        <table id="serviceJobTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Copy Sign</th>
+                                                    <th style="width:150px;">Staff</th>
+                                                    <th>Remarks</th>
+                                                    <th style="width:270px;">Driver Submission for Standby Date/Time</th>
+                                                    <th style="width:120px;">Vehicle</th>
+                                                    <th style="width:120px;">Pick Up Pax</th>
+                                                    <th style="width:120px;">Status</th>
+                                                    <th style="width:120px;">Voucher</th>
+                                                    <th style="width:140px;"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="ServiceJobContainer">
+                                                @foreach (var serviceJob in Model.ServiceJobList)
+                                                {
+                                                    <tr class="ServiceJobs" tableIndex="ServiceJobList_@serviceJobCount.ToString()__">
+                                                        <td>
+                                                            @*@if (serviceJob.CopySign)
+                                                                    {
+                                                                                                                    <input type="checkbox" id="ServiceJobList_@serviceJobCount.ToString()__CopySign" name="ServiceJobList[@serviceJobCount.ToString()].CopySign" checked value="true" />
+                                                                }
+                                                                else
+                                                                {
+                                                                                                                    <input type="checkbox" id="ServiceJobList_@serviceJobCount.ToString()__CopySign" name="ServiceJobList[@serviceJobCount.ToString()].CopySign" value="false"  />
+                                                                }*@
+                                                            @Html.CheckBoxFor(m => Model.ServiceJobList[serviceJobCount].CopySign)
+                                                        </td>
+                                                        <td>
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__Id" name="ServiceJobList[@serviceJobCount.ToString()].Id" value="@serviceJob.Id" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__ChecklistTemplateId" name="ServiceJobList[@serviceJobCount.ToString()].ChecklistTemplateId" value="@serviceJob.ChecklistTemplateId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__CustomerId" name="ServiceJobList[@serviceJobCount.ToString()].CustomerId" value="@serviceJob.CustomerId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__Customer" name="ServiceJobList[@serviceJobCount.ToString()].Customer" value="@serviceJob.Customer" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__WorkOrderId" name="ServiceJobList[@serviceJobCount.ToString()].WorkOrderId" value="@serviceJob.WorkOrderId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__UserId" name="ServiceJobList[@serviceJobCount.ToString()].UserId" value="@serviceJob.UserId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__User_ApplicationUserId" name="ServiceJobList[@serviceJobCount.ToString()].User.ApplicationUserId" value="N/A" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__User_UserName" name="ServiceJobList[@serviceJobCount.ToString()].User.UserName" value="N/A" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__User_FirstName" name="ServiceJobList[@serviceJobCount.ToString()].User.FirstName" value="@serviceJob.User.FirstName" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__User_LastName" name="ServiceJobList[@serviceJobCount.ToString()].User.LastName" value="@serviceJob.User.LastName" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__User_Email" name="ServiceJobList[@serviceJobCount.ToString()].User.Email" value="N/A" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__VehicleId" name="ServiceJobList[@serviceJobCount.ToString()].VehicleId" value="@serviceJob.VehicleId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__SignatureId" name="ServiceJobList[@serviceJobCount.ToString()].SignatureId" value="@serviceJob.SignatureId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__StartDateTime" name="ServiceJobList[@serviceJobCount.ToString()].StartDateTime" value="@serviceJob.StartDateTime" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__EndDateTime" name="ServiceJobList[@serviceJobCount.ToString()].EndDateTime" value="@serviceJob.EndDateTime" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__StartExecutionTime" name="ServiceJobList[@serviceJobCount.ToString()].StartExecutionTime" value="@serviceJob.StartExecutionTime" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__EndExecutionTime" name="ServiceJobList[@serviceJobCount.ToString()].EndExecutionTime" value="@serviceJob.EndExecutionTime" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__StartExecutionPlace" name="ServiceJobList[@serviceJobCount.ToString()].StartExecutionPlace" value="@serviceJob.StartExecutionPlace" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__EndExecutionPlace" name="ServiceJobList[@serviceJobCount.ToString()].EndExecutionPlace" value="@serviceJob.EndExecutionPlace" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__CustomDetentionId" name="ServiceJobList[@serviceJobCount.ToString()].CustomDetentionId" value="@serviceJob.CustomDetentionId" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__CustomDetention" name="ServiceJobList[@serviceJobCount.ToString()].CustomDetention" value="@serviceJob.CustomDetention" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__Disposals" name="ServiceJobList[@serviceJobCount.ToString()].Disposals" value="@serviceJob.Disposals" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__AdditionalStops" name="ServiceJobList[@serviceJobCount.ToString()].AdditionalStops" value="@serviceJob.AdditionalStops" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__WaitingTime" name="ServiceJobList[@serviceJobCount.ToString()].WaitingTime" value="@serviceJob.WaitingTime" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__CheckListIds" name="ServiceJobList[@serviceJobCount.ToString()].CheckListIds" value="@serviceJob.CheckListIds" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__ChecklistStr" name="ServiceJobList[@serviceJobCount.ToString()].ChecklistStr" value="@serviceJob.ChecklistStr" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__YesNo9" name="ServiceJobList[@serviceJobCount.ToString()].YesNo9" value="@serviceJob.YesNo9.ToString()" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__Status" name="ServiceJobList[@serviceJobCount.ToString()].Status" value="@serviceJob.Status" class="form-control" readonly="readonly" />
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__User_Name" name="ServiceJobList[@serviceJobCount.ToString()].User.Name" value="@serviceJob.User.Name" class="form-control" readonly="readonly" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__TripFees" name="ServiceJobList[@serviceJobCount.ToString()].TripFees" value="@serviceJob.TripFees" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__MSFees" name="ServiceJobList[@serviceJobCount.ToString()].MSFees" value="@serviceJob.MSFees" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__DriverRemark" name="ServiceJobList[@serviceJobCount.ToString()].DriverRemark" value="@serviceJob.DriverRemark" class="form-control" readonly="readonly" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__ServiceJobReason" name="ServiceJobList[@serviceJobCount.ToString()].DriverRemark" value="@serviceJob.ServiceJobSubmission" class="form-control" readonly="readonly" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__Vehicle_VehicleNo" name="ServiceJobList[@serviceJobCount.ToString()].Vehicle.VehicleNo" value="@serviceJob.Vehicle.VehicleNo" class="form-control" readonly="readonly" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__PickUpPax" name="ServiceJobList[@serviceJobCount.ToString()].PickUpPax" value="@serviceJob.PickUpPax" class="form-control" readonly="readonly" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ServiceJobList_@serviceJobCount.ToString()__ServiceJobStatusStr" name="ServiceJobList[@serviceJobCount.ToString()].ServiceJobStatusStr" value="@serviceJob.ServiceJobStatusStr" class="form-control" readonly="readonly" />
+
+                                                        </td>
+                                                        <td>
+                                                            @if (!(serviceJob.Status < EngagerMark4.ApplicationCore.SOP.Entities.Jobs.ServiceJob.ServiceJobStatus.Submitted))
+                                                            {
+                                                                <a href="~/ServiceJobPDF/DownloadVoucher?serviceJobId=@serviceJob.Id">Download @serviceJob.ReferenceNo</a>
+                                                            }
+
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__ReferenceNo" name="ServiceJobList[@serviceJobCount.ToString()].ReferenceNo" value="@serviceJob.ReferenceNo" class="form-control" readonly="readonly" />
+                                                            <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__ReferenceNoNumber" name="ServiceJobList[@serviceJobCount.ToString()].ReferenceNoNumber" value="@serviceJob.ReferenceNoNumber" class="form-control" readonly="readonly" />
+                                                        </td>
+                                                        <td>
+                                                            <label>
+                                                                <input type="hidden" id="ServiceJobList_@serviceJobCount.ToString()__Delete" class="mark-for-delete" name="ServiceJobList[@serviceJobCount.ToString()].Delete" value="@serviceJob.Delete.ToString()" />
+                                                                @*@Html.HiddenFor(m => serviceJob.Delete, new { @class = "mark-for-delete" })*@
+                                                                <a href="#" class="btn btn-info btnEditServiceJob">Edit</a>
+                                                                @Html.LinkToRemoveNestedForm("Delete", "tr.ServiceJobs", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    serviceJobCount++;
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        @if ((bool)ViewBag.HasPermissionForWorkOrderHistory && Model.Id != 0)
+                        {
+                            <div id="tabNotifications" class="tab-pane fade">
+
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="table-responsive">
+                                        <table id="notificationTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-sm-4">Title</th>
+                                                    <th class="col-sm-4">Description</th>
+                                                    <th class="col-sm-2"> Driver Name</th>
+                                                    <th class="col-sm-1">Acknowledge Status</th>
+                                                    <th class="col-sm-1">Created Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="NotificationContainer">
+                                                @foreach (var notification in Model.WorkOrderNotificationList)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <input readonly type="text" value="@notification.Description" class="form-control" />
+                                                        </td>
+                                                        <td>
+                                                            <input readonly type="text" value="@notification.DetailedDescription" class="form-control" />
+                                                        </td>
+                                                        <td>
+                                                            <input readonly type="text" value="@notification.NotifiedUserName" class="form-control" />
+                                                        </td>
+                                                        <td class="col-sm-1">
+                                                            @if (notification.Acknowledge)
+                                                            {
+                                                                <input readonly type="text" value="Yes" class="form-control" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <input readonly type="text" value="No" class="form-control" />
+                                                            }
+                                                        </td>
+                                                        <td class="col-sm-2">
+                                                            <input readonly type="text" value="@notification.Created.ToString("g")" class="form-control" />
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        }
+
+                        @if ((bool)ViewBag.HasPermissionForWorkOrderHistory && Model.Id != 0)
+                        {
+                            <div id="tabHistories" class="tab-pane fade">
+
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="table-responsive">
+                                        <table id="historyTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-sm-2">Date Time</th>
+                                                    <th class="col-sm-2">Updated By </th>
+                                                    <th class="col-sm-8">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="HistoryContainer">
+                                                @foreach (var history in Model.WorkOrderHistoryList)
+                                                {
+                                                    <tr>
+                                                        <td class="col-sm-2">
+                                                            @Html.DisplayFor(m => history.CreatedDateStr)
+                                                        </td>
+                                                        <td class="col-sm-2">
+                                                            @Html.DisplayFor(m => history.CreatedByName)
+                                                        </td>
+                                                        <td>
+                                                            <label>@history.CurrentStateDescription</label>
+                                                            <br />
+                                                            @if (!String.IsNullOrEmpty(history.ChangeDescription))
+                                                            {
+                                                                var descList = history.ChangeDescription.Split('|');
+
+
+                                                                foreach (var desc in descList)
+                                                                {
+                                                                    if (!String.IsNullOrEmpty(desc))
+                                                                    {
+                                                                        <span style="font-size:small;">
+                                                                            • @desc
+                                                                        </span>
+                                                                        <br />
+                                                                    }
+                                                                }
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        }
+
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            @if (Model.Status < EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.Billed)
+            {
+                <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+            }
+
+            @*<button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>*@
+
+            @if (Model.Status >= EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.Submitted && Model.Status < EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder.OrderStatus.Billed)
+            {
+                <button type="submit" id="btnSaveCopySign" value="Save Copy Sign" class="btn btn-primary">Save Copy Sign</button>
+            }
+
+            @if (string.IsNullOrEmpty(returnUrl))
+            {
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            }
+            else
+            {
+                <a href="@returnUrl" class="btn btn-info">Back to List</a>
+            }
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_WorkOrderLocationModal")
+@Html.Partial("_WorkOrderPassengerModal")
+@Html.Partial("_WorkOrderMeetingServiceModal")
+@Html.Partial("_ServiceJobModal")
+
+<script src="~/Scripts/Custom/WorkOrder/Details.js"></script>
+<script src="~/Scripts/Custom/WorkOrder/DetailsPassenger.js"></script>
+<script src="~/Scripts/Custom/WorkOrder/DetailsMeetingService.js"></script>
+<script src="~/Scripts/Custom/WorkOrder/DetailsServiceJob.js"></script>

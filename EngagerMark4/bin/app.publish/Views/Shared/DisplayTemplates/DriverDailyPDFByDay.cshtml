@@ -1,0 +1,142 @@
+﻿@model EngagerMark4.ApplicationCore.ReportViewModels.DriverDailyPDFByDay
+
+@{ 
+    int currentIndex = 0;
+    int maxRecord = 30;
+    int currentRecord = 1;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Driver Daily Report</title>
+    <style>
+        .invoice-box {
+            max-width: 900px;
+            width: 900px;
+            height: 665px;
+            max-height: 665px;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+    @do
+    {
+        <div class="invoice-box">
+            <div style="margin:5px;margin-right:5px;width:900px;text-align:center;font-size:14px;">
+                <label><b> Driver Daily Report </b></label>
+            </div>
+            <table style="font-family:Tahoma;font-size:11px;">
+                <tr style="height:20px;">
+                    <td style="width:300px;vertical-align:top;"><label style="margin-left:5px;"> <b>DRIVER MONTHLY SALARY FOR THE MONTH OF: </b> </label></td>
+                    <td style="width:160px;vertical-align:top;">
+                        <div style="border-bottom:1px solid black;width:140px;">
+                            @Model.FromDate - @Model.ToDate
+                        </div>
+                    </td>
+                    <td style="width:60px;vertical-align:top;">
+                        <b>NAME OF DRIVER: </b>
+                    </td>
+                    <td style="width:300px;vertical-align:top;">
+                        <div style="border-bottom: 1px solid black; width: 300px;">
+                            <label style="margin-left:10px;">
+                                @Model.DriverName - IC Number (@Model.DriverNRIC)
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;height:600px;">
+                <thead>
+                    <tr style="border-bottom:1px solid black;height:30px;background-color:silver;border-top:1px solid black;">
+                        <td style="text-align:center;width:100px;border-right:1px solid black;">
+                            Date
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            Trip
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            MS
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            Parking Fees
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            ERP
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            Meal
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            NEA Cert.
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            Ferry Ticket
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            JP Pass Fee
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            PSA Pass Fee
+                        </td>
+                        <td style="text-align: center; width: 80px; border-right: 1px solid black;">
+                            Others
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @while (currentIndex < Model.Models.Count)
+                    {
+                        if (currentRecord > maxRecord)
+                        {
+                            currentRecord = 0;
+                            break;
+                        }
+
+                    <tr style="height:15px;">
+                        <td style="width: 100px; border-right: 1px solid black; text-align: left; border-bottom: 1px solid black;"><label style="padding: 2px;;">@Model.Models[currentIndex].DateStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: left; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].TripFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: left; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].MSFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: left; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].ParkFeesStr</label></td>
+                        <td style="width: 80px; text-align: left; border-right: 1px solid black; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].ERPFeesStr</label></td>
+                        <td style="width: 80px; text-align: left; border-right: 1px solid black; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].MealFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: right; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].NEACertFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: right; border-bottom: 1px solid black; "><label style="padding: 2px;"> @Model.Models[currentIndex].FerryTicketFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: right; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].JPPassFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: right; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].PSAPassFeesStr</label></td>
+                        <td style="width: 80px; border-right: 1px solid black; text-align: right; border-bottom: 1px solid black;"><label style="padding: 2px;"> @Model.Models[currentIndex].OtherFeesStr</label></td>
+                    </tr>
+                        currentIndex++;
+                        currentRecord++;
+                    }
+
+                    @if (Model.Models.Count < maxRecord)
+                    {
+                <tr>
+                    <td style="text-align: center; width: 100px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                    <td style="text-align: center; width: 80px; border-right: 1px solid black;"></td>
+                </tr>
+                    }
+
+                </tbody>
+            </table>
+            <div style="width:900px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:15px;">
+                <label style="margin-top:5px;"><b>THIS IS THE COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+            </div>
+        </div>
+    } while (currentIndex < Model.Models.Count);
+</body>
+</html>

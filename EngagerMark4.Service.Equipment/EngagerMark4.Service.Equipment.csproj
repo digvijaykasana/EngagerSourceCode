@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F7A978D-6481-4CEC-927C-470AB606D95E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EngagerMark4.Service.Equipment</RootNamespace>
+    <AssemblyName>EngagerMark4.Service.Equipment</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conveyors\ConveyorService.cs" />
+    <Compile Include="Equipments\EquipmentService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore.Equipment\EngagerMark4.ApplicationCore.Equipment.csproj">
+      <Project>{CE982E40-F608-4139-B559-69FB75AEC006}</Project>
+      <Name>EngagerMark4.ApplicationCore.Equipment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore.SOP\EngagerMark4.ApplicationCore.SOP.csproj">
+      <Project>{CD72D7C3-6EB3-4079-87EC-32032817DD61}</Project>
+      <Name>EngagerMark4.ApplicationCore.SOP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.ApplicationCore\EngagerMark4.ApplicationCore.csproj">
+      <Project>{9e3eebc4-863c-41c2-9c07-d9e84be5ab28}</Project>
+      <Name>EngagerMark4.ApplicationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EngagerMark4.Service\EngagerMark4.Service.csproj">
+      <Project>{c66e9f2c-86bf-46d6-b763-a392d8de10e3}</Project>
+      <Name>EngagerMark4.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

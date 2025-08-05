@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Price List";
+}
+
+@Html.Partial("_ListMessage")
+<input type="hidden" id="orderPage" value="@ViewBag.orderPage" />
+<input type="hidden" id="orderColumn" value="@ViewBag.orderColumn" />
+<input type="hidden" id="orderOrderBy" value="@ViewBag.orderOrderBy" />
+<input type="hidden" id="orderDataType" value="@ViewBag.orderDataType" />
+<input type="hidden" id="CurrentId" value="@ViewBag.CurrentId" />
+
+<div class="panel panel-info">
+    <div class="panel-heading">Price List</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-lg-2">
+                    Customer
+                    @Html.DropDownList("CustomerId", null, "All", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-2">
+                    GL Codes
+                    @Html.DropDownList("GLCodeId", null, "All", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-2">
+                    Item Code
+                    <input type="text" id="txtCode" class="form-control" value="@ViewBag.ItemCode" placeholder="Item Code" />
+                </div>
+                <div class="col-lg-2">
+                    Pickup Point
+                    <input type="text" id="txtPickupPoint" class="form-control" value="@ViewBag.PickupPoint" placeholder="Pickup Point" />
+                </div>
+                <div class="col-lg-2">
+                    Drop Point
+                    <input type="text" id="txtDropPoint" class="form-control" value="@ViewBag.DropPoint" placeholder="Drop Point" />
+                </div>
+                <div class="col-lg-2">
+                    <input type="submit" id="btnSearch" class="btn btn-success" value="Search" style="margin-top:15px;" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <a href="~/Price/Details" class="btn btn-lg btn-block btn-primary"><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New Price List Item</a>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Custom/Price/Index.js"></script>

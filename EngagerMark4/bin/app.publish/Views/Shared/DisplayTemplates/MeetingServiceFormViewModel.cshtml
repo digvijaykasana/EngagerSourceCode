@@ -1,0 +1,215 @@
+﻿
+@model EngagerMark4.ApplicationCore.SOP.ViewModels.MeetingServiceFormViewModel
+
+@{ 
+    decimal additionalPersonCharge = 0;
+    decimal lastMinuteCharge = 0;
+    decimal majorAmendmentCharge = 0;
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Airport Meeting Services</title>
+    <style>
+        .invoice-box {
+            max-width: 695px;
+            width: 695px;
+            height: 1014px;
+            max-height: 1014px;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+
+        <h1 style="text-align:center;">Airport Meeting Services</h1>
+        <h3 style="text-align:center;"  >PASSENGER MEETING SERVICES</h3>
+        <table style="font-size:12px;margin-top:10px;">
+            <tr style="height:10px;">
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:110px;text-align:right;"></td>
+            </tr>
+            <tr style="height:20px;">
+                <td>Name:</td>
+                <td colspan="3" style="border-bottom:1px dotted;height:12px;padding-top:0px;">Dummy TRANSPORT SERVICE PTE LTD</td>
+                <td colspan="2"></td>
+                <td>Date:</td>
+                <td style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.CurrentDate</td>
+            </tr>
+            <tr style="height:20px;">
+                <td>To Meet:</td>
+                <td colspan="3" style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.WorkOrderMeetingServiceEntity.MeetingServicePassengerInCharge</td>
+                <td>Vessel:</td>
+                <td colspan="3" style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.WorkOrderMeetingServiceEntity.Vessel</td>
+            </tr>
+            <tr style="height:20px;">
+                <td>Date:</td>
+                <td style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.WorkOrder.PickUpDateOnlyStr</td>
+                <td>No. Of Pax:</td>
+                <td colspan="3" style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.WorkOrderMeetingServiceEntity.NoOfPax.ToString()</td>
+                <td>Flight No.:</td>
+                <td style="border-bottom:1px dotted;height:12px;padding-top:0px;">@Model.WorkOrderMeetingServiceEntity.FlightNo</td>
+            </tr>
+        </table>
+        <br />
+        <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;">
+            <thead>
+                <tr style="height:20px;background-color:silver;border-top:1px solid black;border-bottom:1px solid black;">
+                    <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                        No. Of Pax
+                    </td>
+                    <td style="text-align:center;width:80px;border-right:1px solid black;">
+                        Charges (S$)
+                    </td>
+                    <td style="text-align:center;width:140px;border-right:1px solid black;">
+                        Amount (S$)
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.MeetingServiceEntity.MeetingServiceDetails)
+                {
+                    <tr style="vertical-align:central;height:20px;border-bottom:1px solid black;">
+                        <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                            <label style="margin-left:5px;"> @detail.NoOfPax </label>
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;"><label style="margin-left:5px;"> @Model.WorkOrderMeetingServiceEntity.PerPaxCharge </label></td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            @{
+                                decimal perPaxCharge = 0;
+                            }
+
+                            @if (Model.WorkOrderMeetingServiceEntity.PerPaxChargeLabel == detail.NoOfPax)
+                            {
+                                perPaxCharge = Model.WorkOrderMeetingServiceEntity.PerPaxCharge;
+                            }
+
+                            @if(perPaxCharge > 0)
+                            {
+                            <label>@perPaxCharge</label>
+                            }
+                        </td>
+                    </tr>
+                }
+                @if (Model.MeetingServiceEntity.AdditionalPersonCharge > 0)
+                {
+                    <tr style="vertical-align:central;height:20px;border-bottom:1px solid black;">
+                        <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                            <label style="margin-left:5px;"> For Every Additional Person </label>
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;"><label style="margin-left:5px;"> @Model.WorkOrderMeetingServiceEntity.AdditionalPersonCharge</label></td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            @if (Model.WorkOrderMeetingServiceEntity.NoOfPax > Model.WorkOrderMeetingServiceEntity.MaxPaxRange)
+                            {
+                                additionalPersonCharge = (Convert.ToDecimal(Model.WorkOrderMeetingServiceEntity.NoOfPax - Model.WorkOrderMeetingServiceEntity.MaxPaxRange)) * Model.WorkOrderMeetingServiceEntity.AdditionalPersonCharge;
+
+                            }
+
+                            @if (additionalPersonCharge > 0)
+                            {
+
+                            <label>@additionalPersonCharge</label>  
+                            }
+                            </td>
+                    </tr>
+                }
+
+                @if (Model.MeetingServiceEntity.LastMinuteCharge > 0)
+                {
+                    <tr style="vertical-align:central;height:20px;border-bottom:1px solid black;">
+                        <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                            <label style="margin-left:5px;"> Last Minute Charges (less than 24hr to 12hr) </label>
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;"><label style="margin-left:5px;"> @Model.WorkOrderMeetingServiceEntity.LastMinuteCharge</label></td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            @if (Model.WorkOrderMeetingServiceEntity.IsLastMinuteCharge)
+                            {
+                                lastMinuteCharge = Model.WorkOrderMeetingServiceEntity.LastMinuteCharge;
+                            }
+
+                            @if (lastMinuteCharge > 0)
+                            {
+
+                            <label>@lastMinuteCharge</label>
+                            }
+
+                            
+                        </td>
+                    </tr>
+                }
+
+                @if (Model.MeetingServiceEntity.OvernightCharge > 0)
+                {
+                    <tr style="vertical-align:central;height:20px;border-bottom:1px solid black;">
+                        <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                            <label style="margin-left:5px;"> Overnight Charges (Stated Time of Arrival 2331 to 0700) </label>
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;"><label style="margin-left:5px;"> @Model.WorkOrderMeetingServiceEntity.OvernightCharge</label></td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            
+
+
+                            @if (Model.WorkOrder.IsOverNightJob && Model.WorkOrderMeetingServiceEntity.OvernightCharge > 0)
+                            {
+                                <label>@Model.WorkOrderMeetingServiceEntity.OvernightCharge</label>
+                            }
+
+                        </td>
+                    </tr>
+                }
+
+                @if (Model.MeetingServiceEntity.MajorAmendmentCharge > 0)
+                {
+                    <tr style="vertical-align:central;height:20px;border-bottom:1px solid black;">
+                        <td style="text-align:center;width:480px;border-right:1px solid black;border-left:1px solid black;">
+                            <label style="margin-left:5px;"> Major Amendment Changes (Changes made less than 12hr) </label>
+                        </td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;"><label style="margin-left:5px;"> @Model.WorkOrderMeetingServiceEntity.MajorAmendmentCharge</label></td>
+                        <td style="text-align:center;width:80px;border-right:1px solid black;">
+                            @if (Model.WorkOrderMeetingServiceEntity.IsMajorAmendment)
+                            {
+                                majorAmendmentCharge = Model.WorkOrderMeetingServiceEntity.MajorAmendmentCharge;
+                            }
+
+                            @if (majorAmendmentCharge > 0)
+                            {
+
+                                <label>@majorAmendmentCharge</label>
+                            }
+
+
+
+                        </td>
+                    </tr>
+                }
+
+                <tr style="vertical-align:central;height:30px;border-bottom:1px solid black;">
+                    <td colspan="2" style="text-align:right;border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;margin-right:5px;"><b>Sub Total</b></label></td>
+                    <td style="border-top:1px solid black;text-align:center;margin-right:5px;border-right:1px solid black;"><label> @Model.WorkOrderMeetingServiceEntity.Charges.ToString("#.#0") </label></td>
+                </tr>
+                <tr style="vertical-align:central;height:30px;border-bottom:1px solid black;">
+                    <td colspan="2" style="text-align:right;margin-right:10px;border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;margin-right:5px;"><b>GST</b></label></td>
+                    <td style="border-top:1px solid black;text-align:center;margin-right:5px;border-right:1px solid black;"><label> @Model.GSTAmount.ToString("#.#0")</label></td>
+                </tr>
+                <tr style="vertical-align:central;height:30px;border-bottom:1px solid black;">
+                    <td colspan="2" style="text-align:right;margin-right:10px;border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;"><label style="margin-left:5px;margin-right:5px;"><b>Grand Total </b></label></td>
+                    <td style="border-top:1px solid black;text-align:center;margin-right:5px;border-right:1px solid black;"><label> @Model.GrandTotal.ToString("#.#0")</label></td>
+                </tr>
+            </tbody>
+        </table>
+    <br />
+        <div style="width:690px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:5px;">
+            <label style="margin-top:5px;meer"><b>THIS IS THE COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+        </div>
+
+</body>
+</html> 

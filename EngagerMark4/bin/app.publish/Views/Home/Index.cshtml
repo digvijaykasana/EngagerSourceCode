@@ -1,0 +1,87 @@
+﻿@model EngagerMark4.ApplicationCore.Cris.HomeDashboardCri
+
+@{ 
+    ViewBag.Title = "Dashboard";
+}
+
+@section featured{
+    <div class="panel-heading">
+        <strong>Dashboard</strong>
+    </div>    
+}
+
+<div ng-app="app">
+    <script type="text/javascript">
+        var app = angular.module('app', ['chart.js']);
+    </script>
+    <div class="form-horizontal" style="margin:10px;">
+        <div class="row">
+            <div class="col-lg-3">
+                <label>Month</label>
+                @Html.DropDownList("Month", null, new { @class = "form-control" })
+            </div>
+            <div class="col-lg-3">
+                <label>Year</label>
+                @Html.DropDownList("Year", null, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="panel panel-warning col-sm-12" style="height:200px;padding:0px;">
+            <div class="panel-heading">
+                <label>Incoming Requests</label>
+            </div>
+            <div class="panel-body" style="padding:0px;">
+                <div class="table-responsive" style="height:150px;overflow-y:scroll;">
+                    <table id="tableNotification" class="table table-bordered table-striped" style="font-size:11px;">
+                        <tbody>
+                            @foreach (var notifiication in ViewBag.Notifications as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.Notification>)
+                            {
+                                <tr>
+                                    <td>
+                                        <a href="/WorkOrder/Details/@notifiication.ReferenceId" target="_blank">
+                                            @Html.Raw(notifiication.Description)
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info col-sm-12" style="padding:0px;">
+            <div class="panel-heading">
+                <label>Daily Job By Company</label>
+            </div>
+            <div class="form-group">
+                @Html.Partial("_DailyJobChartByCompany")
+            </div>
+        </div>
+    
+        <div class="panel panel-info col-sm-12" style="padding:0px;">
+            <div class="panel-heading">
+                <label>Daily Job By Driver</label>
+            </div>
+            <div class="form-group">
+                @Html.Partial("_DailyJobChartByDriver")
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
+    @Scripts.Render("~/signalr/hubs")
+    <script>
+        var connection = $.hubConnection();
+        var hub = connection.createHubProxy("DashboardHub");
+        hub.on("updateWorkOrder", function (notification) {
+            $("<tr><td style='color:green;'><a href='/WorkOrder/Details/" + notification.ReferenceId + "' target='_blank' style='color:green;' >" + notification.Description + "</a></td></tr>").prependTo("#tableNotification > tbody");
+            //$('#tableNotification').append('<tr><td>' + notification.Description + '</td></tr>');
+        });
+
+        connection.start();
+    </script>
+}

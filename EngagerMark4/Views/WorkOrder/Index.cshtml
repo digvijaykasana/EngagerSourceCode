@@ -1,0 +1,206 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.WorkOrderCri
+
+@{
+                /**/
+
+                ViewBag.Title = "Work Order (Ops)";
+}
+
+@Html.Partial("_ListMessage")
+
+@section featured{
+    <div class="panel-heading">
+        <strong>Work Orders (Ops)</strong>
+    </div>
+}
+
+<div ng-app="app">
+    <script type="text/javascript">
+        var app = angular.module('app', ['chart.js']);
+    </script>
+
+    <div class="col-sm-12">
+        <div class="panel panel-warning col-sm-12" style="padding:0px;">
+            <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                <label>Incoming Requests</label>
+                <a data-toggle="collapse" href="#collapse1" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+            </div>
+
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body" style="padding:5px;">
+                    <div class="table-responsive" style="height:100px;overflow-y:scroll;">
+                        <table id="tableNotification" class="table table-bordered table-striped" style="font-size:11px;">
+                            <tbody>
+                                @foreach (var notifiication in ViewBag.Notifications as IEnumerable<EngagerMark4.ApplicationCore.Entities.Application.Notification>)
+                                {
+                                    <tr>
+                                        @if (notifiication.Type == EngagerMark4.ApplicationCore.Entities.Application.Notification.NotificationType.DriverSubmission || notifiication.Type == EngagerMark4.ApplicationCore.Entities.Application.Notification.NotificationType.WorkOrderByAgent)
+                                        {
+                                            if (notifiication.Acknowledge)
+                                            {
+                                                <td class="col-sm-10">
+                                                    <a href="/WorkOrder/Details/@notifiication.ReferenceId" id="notiLink_@notifiication.Id" style="color:cornflowerblue;" target="_blank">
+                                                        @Html.Raw(notifiication.Description)
+                                                    </a>
+                                                </td>
+                                                <td class="col-sm-2"></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="col-sm-10">
+                                                    <a href="/WorkOrder/Details/@notifiication.ReferenceId" id="notiLink_@notifiication.Id" style="color:green;" target="_blank">
+                                                        @Html.Raw(notifiication.Description)
+                                                    </a>
+                                                </td>
+
+                                                if (ViewBag.HasPermissionForWONotiAcknowlegement)
+                                                {
+                                                    <td class="col-sm-2">
+                                                        <button class="btn btn-warning center-block acknowledge" notificationId="@notifiication.Id" id="notiButton_@notifiication.Id">Acknowledge</button>
+                                                    </td>
+                                                }
+                                            }
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="orderPage" value="@ViewBag.orderPage" />
+<input type="hidden" id="orderColumn" value="@ViewBag.orderColumn" />
+<input type="hidden" id="orderOrderBy" value="@ViewBag.orderOrderBy" />
+<input type="hidden" id="orderDataType" value="@ViewBag.orderDataType" />
+<input type="hidden" id="CurrentId" value="@ViewBag.CurrentId" />
+
+<form action="/InvoicePDF/Download" method="post" id="frmPDF">
+
+    <div class="panel">
+
+        <div class="panel-body">
+
+            <div class="form-horizontal">
+                <div class="panel panel-success col-sm-12" style="padding:0px;">
+                    <div class="panel-heading" data-toggle="collapse" href="#collapse2">
+                        <label>Filter</label>
+                        <a data-toggle="collapse" href="#collapse2" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse in">
+                        <div class="panel-body" style="padding:10px;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    Customer :
+                                    @Html.DropDownList("Customers", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-3">
+                                    Vessel :
+                                    @Html.DropDownList("Vessels", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-2">
+                                    Status :
+                                    @Html.DropDownList("Status", null, new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-2">
+                                    From Date :
+                                    <div class='input-group' id='divFromDate'>
+                                        <input type="text" id="txtFromDate" value="@ViewBag.FromDate" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    To Date :
+                                    <div class='input-group' id='divToDate'>
+                                        <input type="text" id="txtToDate" class="form-control" value="@ViewBag.ToDate" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    Driver :
+                                    @Html.DropDownList("DriverId", null, "All", new { @class = "form-control" })
+                                    <br />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <br />
+                                    <input type="submit" id="btnSearch" class="btn btn-block btn-success" value="Search" />
+                                    <br />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <br />
+                                    @Html.ActionLink("Clear Filter(s)","Index",null,new { @class="btn btn-block btn-warning"})
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</form>
+
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/WorkOrder/Index.js"></script>
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
+    @Scripts.Render("~/signalr/hubs")
+    <script>
+        // Create a connection
+        var connection = $.hubConnection();
+        var hub = connection.createHubProxy("DashboardHub");
+
+        // Configure keep-alive timeout (set to 120 seconds here)
+        connection.keepAliveTimeout = 120 * 1000; // 120 seconds
+        connection.keepAlive = 30 * 1000;
+
+        // Define client-side methods
+        hub.on("updateWorkOrder", function (notification) {
+            $("<tr><td style='color:green;'><a id='notiLink_" + notification.Id + "' href='/WorkOrder/Details/" + notification.ReferenceId + "' target='_blank' style='color:green;' >" + notification.Description + "</a></td><td><button class='btn btn-primary acknowledge' notificationId='" + notification.Id + "' id='notiButton_" + Notifiication.Id + "' >Acknowledge</button></td></tr>").prependTo("#tableNotification > tbody");
+            //$('#tableNotification').append('<tr><td>' + notification.Description + '</td></tr>');
+        });
+
+        // Start the connection
+        connection.start()
+            .done(function () {
+                console.log("SignalR connected; connection Id: " + connection.id);
+            })
+            .fail(function (error) {
+                console.error("SignalR connection error:", error);
+            });
+
+        // Handle disconnection
+        connection.disconnected(function () {
+            console.log("SignalR disconnected, attempting to reconnect...");
+            setTimeout(function () {
+                connection.start()
+                    .done(function () {
+                        console.log("Reconnected to SignalR");
+                    })
+                    .fail(function (error) {
+                        console.error("Reconnection failed:", error);
+                    });
+            }, 5000); // Retry after 5 seconds
+        });
+    </script>
+}

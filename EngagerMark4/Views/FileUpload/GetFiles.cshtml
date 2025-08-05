@@ -1,0 +1,150 @@
+﻿@model IEnumerable<EngagerMark4.ApplicationCore.Entities.BlobFile>
+@using EngagerMark4.HtmlExtension;
+
+@using (Html.BeginForm("Downloads", "FileUpload", FormMethod.Post, new { @id = "downloadFiles", enctype = "multipart/form-data" }))
+{<div class="container-fluid">
+        <fieldset>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="col-sm-1"></th>
+                            <th class="col-sm-3">File Name</th>
+                            <th class="col-sm-3">Description</th>
+                            <th class="col-sm-1">Created By</th>
+                            <th class="col-sm-1">Created Time</th>
+                            <th class="col-sm-1">Version</th>
+                            <th class="col-sm-1">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var file in Model)
+                    {
+                            <tr id="@file.Id">
+                                <td align="center">
+                                    <input class="blobCheck" type="checkbox" value="@file.Id" name="ids[]" />
+                                </td>
+                                <td>
+                                    <a class="test" href="~/FileUpload/Download/@file.Id">@file.FileName</a>
+                                </td>
+                                <td>
+
+                                    <input type="text" class="docName form-control" value="@file.Name" fileId="@file.Id" />
+                                </td>
+                                <td>
+                                    @file.CreatedByName
+                                </td>
+                                <td>
+                                    @file.CreatedTimeStr
+                                </td>
+                                <td>
+                                    @file.Version
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" fileId="@file.Id"> <i class="fa fa-trash fa-lg"></i></a>
+                                </td>
+                            </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <button value="Download" id="eventDownload" class="btn btn-info"> <i class="fa fa-download fa-fw"></i>Download</button>
+            <button value="Download All" id="eventDownloadAll" class="btn btn-info"><i class="fa fa-download fa-fw"></i>Download All</button>
+        </div>
+     <input type="hidden" id="currentFileId" />
+     <div id="divRecordDelete" class="modal fade" role="dialog">
+         <div class="modal-dialog" style="width:250px;">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Are you sure to delete?</h4>
+                 </div>
+                 <div class="modal-body">
+                     <button type="button" class="btn btn-default" id="DeleteYesButton">Yes</button>
+                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                 </div>
+                 <div class="modal-footer">
+
+                 </div>
+             </div>
+         </div>
+     </div>
+    </div>
+
+   
+}
+
+
+    
+
+<script type="text/javascript">
+    $('#eventDownload').click(function (e) {
+        e.preventDefault();
+        var isChecked = false;
+        $('.blobCheck').each(function () {
+            if (isChecked == false)
+                isChecked = $(this).prop('checked');
+        })
+        if (isChecked)
+            this.form.submit();
+        else
+            alert("There is no file selected to download!");
+    });
+
+    $('.docName').blur(function (e) {
+        e.preventDefault();
+        var docName = $(this).val();
+        var fileId = $(this).attr('fileId');
+        $.post('/FileUpload/UpdateDocName',
+            {
+                fileId: fileId,
+                docName: docName,
+            }, function (data, status) {
+
+            });
+    });
+
+    $('#eventDownloadAll').click(function (e) {
+        e.preventDefault();
+        var count = 0;
+        $('.blobCheck').each(function () {
+            count++;
+            $(this).prop('checked', 'checked');
+        });
+        if (count == 0)
+        {
+            alert("No File to download!");
+            return;
+        }
+        this.form.submit();
+    });
+
+    $('.btn-danger').click(function (e) {
+        e.preventDefault();
+        $('#currentFileId').val($(this).attr('fileId'));
+        $('#divRecordDelete').modal('show');
+    });
+
+    $('#DeleteYesButton').click(function (e) {
+        var id = $("#currentFileId").val();
+        $.post('/FileUpload/Delete',
+            {
+                id: id
+            },
+            function (data, status) {
+                if (data == 'success') {
+                    $('#' + id).remove();
+                }
+            });
+            
+        $('#divRecordDelete').modal('hide');
+    });
+</script>
+
+
+
+

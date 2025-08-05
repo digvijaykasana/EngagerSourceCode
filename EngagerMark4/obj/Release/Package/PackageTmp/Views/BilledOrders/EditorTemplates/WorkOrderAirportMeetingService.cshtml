@@ -1,0 +1,30 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrderAirportMeetingService
+@using EngagerMark4.HtmlExtension;
+
+<tr class="WorkOrderMeetingServices" tableIndex="nestedObject_">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.AirportMeetingServiceId)
+    @Html.HiddenFor(x => x.VesselId)
+    <td>
+        @Html.TextBoxFor(x => x.MeetingService.Name, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Vessel, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.FlightNo, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.NoOfPax, new { @class = "form-control", @readonly = "readonly", @style="text-align:right;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Charges, new { @class = "form-control", @readonly = "readonly", @style = "text-align:right;" })
+    </td>
+    <td class="col-sm-2">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            <a href="#" class="btn btn-info btnEditMeetingService">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.WorkOrderMeetingServices", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

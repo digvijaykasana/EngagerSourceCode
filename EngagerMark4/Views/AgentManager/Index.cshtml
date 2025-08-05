@@ -1,0 +1,32 @@
+﻿@model EngagerMark4.ApplicationCore.Cris.Users.UserCri
+@{
+    ViewBag.Title = "Agent Manager";
+}
+
+@Html.Partial("_ListMessage")
+
+<div class="panel panel-info">
+    <div class="panel-heading">Agent Manager</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.SearchValue,new { @class="form-control", @placeholder="Name/User Name/Email" })
+                </div>
+                <div class="col-lg-1">
+                    <input type="submit" id="btnSearch" class="btn btn-success" value="Search" />
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="form-group">
+            <a href="~/AgentManager/Details" class="btn btn-lg btn-block btn-primary" ><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New AgentManager</a>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/Custom/AgentManager/Index.js"></script>

@@ -1,0 +1,53 @@
+﻿
+<div id="detailsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Credit Note Item</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Description</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="hidden" id="tableIndex" />
+                            <input type="text" id="txtDescription" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Price</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input id="txtPrice" type="text" class="form-control textValidate" allowedCharacters="NUMBERIC" style="text-align:right;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Qty</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input id="txtQty" type="text" class="form-control textValidate" allowedCharacters="NUMERIC" style="text-align:right" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Total Amount</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input id="txtTotalAmount" type="text" class="form-control textValidate" allowedCharacters="NUMERIC" readonly="readonly" style="text-align:right;" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAdd" class="btn btn-info" value="Add">Add</button>
+                <button id="btnEdit" class="btn btn-info" style="display:none;">Edit</button>
+                <button id="btnCancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+﻿@model PagedList.IPagedList<EngagerMark4.ApplicationCore.Inventory.Entities.Price>
+@using PagedList.Mvc;
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.ApplicationCore.Cris;
+@using EngagerMark4.Common.Configs;
+
+@{
+    var urlString = Server.UrlEncode("/Price?CurrentPage=" + Model.PageNumber + "&Column=" + ViewBag.Column + "&OrderBy=" + ViewBag.OrderBy + "&DataType=" + ViewBag.DataType + "&CustomerId=" + ViewBag.CustomerId + "&GLCodeId=" + ViewBag.GLCodeId + "&SearchValue=" + ViewBag.SearchValue);
+    var urlHeader = "&CustomerId=" + ViewBag.CustomerId + "&GLCodeId=" + ViewBag.GLCodeId + "&SearchValue=" + ViewBag.SearchValue;
+    int pageCount = (ApplicationConfig.PAGE_SIZE * Model.PageNumber) - 50;
+}
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th class="text-left" style="font-size:12px;">No.</th>
+                <th class="text-left">Company Name</th>
+                <th class="text-left">GL Code</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Assigned Price</th>
+                <th class="text-left">Pickup Point</th>
+                <th class="text-left">Drop Point</th>
+                <th class="text-left">Created</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entity in Model)
+            {
+                pageCount++;
+            <tr>
+                <td class="text-center" style="font-size:12px;">
+                    @pageCount
+                </td>
+                <td>@Html.DisplayFor(m => entity.Customer.Name)</td>
+                <td>@Html.DisplayFor(m => entity.GeneralLedger.Code)</td>
+                <td>@Html.DisplayFor(m => entity.DisplayForList)</td>
+                <td>@Html.DisplayFor(m => entity.AssignedPrice)</td>
+                <td>@Html.DisplayFor(m => entity.PickUpPoint)</td>
+                <td>@Html.DisplayFor(m => entity.DropPoint)</td>
+                <td>@Html.DisplayFor(m => entity.CreatedStr)</td>
+                <td class="col-sm-1">
+                    @using (Html.BeginForm("Delete", "Price", FormMethod.Post, new { id = "form" + entity.Id }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@entity.Id" />
+                        <a class="btn btn-info" href="~/Price/Details/@entity.Id?ReturnUrl=@urlString&CurrentId=@entity.Id"> <i class="fa fa-pencil fa-lg"></i></a>
+                        <a class="btn btn-danger" entityId="@entity.Id"> <i class="fa fa-trash fa-lg"></i></a>
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("List", new { CurrentPage = page, Column = ViewBag.Column, OrderBy = ViewBag.OrderBy, DataType = ViewBag.DataType, CustomerId = ViewBag.CustomerId, GLCodeId = ViewBag.GLCodeId, SearchValue = ViewBag.SearchValue }))
+@Html.Partial("_DeleteDialog")
+@Html.Partial("_ProcessScreen")
+
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        var currentId = "@ViewBag.CurrentId";
+        if (currentId == null || currentId == "") {
+            currentId = 0;
+        }
+        location.href = "#" + currentId;
+    });
+</script>
+
+<script src="~/Scripts/Custom/Price/List.js"></script>

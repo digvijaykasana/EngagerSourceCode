@@ -1,0 +1,47 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.Jobs.ServiceJob
+@using EngagerMark4.HtmlExtension;
+
+<tr class="ServiceJobs" tableindex="nestedObject_">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.ChecklistTemplateId)
+    @Html.HiddenFor(x => x.CustomerId)
+    @Html.HiddenFor(x => x.Customer)
+    @Html.HiddenFor(x => x.WorkOrderId)
+    @Html.HiddenFor(x => x.UserId)
+    @Html.HiddenFor(x => x.User.ApplicationUserId)
+    @Html.HiddenFor(x => x.User.UserName)
+    @Html.HiddenFor(x => x.User.FirstName)
+    @Html.HiddenFor(x => x.User.LastName)
+    @Html.HiddenFor(x => x.User.Email)
+    @Html.HiddenFor(x => x.VehicleId)
+    @Html.HiddenFor(x => x.StartDateTime)
+    @Html.HiddenFor(x => x.EndDateTime)
+    @Html.HiddenFor(x => x.StartExecutionTime)
+    @Html.HiddenFor( x=> x.EndExecutionTime)
+    @Html.HiddenFor(x => x.StartExecutionPlace)
+    @Html.HiddenFor(x => x.EndExecutionPlace)
+    @Html.HiddenFor(x => x.CustomDetentionId)
+    @Html.HiddenFor(x => x.CustomDetention)
+    @Html.HiddenFor(x => x.Disposals)
+    @Html.HiddenFor(x => x.AdditionalStops)
+    @Html.HiddenFor(x => x.WaitingTime)
+    @Html.HiddenFor(x => x.CheckListIds)
+    @Html.HiddenFor(x => x.ChecklistStr)
+    <td>
+        @Html.TextBoxFor(x => x.User.Name, new { @readOnly = "readonly", @class = "form-control" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.DriverRemark, new { @readonly = "readonly", @class = "form-control" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Vehicle.VehicleNo, new { @readonly = "readonly", @class = "form-control" })
+    </td>
+   <td></td>
+    <td class="col-sm-2">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            <a href="#" class="btn btn-info btnEditServiceJob">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.ServiceJobs", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

@@ -1,0 +1,33 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.CreditNotes.CreditNoteDetails
+@using EngagerMark4.HtmlExtension;
+
+<tr class="Details" tableIndex="nestedObject_" style="font-size:11px;">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreditNoteId)
+    @Html.HiddenFor(x => x.SerialNo)
+
+    <td class="col-sm-2 text-center">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete", style = "font-size:11px;" })
+            <a href="#" class="btn btn-info btnEditDetails" style="font-size:11px;">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Details", "input.mark-for-delete", new { @class = "btn btn-danger deleteRecord", style = "font-size:11px;" })
+        </label>
+    </td>
+
+    <td class="col-sm-4">
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+    <td class="col-sm-2">
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+    <td class="col-sm-2">
+        @Html.TextBoxFor(x => x.Qty, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+    <td class="col-sm-2">
+        @Html.TextBoxFor(x => x.TotalAmount, new { @class = "form-control totalAmt", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+
+
+
+</tr>
+

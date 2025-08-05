@@ -1,0 +1,91 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Application.SMTP
+
+@{
+    ViewBag.Title = "SMTP";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+    @Html.Partial("_ListMessage")
+    <div class="panel panel-info">
+        <div class="panel-heading">SMTP</div>
+        <div class="panel-body">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.SMTPServer, new { @class = "control-label col-sm-2 required" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.SMTPServer, new { @placeholder = "SMTP Server", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.SMTPServer, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Port, new { @class = "control-label col-sm-2 required" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Port, new { @placeholder = "589", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Port, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Credential, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Credential, new { @placeholder = "", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Credential, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.PasswordFor(m => m.PasswordStr, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.PasswordStr, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.SSL, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.CheckBoxFor(m => m.SSL)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.AdminMail, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.AdminMail, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.AdminMail, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.SupportMail, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.SupportMail, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.SupportMail, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/SMTP/Details.js"></script>

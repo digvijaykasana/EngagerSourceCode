@@ -1,0 +1,149 @@
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EFCache.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.AssemblyReference.cache
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.CoreCompileInputs.cache
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerM.29B2B3A5.Up2Date
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EFCache.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.AssemblyReference.cache
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.CoreCompileInputs.cache
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerM.29B2B3A5.Up2Date
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EFCache.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Infrasturcture.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EntityFramework.SqlServer.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.Common.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/System.Web.Mvc.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Job.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.SOP.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Inventory.dll.config
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/EngagerMark4.ApplicationCore.Equipment.pdb
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/bin/Debug/Newtonsoft.Json.xml
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.AssemblyReference.cache
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.CoreCompileInputs.cache
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.csproj.CopyComplete
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+C:/Git Mariteam/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.pdb
+/Users/digvijaykasana/Downloads/EngagerSourceCode/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.dll
+/Users/digvijaykasana/Downloads/EngagerSourceCode/EngagerMark4.Infrastructure.Mariteam/obj/Debug/EngagerMark4.Infrastructure.Mariteam.pdb

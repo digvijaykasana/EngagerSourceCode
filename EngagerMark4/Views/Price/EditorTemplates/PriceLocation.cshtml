@@ -1,0 +1,29 @@
+﻿@model EngagerMark4.ApplicationCore.Inventory.Entities.PriceLocation
+@using EngagerMark4.HtmlExtension;
+
+<tr class="PriceLocations" tableIndex="nestedObject_">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.LocationId)
+    @Html.HiddenFor(x => x.Location.Code)
+    @Html.HiddenFor(x => x.Location.Longitude)
+    @Html.HiddenFor(x => x.Location.Latitude)
+    @Html.HiddenFor(x => x.Location.Name)
+    @Html.HiddenFor(x => x.Location.PostalCode)
+    @Html.HiddenFor(x => x.Type)
+    <td>
+        @Html.TextBoxFor(x => x.TypeStr, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Location.Display, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td class="col-sm-2">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            <a href="#" class="btn btn-info btnEditLocation">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.PriceLocations", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

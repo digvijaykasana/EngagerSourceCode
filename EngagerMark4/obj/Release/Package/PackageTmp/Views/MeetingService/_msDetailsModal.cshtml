@@ -1,0 +1,59 @@
+﻿
+<div id="msDetailsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Meeting Service Details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Description</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="hidden" id="tableIndex" />
+                            <input type="text" id="txtNoOfPax" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Min Pax</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMinPax" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Max Pax</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtMaxPax" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Charges (S$)</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtCharges" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Serial</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" id="txtSerial" class="form-control" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAddmsDetails" class="btn btn-info" value="Add">Add</button>
+                <button id="btnEditmsDetails" class="btn btn-info" style="display:none;">Edit</button>
+                <button id="btnCancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

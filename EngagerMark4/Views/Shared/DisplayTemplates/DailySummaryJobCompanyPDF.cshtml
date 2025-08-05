@@ -1,0 +1,93 @@
+﻿@model EngagerMark4.ApplicationCore.PDFs.DailySummaryJobCompanyPDF
+
+@{
+    int currentIndex = 0;
+    int maxRecord = 35;
+    int currentRecord = 1;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Daily Job Summary Report by Company</title>
+    <style>
+        .invoice-box {
+            max-width: 900px;
+            width: 900px;
+            height: 665px;
+            max-height: 665px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+    @do
+    {
+        <div class="invoice-box">
+            <div style="margin:5px;margin-right:5px;width:900px;text-align:center;font-size:14px;">
+                <label><b> Daily Job Summary Report by Company (@Model.MonthStr) </b></label>
+            </div>
+            <br />
+            <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;height:625px;">
+                <thead>
+                    <tr style="border-bottom:1px solid black;height:30px;background-color:silver;border-top:1px solid black;">
+                        <td style="text-align:center;width:150px;border-right:1px solid black;border-left:1px solid black;">
+                            Company
+                        </td>
+                        @for (int i = 1; i <= Model.MonthInDays; i++)
+                        {
+                            <td style="width:30px;border-right:1px solid black;text-align:center;border-left:1px solid black;">
+                                @i
+                            </td>
+                        }
+
+                        <td style="width:30px;border-right:1px solid black;text-align:center;border-left:1px solid black;">
+                            Total
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @while (currentIndex < Model.Jobs.Count)
+                    {
+                        if (currentRecord > maxRecord)
+                        {
+                            currentRecord = 0;
+                            break;
+                        }
+
+                    <tr style="height:15px;">
+                        <td style="width:150px;border-right:1px solid black;text-align:left;border-left:1px solid black;border-bottom:1px solid black;"><label style="margin-left:2px;">@Model.Jobs[currentIndex].CustomerName</label></td>
+                        @for (int i = 1; i <= Model.MonthInDays; i++)
+                        {
+                            <td style="width:30px;border-right:1px solid black;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
+                                @Model.Jobs[currentIndex].GetValue(i)
+                            </td>
+                        }
+                        <td style="width:30px;border-right:1px solid black;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
+                            @Model.Jobs[currentIndex].Total
+                        </td>
+                    </tr>
+
+
+                        currentIndex++;
+                        currentRecord++;
+                    }
+                    <tr>
+                        <td style="text-align:center;width:150px;border-right:1px solid black;border-left:1px solid black;border-bottom:1px solid black;"></td>
+                        @for (int i = 1; i <= Model.MonthInDays; i++)
+                        {
+                            <td style="width:30px;border-right:1px solid black;text-align:center;border-bottom:1px solid black;"></td>
+                        }
+                        <td style="width:30px;border-right:1px solid black;text-align:center;border-bottom:1px solid black;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="width:900px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:5px;">
+                <label style="margin-top:5px;"><b>THIS IS THE COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+            </div>
+        </div>
+    } while (currentIndex < Model.Jobs.Count);
+</body>
+</html>

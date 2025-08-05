@@ -1,0 +1,179 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Users.User
+@using EngagerMark4.HtmlExtension;
+
+@{
+    ViewBag.Title = "Ops Admin";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Ops Admin</div>
+        <div class="panel-body">
+                <div class="form-group">
+                    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                </div>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        @Html.HiddenFor(model =>model.Id)
+                        @if (Model.Id != 0)
+                        {
+                            @Html.HiddenFor(model => model.ApplicationUserId)
+                        }
+                        else
+                        {
+                            <input type="hidden" name="ApplicationUserId" value="null" />
+                        }
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#info" data-toggle="tab" >Info</a></li>
+                            <li ><a href="#role" data-toggle="tab">Roles</a></li>
+                            
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="info">
+                                <br />
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 required">User Name</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @if (Model.Id == 0)
+                                            {
+                                                @Html.TextBoxFor(m => m.UserName, new { @placeholder = "User Name", @class = "form-control" })
+                                            }
+                                            else
+                                            {
+                                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @disabled = "disabled" })
+                                                @Html.HiddenFor(m => m.UserName)
+                                            }
+                                            @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 required">Last Name</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name", @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 required">First Name</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name", @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Email</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            <input type="email" placeholder="Email" name="Email" value="@Model.Email" class="form-control" />
+                                            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Contact No</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.TextBoxFor(m => m.ContactNo, new { @class = "form-control", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(m => m.ContactNo, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Status</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.DropDownList("StatusId", null, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.StatusId, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Password</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.PasswordFor(m => m.PasswordStr, new { @placeholder = "Password", @class = "form-control" })
+                                        </div>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            <i class="" style="font-size:11px;"> While creating user, if password field is blank, the user will be created with the default password. While updating, leave the password field blank unless the password needs to be changed.</i>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">FCM Id</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.TextAreaFor(m => m.FCMIdStr, new { @placeholder = "FCMId", @class = "form-control", @readonly = "readonly" })
+                                        </div>
+                                        <div class="col-sm-4" data-role="input-control">
+                                            <input type="submit" id="btnReset" class="btn btn-warning" value="Reset Mobile Login" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="role" class="tab-pane fade">
+                                <div class="form-horizontal">
+                                    <br/>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Role</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            <select id="RoleId" class="form-control">
+                                                @foreach(var role in ViewBag.Roles as IEnumerable<EngagerMark4.ApplicationCore.Entities.Users.Role>)
+                                                {
+                                                    <option value="@role.Id">@role.Name</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add", "#RoleContainer", ".Roles", "UserRoleList", typeof(EngagerMark4.ApplicationCore.Entities.Users.UserRole), new { @class = "btn btn-primary clsAddRole" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-8">
+                                            <table class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Role</th>
+                                                        <th class="col-sm-1"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="RoleContainer">
+                                                    @Html.EditorFor(x => x.UserRoleList)
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                       
+                        </div>
+
+                        
+                    </fieldset>
+                </div>
+            </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/OpsAdmin/Details.js"></script>

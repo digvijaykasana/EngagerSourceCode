@@ -1,0 +1,83 @@
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EFCache.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.pdb
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.AssemblyReference.cache
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.CoreCompileInputs.cache
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerM.641A15F4.Up2Date
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkplaceFF/MTS/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EFCache.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.pdb
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.AssemblyReference.cache
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.CoreCompileInputs.cache
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerM.641A15F4.Up2Date
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/WorkingFolder/20250730_MTS_WebApp/WebApp/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll.config
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Account.pdb
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EFCache.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.pdb
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.Customer.dll.config
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.pdb
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.ApplicationCore.dll.config
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.xml
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EntityFramework.SqlServer.xml
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/EngagerMark4.Common.pdb
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/System.Web.Mvc.xml
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/bin/Debug/Microsoft.AspNet.Identity.Core.xml
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.AssemblyReference.cache
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.CoreCompileInputs.cache
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.csproj.CopyComplete
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.dll
+C:/Git Mariteam/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.pdb
+/Users/digvijaykasana/Downloads/EngagerSourceCode/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.dll
+/Users/digvijaykasana/Downloads/EngagerSourceCode/EngagerMark4.ApplicationCore.Account/obj/Debug/EngagerMark4.ApplicationCore.Account.pdb

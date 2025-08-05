@@ -1,0 +1,267 @@
+﻿@model EngagerMark4.ApplicationCore.Inventory.Entities.Price
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+@{
+    ViewBag.Title = "Price List";
+    int locationCount = 0;
+    var returnUrl = ViewBag.ReturnUrl;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+    <input type="hidden" name="ReturnUrl" value="@returnUrl" />
+    <div class="panel panel-info">
+        <div class="panel-heading">Price List</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="form-group">
+                    @if (string.IsNullOrEmpty(returnUrl))
+                    {
+                        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                    }
+                    else
+                    {
+                        <a href="@returnUrl" class="btn btn-info">Back to List</a>
+                    }
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    @Html.HiddenFor(model => model.Id)
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#priceInfo" data-toggle="tab">Price List Item Info</a></li>
+                        @**if ((bool)ViewBag.HasPermisisonForLocation)
+                            {
+                            }*@
+                        <li><a href="#priceLocation" data-toggle="tab">Price List Item Location</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="priceInfo">
+                            <br />
+                            <div class="form-horizontal">
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Customer / Company</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.DropDownList("CustomerId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.CustomerId, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">GL Code</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.DropDownList("GLCodeId", null, "N/A", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.GLCodeId, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 required">Product Code (Auto Gen)</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        <input type="text" value="@Model.Code" disabled="disabled" class="form-control" />
+                                        @if (Model.Id == 0)
+                                        {
+                                            <input type="hidden" id="Code" name="Code" value="TBD" />
+                                        }
+                                        else
+                                        {
+                                            @Html.HiddenFor(m => m.Code)
+                                        }
+                                        @Html.ValidationMessageFor(m => m.Code, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Product Name</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name of the product", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Assigned Price</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.AssignedPrice, new { @placeholder = "Assigned Price in Numbers", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.AssignedPrice, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Max Pax</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.MaxPax, new { @placeholder = "Max Pax in Numbers", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.MaxPax, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Exceeded Price</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.ExceedAmt, new { @placeholder = "Exceeded Price in Numbers", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.ExceedAmt, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Discount Percent</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.DiscountPercent, new { @placeholder = "Discount Percent", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.DiscountPercent, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Discount Amount</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.DiscountAmt, new { @placeholder = "Discount Amount in Numbers", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.DiscountAmt, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Start Time</label>
+                                    <div class="col-sm-4">
+                                        <div id="divStartTime" class="input-group">
+                                            @Html.TextBoxFor(x => x.StartTimeBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" title="Explanantion for Ent Time">End Time</label>
+                                    <div class="col-sm-4">
+                                        <div id="divEndTime" class="input-group">
+                                            @Html.TextBoxFor(x => x.EndTimeBinding, new { @class = "form-control" })
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Taxable</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.CheckBoxFor(m => m.IsTaxable)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Vice Versa</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.CheckBoxFor(m => m.ViceVersa)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Order by</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.OrderBy, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        @if ((bool)ViewBag.HasPermissionForPriceLocation)
+                        {
+                            <div id="priceLocation" class="tab-pane fade">
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            @Html.LinkToAddNestedForm("Add", "#LocationContainer", ".PriceLocations", "PriceLocationList", typeof(EngagerMark4.ApplicationCore.Inventory.Entities.PriceLocation), new { @class = "btn btn-primary clsAddLocation" })
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="locationTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:140px;">Type</th>
+                                                        <th style="width:150px;">Location</th>
+                                                        <th> Description</th>
+                                                        <th class="col-sm-2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="LocationContainer">
+                                                    @foreach (var location in Model.PriceLocationList)
+                                                    {
+                                                        <tr class="PriceLocations" tableIndex="PriceLocationList_@locationCount.ToString()__">
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__Id" name="PriceLocationList[@locationCount.ToString()].Id" value="@location.Id" />
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__LocationId" name="PriceLocationList[@locationCount.ToString()].LocationId" value="@location.LocationId" />
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__Location_Code" name="PriceLocationList[@locationCount.ToString()].Location.Code" value="TBA" />
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__Location_Name" name="PriceLocationList[@locationCount.ToString()].Location.Name" value="TBA" />
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__Location_PostalCode" name="PriceLocationList[@locationCount.ToString()].Location.PostalCode" value="@location.Location.PostalCode" />
+                                                            <input type="hidden" id="PriceLocationList_@locationCount.ToString()__Type" name="PriceLocationList[@locationCount.ToString()].Type" value="@location.TypeInt" />
+                                                            <td>
+                                                                <input readonly type="text" id="PriceLocationList_@locationCount.ToString()__TypeStr" name="PriceLocationList[@locationCount.ToString()].TypeStr" value="@location.TypeStr" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input readonly type="text" id="PriceLocationList_@locationCount.ToString()__Location_Display" name="PriceLocationList[@locationCount.ToString()].Location.Display" value="@location.Location.Display" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input readonly type="text" id="PriceLocationList_@locationCount.ToString()__Description" name="PriceLocationList[@locationCount.ToString()].Description" value="@location.Description" class="form-control" />
+                                                            </td>
+                                                            <td class="col-sm-2">
+                                                                <label>
+                                                                    @Html.HiddenFor(m => location.Delete, new { @class = "mark-for-delete" })
+                                                                    <a href="#" class="btn btn-info btnEditLocation">Edit</a>
+                                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.PriceLocations", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        locationCount++;
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <br />
+
+
+
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+            @if (string.IsNullOrEmpty(returnUrl))
+            {
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            }
+            else
+            {
+                <a href="@returnUrl" class="btn btn-info">Back to List</a>
+            }
+        </div>
+
+    </div>
+}
+
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_PriceLocationModal")
+<script src="~/Scripts/Custom/Price/Details.js"></script>

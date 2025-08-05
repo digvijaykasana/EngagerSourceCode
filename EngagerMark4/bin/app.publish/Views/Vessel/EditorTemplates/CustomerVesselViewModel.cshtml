@@ -1,0 +1,17 @@
+﻿@model  EngagerMark4.ApplicationCore.Entities.Configurations.CustomerVesselViewModel
+@using EngagerMark4.HtmlExtension;
+
+<tr class="CustomerVessels">
+    @Html.HiddenFor(x => x.CustomerId)
+    @Html.HiddenFor(x => x.VesselId)
+    @Html.HiddenFor(x => x.Vessel)
+    <td>
+        @Html.TextBoxFor(x => x.Customer, new { @class = "form-control", @readonly="readonly" })
+    </td>
+    <td class="col-sm-1">
+        <label>
+            @Html.HiddenFor(x => x.Delete, new { @class = "mark-for-delete" })
+            @Html.LinkToRemoveNestedForm("Delete", "tr.CustomerVessels", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

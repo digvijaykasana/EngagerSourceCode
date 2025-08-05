@@ -1,0 +1,71 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.WorkOrderCri
+
+@{
+    ViewBag.Title = "Customer Work Order";
+}
+
+@Html.Partial("_ListMessage")
+<form  action="/InvoicePDF/Download" method="post" id="frmPDF">
+    <div class="panel panel-info">
+        <div class="panel-heading">Customer Order Page</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                @Html.Hidden("txtAgentCustomerId", (object)ViewBag.CurrentCustomer)
+                <div class="panel panel-success col-sm-12" style="padding:0px;">
+                    <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                        <label>Filter</label>
+                        <a data-toggle="collapse" href="#collapse1" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-plus-square"></i></a>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body" style="padding:10px;">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    Customer :
+                                    @Html.DropDownList("Customers", null, "All", new { @class = "form-control", disabled = "disabled" })
+                                </div>
+                                <div class="col-lg-2">
+                                    Vessel :
+                                    @Html.DropDownList("Vessels", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-2">
+                                    From Date :
+                                    <div class='input-group' id='divFromDate'>
+                                        <input type="text" id="txtFromDate" value="@ViewBag.FromDate" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    To Date :
+                                    <div class='input-group' id='divToDate'>
+                                        <input type="text" id="txtToDate" class="form-control" value="@ViewBag.ToDate" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    Status :
+                                    @Html.DropDownList("Status", null, new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-1">
+                                    <br />
+                                    <input type="submit" id="btnSearch" class="btn btn-success" value="Search" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                </div>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</form>
+<script src="~/Scripts/Custom/CustomerOrder/Index.js"></script>

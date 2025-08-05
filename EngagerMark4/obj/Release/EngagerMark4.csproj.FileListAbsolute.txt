@@ -1,0 +1,462 @@
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\App_Data\Templates\ErrorDetails.txt
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\ApplicationInsights.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\lib\Aspose.Pdf.lic
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\lib\Aspose.Total.lic
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csc.exe
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csc.exe.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csc.rsp
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csi.exe
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csi.exe.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\csi.rsp
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.Managed.Core.targets
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.AppContext.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Collections.Immutable.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Console.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Globalization.Calendars.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.IO.Compression.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.IO.FileSystem.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Net.Http.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Net.Sockets.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Reflection.Metadata.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.ValueTuple.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Xml.XmlDocument.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Xml.XPath.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\vbc.exe
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\vbc.exe.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\vbc.rsp
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\VBCSCompiler.exe
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\roslyn\VBCSCompiler.exe.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Antlr3.Runtime.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Aspose.Cells.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Aspose.Email.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Aspose.Pdf.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Aspose.Slides.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Aspose.Words.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Equipment.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.DocumentProcessor.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrasturcture.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Account.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Customer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Equipment.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Inventory.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Job.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Mariteam.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.SOP.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EntityFramework.SqlServer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ionic.Zip.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.Agent.Intercept.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.DependencyCollector.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.Web.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.WindowsServer.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.ApplicationInsights.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Cookies.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Facebook.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Google.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.OAuth.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Twitter.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Web.Infrastructure.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Newtonsoft.Json.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Common.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Common.WebHost.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Owin.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\PagedList.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\PagedList.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Net.Http.Formatting.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Helpers.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Http.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Http.WebHost.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Mvc.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Optimization.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Razor.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.Deployment.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.Razor.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\WebActivatorEx.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\WebGrease.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EFCache.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Equipment.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.ApplicationCore.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Common.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.DocumentProcessor.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrasturcture.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Infrasturcture.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Account.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Account.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Customer.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Customer.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Equipment.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Equipment.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Inventory.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Inventory.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Job.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Job.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.SOP.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.SOP.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Mariteam.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.Mariteam.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EngagerMark4.Service.dll.config
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Common.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Common.WebHost.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Ninject.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\PagedList.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\PagedList.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Net.Http.Formatting.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Http.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Http.WebHost.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Helpers.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Mvc.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Optimization.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.Razor.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.Deployment.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\System.Web.WebPages.Razor.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Antlr3.Runtime.pdb
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Newtonsoft.Json.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\EntityFramework.SqlServer.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.Core.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Facebook.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Cookies.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.OAuth.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Google.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.Twitter.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.ApplicationInsights.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.DependencyCollector.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.WindowsServer.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\bin\Microsoft.AI.Web.xml
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.csproj.AssemblyReference.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.Properties.Resources.resources
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.csproj.GenerateResource.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.csproj.CoreCompileInputs.cache
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerM.45209A4F.Up2Date
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.dll
+C:\WorkplaceFF\MTS\WebApp\EngagerMark4\obj\Release\EngagerMark4.pdb
+C:\Git Mariteam\EngagerMark4\bin\App_Data\Templates\ErrorDetails.txt
+C:\Git Mariteam\EngagerMark4\bin\ApplicationInsights.config
+C:\Git Mariteam\EngagerMark4\bin\lib\Aspose.Pdf.lic
+C:\Git Mariteam\EngagerMark4\bin\lib\Aspose.Total.lic
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.pdb
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csc.exe
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csc.exe.config
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csc.rsp
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csi.exe
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csi.exe.config
+C:\Git Mariteam\EngagerMark4\bin\roslyn\csi.rsp
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Git Mariteam\EngagerMark4\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.AppContext.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Collections.Immutable.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Console.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Globalization.Calendars.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.IO.Compression.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.IO.FileSystem.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Net.Http.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Net.Sockets.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Reflection.Metadata.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.ValueTuple.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Xml.XPath.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Git Mariteam\EngagerMark4\bin\roslyn\vbc.exe
+C:\Git Mariteam\EngagerMark4\bin\roslyn\vbc.exe.config
+C:\Git Mariteam\EngagerMark4\bin\roslyn\vbc.rsp
+C:\Git Mariteam\EngagerMark4\bin\roslyn\VBCSCompiler.exe
+C:\Git Mariteam\EngagerMark4\bin\roslyn\VBCSCompiler.exe.config
+C:\Git Mariteam\EngagerMark4\bin\Antlr3.Runtime.dll
+C:\Git Mariteam\EngagerMark4\bin\Aspose.Cells.dll
+C:\Git Mariteam\EngagerMark4\bin\Aspose.Email.dll
+C:\Git Mariteam\EngagerMark4\bin\Aspose.Pdf.dll
+C:\Git Mariteam\EngagerMark4\bin\Aspose.Slides.dll
+C:\Git Mariteam\EngagerMark4\bin\Aspose.Words.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Equipment.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Common.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.DocumentProcessor.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrasturcture.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Account.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Customer.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Equipment.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Inventory.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Job.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Mariteam.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.SOP.dll
+C:\Git Mariteam\EngagerMark4\bin\EntityFramework.dll
+C:\Git Mariteam\EngagerMark4\bin\EntityFramework.SqlServer.dll
+C:\Git Mariteam\EngagerMark4\bin\Ionic.Zip.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.DependencyCollector.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.Web.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.WindowsServer.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.ApplicationInsights.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Google.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Web.Infrastructure.dll
+C:\Git Mariteam\EngagerMark4\bin\Newtonsoft.Json.dll
+C:\Git Mariteam\EngagerMark4\bin\Ninject.dll
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Common.dll
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Common.WebHost.dll
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4\bin\Owin.dll
+C:\Git Mariteam\EngagerMark4\bin\PagedList.dll
+C:\Git Mariteam\EngagerMark4\bin\PagedList.Mvc.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Net.Http.Formatting.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Helpers.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Http.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Http.WebHost.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Mvc.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Optimization.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Razor.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.Deployment.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.dll
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.Razor.dll
+C:\Git Mariteam\EngagerMark4\bin\WebActivatorEx.dll
+C:\Git Mariteam\EngagerMark4\bin\WebGrease.dll
+C:\Git Mariteam\EngagerMark4\bin\EFCache.dll
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Account.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Customer.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Equipment.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Inventory.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Job.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.SOP.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.Mariteam.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.ApplicationCore.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Common.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.DocumentProcessor.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Account.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Customer.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Equipment.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Inventory.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Job.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.SOP.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrastructure.Mariteam.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrasturcture.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Infrasturcture.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Account.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Account.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Customer.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Customer.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Equipment.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Equipment.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Inventory.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Inventory.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Job.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Job.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.SOP.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.SOP.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Mariteam.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.Mariteam.dll.config
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.pdb
+C:\Git Mariteam\EngagerMark4\bin\EngagerMark4.Service.dll.config
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Git Mariteam\EngagerMark4\bin\Ninject.xml
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Common.xml
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Common.WebHost.xml
+C:\Git Mariteam\EngagerMark4\bin\Ninject.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4\bin\PagedList.xml
+C:\Git Mariteam\EngagerMark4\bin\PagedList.Mvc.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Net.Http.Formatting.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Http.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Http.WebHost.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Helpers.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Mvc.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Optimization.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.Razor.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.Deployment.xml
+C:\Git Mariteam\EngagerMark4\bin\System.Web.WebPages.Razor.xml
+C:\Git Mariteam\EngagerMark4\bin\Antlr3.Runtime.pdb
+C:\Git Mariteam\EngagerMark4\bin\Newtonsoft.Json.xml
+C:\Git Mariteam\EngagerMark4\bin\EntityFramework.xml
+C:\Git Mariteam\EngagerMark4\bin\EntityFramework.SqlServer.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Google.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.ApplicationInsights.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.DependencyCollector.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.WindowsServer.xml
+C:\Git Mariteam\EngagerMark4\bin\Microsoft.AI.Web.xml
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.csproj.AssemblyReference.cache
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.Properties.Resources.resources
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.csproj.GenerateResource.cache
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.csproj.CoreCompileInputs.cache
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.csproj.CopyComplete
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.dll
+C:\Git Mariteam\EngagerMark4\obj\Release\EngagerMark4.pdb

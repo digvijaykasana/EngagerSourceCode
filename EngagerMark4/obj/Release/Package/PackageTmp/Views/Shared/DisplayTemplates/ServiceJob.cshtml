@@ -1,0 +1,194 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.Jobs.ServiceJob
+@using EngagerMark4.Common.Utilities;
+@using EngagerMark4.Common.Configs;
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Service Job</title>
+    <style>
+        .invoice-box {
+            max-width: 690px;
+            height: 840px;
+            margin: auto;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body style="font-size:12px;font-family:Tahoma;">
+    <div class="invoice-box">
+        <div style="margin-left:5px;">
+            @*<img src="@Url.Action(Model.ShortText10, "Images\\Company", null, Request.Url.Scheme)" style="width:690px;" />*@
+            <img src="@Url.Action("DownloadByReferenceIdAndType", "FileUpload", new { referenceId = Model.LetterheadId, entityType = EntityConfig.EntityType.Letterhead }, Request.Url.Scheme)" style="width:690px;" />
+        </div>
+        <table style="font-size:12px;margin-top:10px;">
+            <tr style="height:20px;">
+                <td style="width:110px;text-align:right;"></td>
+                <td style="width:220px;text-align:right;"><b>Reference No:</b></td>
+                <td style="width:150px;text-align:center;border-bottom:1px dotted;"> @Model.ReferenceNo</td>
+                <td style="width:80px;text-align:left;">
+                    <b>Date:</b>
+                </td>
+                <td style="width:150px;">
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.PickUpDateOnlyStr
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20px;">
+                <td style="width:110px;"><b>Engaged By:</b></td>
+                <td colspan="2">
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.Customer.Name
+                    </div>
+                </td>
+                <td>
+                    <b>Order By:</b>
+                </td>
+                <td>
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @if (Model.WorkOrder.User != null)
+                {
+                    @Model.WorkOrder.User.Name
+        }
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20px;">
+                <td><b>Vessel Name:</b></td>
+                <td colspan="2">
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.VesselName
+                    </div>
+                </td>
+                <td>
+                    <b>Voyage No:</b>
+                </td>
+                <td>
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.VoyageNo
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20px;">
+                <td><b>Pax Name:</b></td>
+                <td>
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.GetPassengerInCharge(Model.VehicleId == null ? 0 : Model.VehicleId.Value)
+                    </div>
+                </td>
+                <td style="text-align:center;">
+                    <b>Rank:</b>
+                </td>
+                <td colspan="2">
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @*@Model.WorkOrder.GetPassengerInChargeRank(Model.VehicleId == null ? 0 : Model.VehicleId.Value) x
+                    (@Model.WorkOrder.GetNoOfPax(Model.VehicleId == null ? 0 : Model.VehicleId.Value) pax)*@
+                        @Model.WorkOrder.GetPassengerInChargeRank(Model.VehicleId == null ? 0 : Model.VehicleId.Value) x
+                        (@Model.WorkOrder.GetNoOfPax(Model.VehicleId == null ? 0 : Model.VehicleId.Value) pax)
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20px;">
+                <td><b>Pick up Time:</b></td>
+                <td>
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @TimeUtil.ConvertTo24HrsFormat(Model.WorkOrder.PickUpdateDate)
+                    </div>
+                </td>
+                <td>
+                    <div style="width:100%;">
+                        <div style="width:20%;float:left;"><b>Fm:</b></div>
+                        <div style="border-bottom:1px dotted;height:12px;padding-top:0px;width:80%;float:right;padding-left:0px;">
+                            @Model.WorkOrder.GetPickUpPoint()
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <b>To:</b>
+                </td>
+                <td>
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.GetDropOffPoint()
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20px;">
+                <td>
+                    <b>Arrival/Departure:</b><br />
+                    <b>Flight No:</b>
+                </td>
+                <td colspan="4">
+                    <div style="border-bottom:1px dotted;height:12px;padding-top:0px;">
+                        @Model.WorkOrder.BoardType - @Model.WorkOrder.GetFlightNo()
+                    </div>
+                </td>
+            </tr>
+            <tr style="vertical-align:top;">
+                <td>
+                    <b>Remarks:</b>
+                </td>
+                <td colspan="4" style="vertical-align:top;">
+                    <div style="border-bottom:1px dotted; height:12px;padding-top:0px;">
+                        @if (!String.IsNullOrEmpty(Model.WorkOrder.GetAdditionalStop()))
+                        {
+                        <label> Stops : @Model.WorkOrder.GetAdditionalStop()</label> 
+                        }
+
+                        @Model.WorkOrder.AdminRemarkInVoucher
+                    </div>
+                </td>
+            </tr>
+            @if (Model.CopySign)
+    {
+        <tr>
+            <td style="vertical-align:top;">
+                
+            </td>
+            <td colspan="2"></td>
+            <td colspan="2">
+                @if (Model.SignatureId == 0)
+                {
+                    <img src="@Url.Action("DownloadByReferenceIdAndType", "FileUpload", new { referenceId= Model.WorkOrder.GetPassengerInChargeId(Model.VehicleId == null ? 0 : Model.VehicleId.Value), entityType = EntityConfig.EntityType.ServiceJobSignature }, Request.Url.Scheme)" style="height:45px;"  />
+                }
+                else
+                {
+                    <img src="@Url.Action("Download", "FileUpload", new { id= Model.SignatureId }, Request.Url.Scheme)" style="height:45px;" />
+                }
+            </td>
+
+        </tr>
+}
+            <tr>
+                <td colspan="2" style="height:90px;vertical-align:top;">
+                    @if (Model.SignatureId == 0)
+                    {
+                        <img src="@Url.Action("DownloadByReferenceIdAndType", "FileUpload", new { referenceId= Model.WorkOrder.GetPassengerInChargeId(Model.VehicleId == null ? 0 : Model.VehicleId.Value), entityType = EntityConfig.EntityType.ServiceJobSignature }, Request.Url.Scheme)" style="height:90px;width:100%;" />
+                    }
+                    else
+                    {
+                        <img src="@Url.Action("Download", "FileUpload", new { id= Model.SignatureId }, Request.Url.Scheme)" style="height:90px;width:100%;" />
+                    }
+                </td>
+
+            </tr>
+            <tr>
+                <td><b>Guest's Signature</b></td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td style="font-size:10px;color:dimgrey;"><br /><i>Dummy Transport Services Pte Ltd</i></td>
+                <td colspan="4"></td>
+            </tr>
+        </table>
+        @*<div style="margin-left:5px;">
+                    <img src="@Url.Action(Model.FooterLogo, "Images\\Company", null, Request.Url.Scheme)" style="width:690px;height:60px;" />            </div>
+            </div>*@
+
+    </div>
+</body>
+</html>
+

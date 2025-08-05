@@ -1,0 +1,71 @@
+﻿@model EngagerMark4.ApplicationCore.Cris.Users.UserCri
+@{
+    ViewBag.Title = "Driver Daily Report";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-info">
+        <div class="panel-heading">Driver Daily Report</div>
+        <div class="panel-body">
+           <div class="form-horizontal">
+               <fieldset>
+                   <legend></legend>
+
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">From Date</label>
+                       <div class="col-sm-4" data-role="input-control">
+                           <div class="input-group" id="divDate">
+                               @Html.TextBoxFor(x => x.DateStr, new { @class = "form-control" })
+                               <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">To Date</label>
+                       <div class="col-sm-4" data-role="input-control">
+                           <div class="input-group" id="divToDate">
+                               @Html.TextBoxFor(x => x.ToDateStr, new { @class = "form-control" })
+                               <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">Driver</label>
+                       <div class="col-sm-4" data-role="input-control">
+                           @Html.DropDownList("DriverId", null, new { @class = "form-control" })
+                       </div>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">Report Type</label>
+                       <div class="col-sm-4" data-role="input-control">
+                           @Html.EnumDropDownListFor(x => x.GeneratedReportType, null, new { @class = "form-control" })
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="control-label col-sm-2">Report Format</label>
+                       <div class="col-sm-4" data-role="input-control">
+                           @Html.EnumDropDownListFor(x => x.GeneratedReportFormat, null, new { @class = "form-control" })
+                       </div>
+                   </div>
+               </fieldset>
+           </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnGenerateReport" value="Generate Report" class="btn btn-primary">Generate Report</button>
+        </div>
+    </div>
+
+}
+
+<script src="~/Scripts/Custom/DriverDailyReport/Index.js"></script>

@@ -1,0 +1,90 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Application.Function
+
+@{
+    ViewBag.Title = "Function";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Function</div>
+        <div class="panel-body">
+                <div class="form-group">
+                    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+                </div>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        @Html.HiddenFor(model =>model.Id)
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Controller</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.DropDownList("Controller", null, "select", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Controller, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Name</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 required">Type</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.EnumDropDownListFor(m => m.Type, null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Serial No</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.TextBoxFor(m => m.SerialNo, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Icon Name</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                <select id="IconsList" class="form-control">
+                                    @foreach (var icon in Model.FontAwesomeList)
+                                    {
+                                        <option value="@icon"> @icon </option>
+                                    }
+                                </select>
+                                @Html.HiddenFor(m => m.IconName)
+                            </div>
+                            <i class="" style="font-size:11px;"> Please refer to the following link to view the icons of the functions. <a>https://www.w3schools.com/icons/fontawesome_icons_webapp.asp</a> </i>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Show on Menu</label>
+                            <div class="col-sm-6" data-role="input-control">
+                                @Html.CheckBoxFor(m => m.ShowOnMenu)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/Function/Details.js"></script>

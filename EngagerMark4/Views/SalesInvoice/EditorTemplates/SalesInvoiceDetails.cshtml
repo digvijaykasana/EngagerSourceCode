@@ -1,0 +1,48 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.SalesInvoices.SalesInvoiceDetails
+@using EngagerMark4.HtmlExtension;
+
+<tr class="Details" tableIndex="nestedObject_">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.PriceId)
+    @Html.HiddenFor(x => x.Type)
+    @Html.HiddenFor(x => x.Taxable)
+    <td>
+        @Html.CheckBoxFor(x => x.GSTEssentials, new { @readonly = "readonly" })
+        @*@Html.HiddenFor(x => x.GSTEssentials)*@
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.SortOrder, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+        @*@Html.HiddenFor(x => x.GSTEssentials)*@
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Code, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @readonly = "readonly", style = "font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Qty, new { @class = "form-control", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.TotalAmt, new { @class = "form-control totalAmt", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.DiscountPercent, new { @class = "form-control", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.DiscountAmount, new { @class = "form-control discountAmt", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        @Html.TextBoxFor(x => x.TotalNetAmount, new { @class = "form-control netAmount", @readonly = "readonly", @style = "text-align:right;font-size:11px;" })
+    </td>
+    <td>
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete", style = "font-size:11px;" })
+            <a href="#" class="btn btn-info btnEditDetails" style="font-size:11px;">Edit</a>
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Details", "input.mark-for-delete", new { @class = "btn btn-danger deleteRecord", style = "font-size:11px;" })
+        </label>
+    </td>
+</tr>

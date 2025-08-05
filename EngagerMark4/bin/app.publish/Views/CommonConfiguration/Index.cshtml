@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Common Configuration";
+}
+
+@Html.Partial("_ListMessage")
+
+<div class="panel panel-info">
+    <div class="panel-heading">Common Configuration</div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label style="margin-top:5px;">Configuration Group</label>
+                </div>
+                <div class="col-sm-3">
+                    @Html.DropDownList("ConfigurationGroupId", null, "--All--", new { @class = "form-control" })
+                </div>
+                <div class="col-sm-1">
+                    <button id="btnSearch" class="btn btn-success"> Search</button>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <a href="~/CommonConfiguration/Details" class="btn btn-lg btn-block btn-primary"><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New Common Configuration</a>
+        </div>
+
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Custom/CommonConfiguration/Index.js"></script>

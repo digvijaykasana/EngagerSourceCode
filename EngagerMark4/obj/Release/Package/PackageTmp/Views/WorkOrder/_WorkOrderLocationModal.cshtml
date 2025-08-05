@@ -1,0 +1,50 @@
+﻿
+<div id="workOrderLocationModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnLocationClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Work Order Location</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 required">Type</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="hidden" id="tableIndex"/>
+                            @Html.DropDownList("LocationType", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Location</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            @Html.DropDownList("Locations", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Hotel</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            @Html.DropDownList("Hotels", null, "N/A", new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Description</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <textarea id="txtLocationDescription" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAddLocation" class="btn btn-info" value="Add">Add</button>
+                <button id="btnEditLocation" class="btn btn-info" style="display:none;">Edit</button>
+                <button id="btnCancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

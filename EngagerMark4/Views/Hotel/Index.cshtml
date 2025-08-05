@@ -1,0 +1,31 @@
+﻿@model EngagerMark4.ApplicationCore.Cris.Configurations.HotelCri
+@{
+    ViewBag.Title = "Hotel";
+}
+
+@Html.Partial("_ListMessage")
+
+<div class="panel panel-info">
+    <div class="panel-heading">Hotel</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.SearchValue, new { @class = "form-control", placeholder = "Name/Postal Code/Address" })
+                </div>
+                <div class="col-lg-1">
+                    <input type="submit" id="btnSearch" class="btn btn-success" value="Search" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <a href="~/Hotel/Details" class="btn btn-lg btn-block btn-primary"><i class="fa fa fa-plus-square"></i>&nbsp &nbsp New Hotel</a>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Custom/Hotel/Index.js"></script>

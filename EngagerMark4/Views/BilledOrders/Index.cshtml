@@ -1,0 +1,121 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.WorkOrderCri
+
+@{
+    ViewBag.Title = "Billed Orders";
+}
+
+@Html.Partial("_ListMessage")
+<input type="hidden" id="orderPage" value="@ViewBag.orderPage" />
+<input type="hidden" id="orderColumn" value="@ViewBag.orderColumn" />
+<input type="hidden" id="orderOrderBy" value="@ViewBag.orderOrderBy" />
+<input type="hidden" id="orderDataType" value="@ViewBag.orderDataType" />
+<input type="hidden" id="CurrentId" value="@ViewBag.CurrentId" />
+<input type="hidden" id="TaxInclude" name="TaxInclude" checked />
+
+<form action="/InvoicePDF/Download" method="post" id="frmPDF">
+    <div class="panel panel-info">
+        <div class="panel-heading">Billed Orders</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="panel panel-success col-sm-12" style="padding:0px;">
+                    <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                        <label>Filter</label>
+                        <a data-toggle="collapse" href="#collapse1" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body" style="padding:10px;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    Customer :
+                                    @Html.DropDownList("Customers", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-3">
+                                    Vessel :
+                                    @Html.DropDownList("Vessels", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-2">
+                                    From Invoice Date :
+                                    <div class='input-group' id='divFromDate'>
+                                        <input type="text" id="txtFromDate" name="FromDate" value="@ViewBag.FromDate" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    To Invoice Date :
+                                    <div class='input-group' id='divToDate'>
+                                        <input type="text" id="txtToDate" name="ToDate" class="form-control" value="@ViewBag.ToDate" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    Status :
+                                    @Html.DropDownList("Status", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-3 hidden">
+                                    Driver:
+                                    @Html.DropDownList("DriverId", null, "All", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-3">
+                                    <br />
+                                    @Html.CheckBoxFor(x => x.SearchByRange)
+                                    Search By Invoice Range?
+                                    @Html.HiddenFor(x => x.IsSearchByRange)
+                                </div>
+                                <div class="col-lg-3" id="divSearchIndividualInvoice">
+                                    Invoice No. :
+                                    @Html.TextBoxFor(x => x.SalesInvoiceSummaryNo, new { @class = "form-control", placeholder = "Invoice No" })
+                                </div>
+                                <div id="divSearchInvoiceByRange" style="display:none;">
+                                    <div class="col-lg-3">
+                                        Starting Invoice No. :
+                                        @Html.TextBoxFor(x => x.SalesInvoiceSummaryStartingNo, new { @class = "form-control", placeholder = "Invoice No" })
+                                        <label id="lblSalesInvoiceSummaryStartingNo" style="display:none;" class="text-danger">Invoice format not valid.</label>
+                                    </div>                                    
+                                    <div class="col-lg-3">
+                                        Ending Invoice No. :
+                                        @Html.TextBoxFor(x => x.SalesInvoiceSummaryEndingNo, new { @class = "form-control", placeholder = "Invoice No" })
+                                        <label id="lblSalesInvoiceSummaryEndingNo" style="display:none;" class="text-danger">Invoice format not valid.</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <br />
+                                    <input type="submit" id="btnSearch" class="btn btn-block btn-success" value="Search" />
+                                </div>
+                            </div>
+                            <br />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        @Html.EnumDropDownListFor(x => x.ActionThing, new { @class = "form-control" })
+                        <input type="hidden" id="TaxInclude" name="TaxInclude" checked />
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="submit" id="btnDownload" class="btn btn-block btn-primary" value="Download" />
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="submit" id="btnMoveToWithAccounts" class="btn btn-block btn-primary" style="font-size:15px;" value="+ Move to With Accounts" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</form>
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/BilledOrders/Index.js"></script>

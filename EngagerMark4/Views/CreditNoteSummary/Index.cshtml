@@ -1,0 +1,73 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Cris.CreditNoteCri
+@{
+    ViewBag.Title = "Credit Note Summary";
+}
+
+@Html.Partial("_ListMessage")
+
+<form method="post">
+    <div class="panel panel-info">
+        <div class="panel-heading">Credit Note Summary</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="panel panel-success col-sm-12" style="padding:0px;">
+                    <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                        <label>Filter</label>
+                        <a data-toggle="collapse" href="#collapse1" class="pull-right Bold" style="padding:5px;font-size:large;color:black;"><i class="fa fa-minus-square"></i></a>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body" style="padding:10px;">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    Reference No
+                                    @Html.TextBoxFor(x => x.ReferenceNo, new { @class = "form-control", placeholder = "Reference No" })
+                                </div>
+                                <div class="col-lg-2">
+                                    Customer
+                                    @Html.DropDownList("CustomerId", null, "NA", new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-2">
+                                    From Date
+                                    <div class='input-group' id='divFromDate'>
+                                        <input type="text" id="txtFromDate" name="FromDate" value="@Model.FromDate" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    To Date
+                                    <div class='input-group' id='divToDate'>
+                                        <input type="text" id="txtToDate" name="ToDate" class="form-control" value="@Model.ToDate" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    Status
+                                    @Html.EnumDropDownListFor(x => x.Status, null, new { @class = "form-control" })
+                                </div>
+                                <div class="col-lg-1">
+                                    <br />
+                                    <input type="submit" id="btnSearch" class="btn btn-success" value="Search" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="form-group">
+                <a href="~/CreditNoteSummary/Details" class="btn btn-lg btn-block btn-primary" ><i class="fa fa fa-plus-square"></i>&nbsp; &nbsp; Generate Credit Note Summary </a>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="~/Scripts/Custom/CreditNoteSummary/Index.js"></script>

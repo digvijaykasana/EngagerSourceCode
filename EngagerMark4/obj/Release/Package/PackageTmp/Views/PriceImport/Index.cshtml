@@ -1,0 +1,31 @@
+﻿@{ 
+    ViewBag.Title = "Import Price";
+}
+@Html.Partial("_ListMessage")
+@using (Html.BeginForm("Index", "PriceImport", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-info">
+        <div class="panel-heading">Import Price</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Price Excel File</label>
+                        <div class="col-sm-4" data-role="input-control">
+                            <input style="margin-top:5px;" type="file" name="priceExcel" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnImportPrice" value="Import Price" class="btn btn-primary">Import Price</button>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+<script src="~/Scripts/Custom/PriceImport/Index.js"></script>

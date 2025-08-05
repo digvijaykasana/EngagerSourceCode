@@ -1,0 +1,69 @@
+﻿@model EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+
+@{
+    ViewBag.Title = "AddPassengers";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="WorkOrderId" value="@ViewBag.WorkOrderId" />
+    <input type="hidden" name="ServiceJobId" value="@ViewBag.ServiceJobId" />
+    <div class="panel panel-info">
+        <div class="panel-heading">Add Passenger</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Name</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            <input type="text" class="form-control" id="txtName" placeholder="Name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Rank</label>
+                        <div class="col-sm-6" data-role="input-control">
+                            @Html.DropDownList("Ranks", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal">
+                        <br />
+                        <div class="form-group">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-3">
+                                @Html.LinkToAddNestedForm("Add Passenger", "#PassengerContainer", ".WorkOrderPassengers", "WorkOrderPassengerList", typeof(EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrderPassenger), new { @class = "btn btn-primary clsAddPassenger" })
+                            </div>
+                        </div>
+                        <fieldset>
+                            <legend></legend>
+                            <table id="passengerTable" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th style="width:170px;">Rank</th>
+                                        <th class="col-sm-2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="PassengerContainer">
+                                    @Html.EditorFor(x => x.WorkOrderPassengerList)
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/Custom/WorkOrderApi/AddPassengers.js"></script>

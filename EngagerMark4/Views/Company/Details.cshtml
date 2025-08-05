@@ -1,0 +1,247 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Company
+@using EngagerMark4.HtmlExtension;
+
+@{
+    ViewBag.Title = "Company";
+}
+@if(TempData["message"]!=null)
+{
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <h3 style="color:@TempData["color"];">@TempData["message"]</h3>
+    </div>
+}
+@using (Html.BeginForm("Details", "Company", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container-fluid">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.ParentCompanyId)
+        @if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+        {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+        }
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <strong>Company</strong>
+            </div>
+
+            <div class="panel-body">
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Created)
+                @Html.HiddenFor(model => model.Logo)
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#companyInfo" data-toggle="tab">Company Info</a></li>
+                    <li><a href="#billingAddress" data-toggle="tab">Billing Address</a> </li>
+                    <li><a href="#about" data-toggle="tab">About</a></li>
+                </ul>
+                <br/>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="companyInfo">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Domain, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.Domain, new { @placeholder = "Domain", @class = "form-control textValidate", @allowedCharacters = "domain" })
+                                    @Html.ValidationMessageFor(model => model.Domain, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Prefix, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.Prefix, new { @placeholder = "Prefix", @class = "form-control textValidate", @allowedCharacters = "Prefix" })
+                                    @Html.ValidationMessageFor(model => model.Domain, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.Name, new { @placeholder = "Company Name", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-6 textarea" data-role="input-control">
+                                    @Html.TextAreaFor(model => model.Address, new { @placeholder = "Company Address", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Address, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.City, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.City, new { @placeholder = "City", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.City)
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ZipCode, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.ZipCode, new { @placeholder = "Zip Code", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ZipCode, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Country, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4" data-role="input-control">
+                                    @Html.TextBoxFor(model => model.Country, new { @placeholder = "Country", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Country, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Logo, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4">
+                                    <input type="file" name="logo" onchange="readURL(this);" class="form-control" />
+                                </div>
+                                <br>
+
+                                @if (Model.Logo != null)
+                                {
+                                    <div style="display:block;justify-content:center;align-items:center;display:flex;padding:20px 10px 20px 10px;background-image:url(../images/black-twill-light.png)">
+                                        <img id="logo" src="~/Image/Company?img=@Model.Logo" width="@Model.Width" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <img id="logo" width="@Model.Width" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ReportHeaderLogo, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4">
+                                    <input type="file" name="reportLogo" onchange="readReportURL(this);" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @if (Model.ReportHeaderLogo != null)
+                                {
+                                    <div style="display:block;padding:20px 10px 20px 10px;background-image:url(../images/black-twill-light.png)">
+                                        <img id="reportLogo" src="~/Image/Company?img=@Model.ReportHeaderLogo" width="800"/>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <img id="reportLogo" width="800" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.TransferVoucherLogo, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4">
+                                    <input type="file" name="transferVoucherLogo" onchange="readReportURL(this);" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @if (Model.TransferVoucherLogo != null)
+                                {
+                                    <div class="col-sm-4" style="display:block;padding:20px 10px 50px 10px;background-image:url(../images/black-twill-light.png)">
+                                        <img id="transferVoucherLogo" src="~/Image/Company?img=@Model.TransferVoucherLogo" width="800" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <img id="transferVoucherLogo" width="800"/>
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ReportFooterLogo, new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-4">
+                                    <input type="file" name="FooterLogo" onchange="readReportURL(this);" class="form-control" />
+                                </div>
+                                <br />
+                                @if (Model.ReportFooterLogo != null)
+                                {
+                                    <div style="display:block;justify-content:center;align-items:center;display:flex;padding:20px 10px 20px 10px;background-image:url(../images/black-twill-light.png)">
+                                        <img id="reportLogo" src="~/Image/Company?img=@Model.ReportFooterLogo" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <img id="reportLogo" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="billingAddress">
+                        <div class="form-horizontal">
+                            <input type="hidden" name="Addresses[0].Id" value="@Model.Addresses.ToList()[0].Id" />
+                            <input type="hidden" name="Addresses[0].CompanyId" value="@Model.Id" />
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Postal Code</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        <input type="text" class="form-control" placeholder="Postal Code" name="Addresses[0].PostalCode" value="@Model.Addresses.ToList()[0].PostalCode" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Address</label>
+                                    <div class="col-sm-6 textarea" data-role="input-control">
+                                        <textarea class="form-control" name="Addresses[0].Name" value="@Model.Addresses.ToList()[0].Name" placeholder="Address"></textarea>
+                                        @Html.ValidationMessageFor(model => model.Address, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">City</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        <input type="text" class="form-control" name="Addresses[0].City" value="@Model.Addresses.ToList()[0].City" placeholder="City" />
+                                    </div>
+                                </div>
+                            
+                            <div class="form-group">
+                                    <label class="control-label col-sm-2">Country</label>
+                                    <div class="col-sm-4" data-role="input-control">
+                                        <input type="text" class="form-control" name="Addresses[0].Country" value="@Model.Addresses.ToList()[0].Country" placeholder="Country" />
+                                    </div>
+                                </div>
+                        </div>
+                    
+                </div>
+            
+                    <div class="tab-pane fade" id="about">
+                            <div class="input-control textarea">
+                                @Html.TextAreaFor(model => model.Description1, new { })
+                            </div>
+                            <script>
+                                CKEDITOR.replace('Description1', {
+                                    extraPlugins: 'uploadimage',
+                                    height: 600,
+                                    uploadUrl: '/Image/DragUploadedImage',
+                                    filebrowserBrowseUrl: '/Image/UploadImage',
+                                    filebrowserUploadUrl: '/Image/UploadImage'
+                                });
+                            </script>
+                    </div>
+
+                    <div class="tab-pane fade" id="contact">
+                        <div class="form-horizontal">
+                            <div class="form-group"></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+            <div class="panel-footer">
+                <div class="col-sm-2"></div>
+                <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/Company/Details.js"></script>

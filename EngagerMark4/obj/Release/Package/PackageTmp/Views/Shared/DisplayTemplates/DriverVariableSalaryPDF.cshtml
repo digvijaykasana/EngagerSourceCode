@@ -1,0 +1,94 @@
+﻿
+@model EngagerMark4.ApplicationCore.SOP.PDFs.DriverVariableSalaryPDF
+
+@{
+    int currentIndex = 0;
+    int maxRecord = 30;
+    int currentRecord = 1;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Driver Variable Salary Summary</title>
+    <style>
+        .invoice-box {
+            max-width: 900px;
+            width: 900px;
+            height: 665px;
+            max-height: 665px;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body style="font-family:Tahoma;font-size:11px;">
+    @do
+    {
+        <div class="invoice-box">
+            <div style="margin:5px;margin-right:5px;width:900px;text-align:center;font-size:14px;">
+                <label><b> Driver Variable Salary Summary Report </b></label>
+            </div>
+            <table style="font-family:Tahoma;font-size:11px;">
+                <tr style="height:20px;">
+                    <td style="width:300px;vertical-align:top;"><label style="margin-left:5px;"> <b>DRIVER MONTHLY SALARY FOR THE MONTH OF: </b> </label></td>
+                    <td style="width:160px;vertical-align:top;">
+                        <div style="border-bottom:1px solid black;width:140px;">
+                            @Model.MonthStr - @Model.YearStr
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="font-size:11px;font-family:Tahoma;border-collapse:collapse;height:600px;">
+                <thead>
+                    <tr style="border-bottom:1px solid black;height:30px;background-color:silver;border-top:1px solid black;">
+                        <td style="text-align:center;width:200px;border-right:1px solid black;">
+                            Employee ID
+                        </td>
+                        <td style="text-align:center;width:350px;border-right:1px solid black;">
+                            Pay Item
+                        </td>
+                        <td style="text-align: center; width: 350px; border-right: 1px solid black;">
+                            Amount
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @while (currentIndex < Model.Models.Count)
+                    {
+                        if (currentRecord > maxRecord)
+                        {
+                            currentRecord = 0;
+                            break;
+                        }
+
+                        <tr style="height:15px;">
+                            <td style="width:200px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;">@Model.Models[currentIndex].EmployeeId</label></td>
+                            <td style="width:350px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;"> @Model.Models[currentIndex].PayItemCatStr</label></td>
+                            <td style="width:350px;border-right:1px solid black;text-align:left;border-bottom:1px solid black;"><label style="margin-left:2px;"> @Model.Models[currentIndex].AmountStr</label></td>
+                        </tr>
+                        currentIndex++;
+                        currentRecord++;
+                    }
+
+                    @if (Model.Models.Count < maxRecord)
+                    {
+                        <tr>
+                            <td style="text-align:center;width:200px;border-right:1px solid black;"></td>
+                            <td style="text-align:center;width:350px;border-right:1px solid black;">
+                            </td>
+                            <td style="text-align:center;width:350px;border-right:1px solid black;"></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <div style="width:900px;text-align:center;padding-bottom:10px;font-family:Tahoma;margin-top:30px;">
+                <label style="margin-top:5px;"><b>THIS IS THE COMPUTER GENERATED PRINTOUT. NO SIGNATURE IS REQUIRED.</b></label>
+            </div>
+        </div>
+    } while (currentIndex < Model.Models.Count);
+</body>
+</html>

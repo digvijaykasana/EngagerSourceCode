@@ -1,0 +1,94 @@
+﻿@model EngagerMark4.ApplicationCore.Entities.Configurations.Letterhead
+
+@{
+    ViewBag.Title = "Voucher Letterhead";
+}
+
+@using (Html.BeginForm("Details", "Letterhead", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+<div class="panel panel-info">
+    <div class="panel-heading">Voucher Letterhead</div>
+    <div class="panel-body">
+        <div class="form-group">
+            @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+        </div>
+        <div class="form-horizontal">
+            <fieldset>
+                <legend></legend>
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.LetterheadImageId)
+                @Html.HiddenFor(model => model.YesNo1)
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2 required">Letterhead Name</label>
+                    <div class="col-sm-6" data-role="input-control">
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Letterhead Name", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2 required">Letterhead For</label>
+                    <div class="col-sm-6" data-role="input-control">
+                        @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2 required">Is Default</label>
+                    <div class="col-sm-6" data-role="input-control">
+                        @Html.CheckBoxFor(m => m.IsDefault)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2 required">Letterhead Image</label>
+                    <div class="col-sm-4">
+                        <input type="file" name="letterheadImage" onchange="readLetterheadURL(this);" class="form-control" />
+                    </div>
+                    <br>
+                </div>
+
+                @if (Model.LetterheadImageId > 0)
+                {
+                    <div class="form-group">
+
+                        <label class="control-label col-sm-2">Image</label>
+                        <div style="justify-content:start;align-items:start;display:flex;padding:20px 10px 20px 10px;background-image:url(../images/black-twill-light.png)">
+                            <img src="@Url.Action("Download", "FileUpload", new { id= Model.LetterheadImageId }, Request.Url.Scheme)" style="height:45px;" />
+                        </div>
+
+                    </div>
+                }
+                else
+                {
+                    <img id="LetterheadImageId" />
+                }
+
+
+
+            </fieldset>
+        </div>
+    </div>
+
+    @if (!Model.IsReadOnly)
+    {
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+    }
+</div>
+}
+@Html.Partial("_ProcessScreen")
+
+<script src="~/Scripts/Custom/Letterhead/Details.js"></script>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "OpenPDF";
+}
+
+<h2>OpenPDF</h2>
+
+<button id="btnOpenPDF" value="Open PDF">Open PDF</button>
+
+<script>
+    $('#btnOpenPDF').click(function (e) {
+        e.preventDefault();
+        //window.open('/Test/GetReport', "_blank");  
+        window.open("/Test/GetReport", "popupWindow", "width=800, height=600, scrollbars=yes");
+    });
+</script>

@@ -1,0 +1,268 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Common", "EngagerMark4.Common\EngagerMark4.Common.csproj", "{884A9670-AB7C-4861-BFC0-30F949DBEB34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore", "EngagerMark4.ApplicationCore\EngagerMark4.ApplicationCore.csproj", "{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrasturcture", "EngagerMark4.Infrasturcture\EngagerMark4.Infrasturcture.csproj", "{BD3DD520-5316-43DE-9F1C-40B2A5F99B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4", "EngagerMark4\EngagerMark4.csproj", "{F19706E8-48FB-40F1-A650-2A21A1A386AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Mariteam", "EngagerMark4.ApplicationCore.Mariteam\EngagerMark4.ApplicationCore.Mariteam.csproj", "{3CCAB731-C2AF-431E-82A8-A17AF049D7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service", "EngagerMark4.Service\EngagerMark4.Service.csproj", "{C66E9F2C-86BF-46D6-B763-A392D8DE10E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Account", "EngagerMark4.ApplicationCore.Account\EngagerMark4.ApplicationCore.Account.csproj", "{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Account", "EngagerMark4.Infrastructure.Account\EngagerMark4.Infrastructure.Account.csproj", "{4AE8C00A-8AE0-46BC-AF6D-B13A42CBB6B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Account", "EngagerMark4.Service.Account\EngagerMark4.Service.Account.csproj", "{21833F67-34B2-4C6D-B7C2-E1247E126F3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Customer", "EngagerMark4.ApplicationCore.Customer\EngagerMark4.ApplicationCore.Customer.csproj", "{23EB644B-F2ED-4291-B2E3-AD772B82E81E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Customer", "EngagerMark4.Infrastructure.Customer\EngagerMark4.Infrastructure.Customer.csproj", "{4786CAC2-7BBC-441F-B0D9-8FAA0BC6A01B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Customer", "EngagerMark4.Service.Customer\EngagerMark4.Service.Customer.csproj", "{42BBB8E4-C3B4-439B-B0D1-983D4F0AB56F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Mariteam", "EngagerMark4.Infrastructure.Mariteam\EngagerMark4.Infrastructure.Mariteam.csproj", "{98AFE953-7572-4F41-9648-28E24881B72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Mariteam", "EngagerMark4.Service.Mariteam\EngagerMark4.Service.Mariteam.csproj", "{125C542A-404F-4F35-8FBB-56FF84C10457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Job", "EngagerMark4.ApplicationCore.Job\EngagerMark4.ApplicationCore.Job.csproj", "{468308A6-403F-4640-BCCE-207FE8BD78F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Job", "EngagerMark4.Infrastructure.Job\EngagerMark4.Infrastructure.Job.csproj", "{0A7B78A0-397D-40B5-AA6F-6AE0844CAA6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Job", "EngagerMark4.Service.Job\EngagerMark4.Service.Job.csproj", "{DB39373E-4523-4967-A57B-DAC04C642D68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.SOP", "EngagerMark4.ApplicationCore.SOP\EngagerMark4.ApplicationCore.SOP.csproj", "{CD72D7C3-6EB3-4079-87EC-32032817DD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.SOP", "EngagerMark4.Infrastructure.SOP\EngagerMark4.Infrastructure.SOP.csproj", "{87F1BE0C-8D46-456E-A99E-CEF77CCB5528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.SOP", "EngagerMark4.Service.SOP\EngagerMark4.Service.SOP.csproj", "{0393320D-C6DE-4167-83F6-BC2FBED56EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Inventory", "EngagerMark4.ApplicationCore.Inventory\EngagerMark4.ApplicationCore.Inventory.csproj", "{88C3A22B-8BDD-4FCF-92B0-1DC84906DAEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Inventory", "EngagerMark4.Infrastructure.Inventory\EngagerMark4.Infrastructure.Inventory.csproj", "{19DEFE2E-4506-4C4D-8BF1-FED00FCB9F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Inventory", "EngagerMark4.Service.Inventory\EngagerMark4.Service.Inventory.csproj", "{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.DocumentProcessor", "EngagerMark4.DocumentProcessor\EngagerMark4.DocumentProcessor.csproj", "{3ABDCAA1-FC44-49E6-81A7-D5A90D05B8F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.ApplicationCore.Equipment", "EngagerMark4.ApplicationCore.Equipment\EngagerMark4.ApplicationCore.Equipment.csproj", "{CE982E40-F608-4139-B559-69FB75AEC006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Service.Equipment", "EngagerMark4.Service.Equipment\EngagerMark4.Service.Equipment.csproj", "{4F7A978D-6481-4CEC-927C-470AB606D95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngagerMark4.Infrastructure.Equipment", "EngagerMark4.Infrastructure.Equipment\EngagerMark4.Infrastructure.Equipment.csproj", "{53400BCB-D135-4428-B508-43F0CF297622}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{884A9670-AB7C-4861-BFC0-30F949DBEB34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884A9670-AB7C-4861-BFC0-30F949DBEB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884A9670-AB7C-4861-BFC0-30F949DBEB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884A9670-AB7C-4861-BFC0-30F949DBEB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3DD520-5316-43DE-9F1C-40B2A5F99B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3DD520-5316-43DE-9F1C-40B2A5F99B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3DD520-5316-43DE-9F1C-40B2A5F99B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3DD520-5316-43DE-9F1C-40B2A5F99B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19706E8-48FB-40F1-A650-2A21A1A386AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19706E8-48FB-40F1-A650-2A21A1A386AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19706E8-48FB-40F1-A650-2A21A1A386AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19706E8-48FB-40F1-A650-2A21A1A386AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCAB731-C2AF-431E-82A8-A17AF049D7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCAB731-C2AF-431E-82A8-A17AF049D7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCAB731-C2AF-431E-82A8-A17AF049D7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCAB731-C2AF-431E-82A8-A17AF049D7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66E9F2C-86BF-46D6-B763-A392D8DE10E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66E9F2C-86BF-46D6-B763-A392D8DE10E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66E9F2C-86BF-46D6-B763-A392D8DE10E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66E9F2C-86BF-46D6-B763-A392D8DE10E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E860E9-C847-4F3F-A3A4-5D7C44D76792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE8C00A-8AE0-46BC-AF6D-B13A42CBB6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE8C00A-8AE0-46BC-AF6D-B13A42CBB6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE8C00A-8AE0-46BC-AF6D-B13A42CBB6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE8C00A-8AE0-46BC-AF6D-B13A42CBB6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21833F67-34B2-4C6D-B7C2-E1247E126F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21833F67-34B2-4C6D-B7C2-E1247E126F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21833F67-34B2-4C6D-B7C2-E1247E126F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21833F67-34B2-4C6D-B7C2-E1247E126F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EB644B-F2ED-4291-B2E3-AD772B82E81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EB644B-F2ED-4291-B2E3-AD772B82E81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EB644B-F2ED-4291-B2E3-AD772B82E81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EB644B-F2ED-4291-B2E3-AD772B82E81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4786CAC2-7BBC-441F-B0D9-8FAA0BC6A01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4786CAC2-7BBC-441F-B0D9-8FAA0BC6A01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4786CAC2-7BBC-441F-B0D9-8FAA0BC6A01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4786CAC2-7BBC-441F-B0D9-8FAA0BC6A01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42BBB8E4-C3B4-439B-B0D1-983D4F0AB56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42BBB8E4-C3B4-439B-B0D1-983D4F0AB56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42BBB8E4-C3B4-439B-B0D1-983D4F0AB56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42BBB8E4-C3B4-439B-B0D1-983D4F0AB56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AFE953-7572-4F41-9648-28E24881B72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AFE953-7572-4F41-9648-28E24881B72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AFE953-7572-4F41-9648-28E24881B72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AFE953-7572-4F41-9648-28E24881B72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125C542A-404F-4F35-8FBB-56FF84C10457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125C542A-404F-4F35-8FBB-56FF84C10457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125C542A-404F-4F35-8FBB-56FF84C10457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125C542A-404F-4F35-8FBB-56FF84C10457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468308A6-403F-4640-BCCE-207FE8BD78F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468308A6-403F-4640-BCCE-207FE8BD78F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468308A6-403F-4640-BCCE-207FE8BD78F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468308A6-403F-4640-BCCE-207FE8BD78F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7B78A0-397D-40B5-AA6F-6AE0844CAA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7B78A0-397D-40B5-AA6F-6AE0844CAA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7B78A0-397D-40B5-AA6F-6AE0844CAA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7B78A0-397D-40B5-AA6F-6AE0844CAA6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB39373E-4523-4967-A57B-DAC04C642D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB39373E-4523-4967-A57B-DAC04C642D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB39373E-4523-4967-A57B-DAC04C642D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB39373E-4523-4967-A57B-DAC04C642D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD72D7C3-6EB3-4079-87EC-32032817DD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD72D7C3-6EB3-4079-87EC-32032817DD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD72D7C3-6EB3-4079-87EC-32032817DD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD72D7C3-6EB3-4079-87EC-32032817DD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F1BE0C-8D46-456E-A99E-CEF77CCB5528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F1BE0C-8D46-456E-A99E-CEF77CCB5528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F1BE0C-8D46-456E-A99E-CEF77CCB5528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F1BE0C-8D46-456E-A99E-CEF77CCB5528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0393320D-C6DE-4167-83F6-BC2FBED56EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0393320D-C6DE-4167-83F6-BC2FBED56EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0393320D-C6DE-4167-83F6-BC2FBED56EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0393320D-C6DE-4167-83F6-BC2FBED56EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C3A22B-8BDD-4FCF-92B0-1DC84906DAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C3A22B-8BDD-4FCF-92B0-1DC84906DAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C3A22B-8BDD-4FCF-92B0-1DC84906DAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C3A22B-8BDD-4FCF-92B0-1DC84906DAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19DEFE2E-4506-4C4D-8BF1-FED00FCB9F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DEFE2E-4506-4C4D-8BF1-FED00FCB9F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DEFE2E-4506-4C4D-8BF1-FED00FCB9F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DEFE2E-4506-4C4D-8BF1-FED00FCB9F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC4A763-AF66-4C3E-A3C5-651A2DB50B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ABDCAA1-FC44-49E6-81A7-D5A90D05B8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ABDCAA1-FC44-49E6-81A7-D5A90D05B8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ABDCAA1-FC44-49E6-81A7-D5A90D05B8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ABDCAA1-FC44-49E6-81A7-D5A90D05B8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE982E40-F608-4139-B559-69FB75AEC006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE982E40-F608-4139-B559-69FB75AEC006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE982E40-F608-4139-B559-69FB75AEC006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE982E40-F608-4139-B559-69FB75AEC006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7A978D-6481-4CEC-927C-470AB606D95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7A978D-6481-4CEC-927C-470AB606D95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7A978D-6481-4CEC-927C-470AB606D95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7A978D-6481-4CEC-927C-470AB606D95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53400BCB-D135-4428-B508-43F0CF297622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53400BCB-D135-4428-B508-43F0CF297622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53400BCB-D135-4428-B508-43F0CF297622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53400BCB-D135-4428-B508-43F0CF297622}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49E9A83F-015F-4AFC-AED9-3AD61B4DF9F1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 28
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/FXS-Dev
+		SccProjectUniqueName0 = EngagerMark4.Infrastructure.Customer\\EngagerMark4.Infrastructure.Customer.csproj
+		SccProjectName0 = EngagerMark4.Infrastructure.Customer
+		SccLocalPath0 = EngagerMark4.Infrastructure.Customer
+		SccProjectUniqueName1 = EngagerMark4.Infrastructure.Equipment\\EngagerMark4.Infrastructure.Equipment.csproj
+		SccProjectName1 = EngagerMark4.Infrastructure.Equipment
+		SccLocalPath1 = EngagerMark4.Infrastructure.Equipment
+		SccProjectUniqueName2 = EngagerMark4.Infrastructure.Inventory\\EngagerMark4.Infrastructure.Inventory.csproj
+		SccProjectName2 = EngagerMark4.Infrastructure.Inventory
+		SccLocalPath2 = EngagerMark4.Infrastructure.Inventory
+		SccProjectUniqueName3 = EngagerMark4.Infrastructure.Job\\EngagerMark4.Infrastructure.Job.csproj
+		SccProjectName3 = EngagerMark4.Infrastructure.Job
+		SccLocalPath3 = EngagerMark4.Infrastructure.Job
+		SccProjectUniqueName4 = EngagerMark4.Infrastructure.Mariteam\\EngagerMark4.Infrastructure.Mariteam.csproj
+		SccProjectName4 = EngagerMark4.Infrastructure.Mariteam
+		SccLocalPath4 = EngagerMark4.Infrastructure.Mariteam
+		SccProjectUniqueName5 = EngagerMark4.Infrastructure.SOP\\EngagerMark4.Infrastructure.SOP.csproj
+		SccProjectName5 = EngagerMark4.Infrastructure.SOP
+		SccLocalPath5 = EngagerMark4.Infrastructure.SOP
+		SccProjectUniqueName6 = EngagerMark4.Infrasturcture\\EngagerMark4.Infrasturcture.csproj
+		SccProjectName6 = EngagerMark4.Infrasturcture
+		SccLocalPath6 = EngagerMark4.Infrasturcture
+		SccProjectUniqueName7 = EngagerMark4.Service.Account\\EngagerMark4.Service.Account.csproj
+		SccProjectName7 = EngagerMark4.Service.Account
+		SccLocalPath7 = EngagerMark4.Service.Account
+		SccProjectUniqueName8 = EngagerMark4.Service.Customer\\EngagerMark4.Service.Customer.csproj
+		SccProjectName8 = EngagerMark4.Service.Customer
+		SccLocalPath8 = EngagerMark4.Service.Customer
+		SccProjectUniqueName9 = EngagerMark4.Service.Equipment\\EngagerMark4.Service.Equipment.csproj
+		SccProjectName9 = EngagerMark4.Service.Equipment
+		SccLocalPath9 = EngagerMark4.Service.Equipment
+		SccProjectUniqueName10 = EngagerMark4.Service.Inventory\\EngagerMark4.Service.Inventory.csproj
+		SccProjectName10 = EngagerMark4.Service.Inventory
+		SccLocalPath10 = EngagerMark4.Service.Inventory
+		SccProjectUniqueName11 = EngagerMark4.Service.Job\\EngagerMark4.Service.Job.csproj
+		SccProjectName11 = EngagerMark4.Service.Job
+		SccLocalPath11 = EngagerMark4.Service.Job
+		SccProjectUniqueName12 = EngagerMark4.Service.Mariteam\\EngagerMark4.Service.Mariteam.csproj
+		SccProjectName12 = EngagerMark4.Service.Mariteam
+		SccLocalPath12 = EngagerMark4.Service.Mariteam
+		SccProjectUniqueName13 = EngagerMark4.Service.SOP\\EngagerMark4.Service.SOP.csproj
+		SccProjectName13 = EngagerMark4.Service.SOP
+		SccLocalPath13 = EngagerMark4.Service.SOP
+		SccProjectUniqueName14 = EngagerMark4.Service\\EngagerMark4.Service.csproj
+		SccProjectName14 = EngagerMark4.Service
+		SccLocalPath14 = EngagerMark4.Service
+		SccLocalPath15 = .
+		SccProjectUniqueName16 = EngagerMark4.ApplicationCore.Account\\EngagerMark4.ApplicationCore.Account.csproj
+		SccProjectName16 = EngagerMark4.ApplicationCore.Account
+		SccLocalPath16 = EngagerMark4.ApplicationCore.Account
+		SccProjectUniqueName17 = EngagerMark4.ApplicationCore.Customer\\EngagerMark4.ApplicationCore.Customer.csproj
+		SccProjectName17 = EngagerMark4.ApplicationCore.Customer
+		SccLocalPath17 = EngagerMark4.ApplicationCore.Customer
+		SccProjectUniqueName18 = EngagerMark4.ApplicationCore.Equipment\\EngagerMark4.ApplicationCore.Equipment.csproj
+		SccProjectName18 = EngagerMark4.ApplicationCore.Equipment
+		SccLocalPath18 = EngagerMark4.ApplicationCore.Equipment
+		SccProjectUniqueName19 = EngagerMark4.ApplicationCore.Inventory\\EngagerMark4.ApplicationCore.Inventory.csproj
+		SccProjectName19 = EngagerMark4.ApplicationCore.Inventory
+		SccLocalPath19 = EngagerMark4.ApplicationCore.Inventory
+		SccProjectUniqueName20 = EngagerMark4.ApplicationCore.Job\\EngagerMark4.ApplicationCore.Job.csproj
+		SccProjectName20 = EngagerMark4.ApplicationCore.Job
+		SccLocalPath20 = EngagerMark4.ApplicationCore.Job
+		SccProjectUniqueName21 = EngagerMark4.ApplicationCore.Mariteam\\EngagerMark4.ApplicationCore.Mariteam.csproj
+		SccProjectName21 = EngagerMark4.ApplicationCore.Mariteam
+		SccLocalPath21 = EngagerMark4.ApplicationCore.Mariteam
+		SccProjectUniqueName22 = EngagerMark4.ApplicationCore.SOP\\EngagerMark4.ApplicationCore.SOP.csproj
+		SccProjectName22 = EngagerMark4.ApplicationCore.SOP
+		SccLocalPath22 = EngagerMark4.ApplicationCore.SOP
+		SccProjectUniqueName23 = EngagerMark4.ApplicationCore\\EngagerMark4.ApplicationCore.csproj
+		SccProjectName23 = EngagerMark4.ApplicationCore
+		SccLocalPath23 = EngagerMark4.ApplicationCore
+		SccProjectUniqueName24 = EngagerMark4.Common\\EngagerMark4.Common.csproj
+		SccProjectName24 = EngagerMark4.Common
+		SccLocalPath24 = EngagerMark4.Common
+		SccProjectUniqueName25 = EngagerMark4.DocumentProcessor\\EngagerMark4.DocumentProcessor.csproj
+		SccProjectName25 = EngagerMark4.DocumentProcessor
+		SccLocalPath25 = EngagerMark4.DocumentProcessor
+		SccProjectUniqueName26 = EngagerMark4.Infrastructure.Account\\EngagerMark4.Infrastructure.Account.csproj
+		SccProjectName26 = EngagerMark4.Infrastructure.Account
+		SccLocalPath26 = EngagerMark4.Infrastructure.Account
+		SccProjectUniqueName27 = EngagerMark4\\EngagerMark4.csproj
+		SccProjectName27 = EngagerMark4
+		SccLocalPath27 = EngagerMark4
+	EndGlobalSection
+EndGlobal

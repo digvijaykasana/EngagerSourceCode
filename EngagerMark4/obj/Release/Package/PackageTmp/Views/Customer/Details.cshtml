@@ -1,0 +1,304 @@
+﻿@model EngagerMark4.ApplicationCore.Customer.Entities.Customer
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.Common.Configs;
+@using EngagerMark4.ApplicationCore.Entities;
+@{
+    ViewBag.Title = "Customer";
+    var count = 0;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @Html.ValidationSummary(true, "Errors: ")
+        </div>
+    }
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Customer / Company</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-info" })
+            </div>
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend></legend>
+                    @Html.HiddenFor(model => model.Id)
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#basic" data-toggle="tab">Basic Info</a></li>
+                        @if ((bool)ViewBag.HasPermissionForAdvancedTab)
+                        {
+                            <li><a href="#advanced" data-toggle="tab">Advanced</a></li>
+                        }
+                        @if (Model.Id > 0 && (bool)ViewBag.HasPermissionForFileUpload)
+                        {
+                            <li><a href="#attachment" data-toggle="tab">Attachments</a></li>
+                        }
+                        @if ((bool)ViewBag.HasPermissionForLocation)
+                        {
+                            <li><a href="#location" data-toggle="tab">Locations</a></li>
+                        }
+                        @if ((bool)ViewBag.HasPermissionForVessel)
+                        {
+                            <li><a href="#vessel" data-toggle="tab">Vessels</a></li>
+                        }
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="basic">
+                            <br />
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 required">Name</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Customer / Company Name", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Email</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Office No.</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.OfficeNo, new { @placeholder = "Office Contact Number", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">AccNo</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.AccNo, new { @placeholder = "Customer Account Number", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Fax</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Fax, new { @placeholder = "Fax", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Address</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Address, new { @placeholder = "Address", @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="advanced" class="tab-pane fade">
+                            <div class="form-horizontal">
+                                <br />
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Acronym (Inv)</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.Acronym, new { @placeholder = "Prefix to be used in Order, Invoice and Discounts", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                @**<div class="form-group">
+            <label class="control-label col-sm-2">Vessel</label>
+            <div class="col-sm-6" data-role="input-control">
+                @Html.DropDownList("VesselId", null, "N/A", new { @class = "form-control" })
+            </div>
+        </div>*@
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Discount Percentage (%)</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.DiscountPercent, new { @placeholder = "Discount Percentage for this Customer", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Discount Amount (S$)</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.TextBoxFor(m => m.DiscountAmt, new { @placeholder = "Discount Amount for this Customer", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Discount Type</label>
+                                    <div class="col-sm-6" data-role="input-control">
+                                        @Html.EnumDropDownListFor(x => x.DiscountTy, null, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                @Html.HiddenFor(x => x.RequiresSpecialTransVoucher)
+                                @Html.HiddenFor(x => x.TFRequireAllPassSignatures)
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Letterhead (Transfer Voucher)</label>
+                                    <div class="col-sm-6 checkbox" data-role="input-control">
+                                        @Html.DropDownList("LetterheadId", null, "-- Select --", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.LetterheadId, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Transfer Voucher Format</label>
+                                    <div class="col-sm-6 checkbox" data-role="input-control">
+                                        @Html.EnumDropDownListFor(x => x.TransferVoucherFormat, null, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                @Html.HiddenFor(x => x.ExcludeInCustomerDailySummaryReport)
+                            </div>
+                        </div>
+
+                        @if (Model.Id > 0 && (bool)ViewBag.HasPermissionForFileUpload)
+                        {
+                            <div id="attachment" class="tab-pane fade">
+
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    @Html.GetFileUploadIFrame("", EntityConfig.EntityType.Customer, Model.Id, BlobFile.BlobFileStatus.All, true)
+                                </div>
+                            </div>
+                        }
+
+                        @if ((bool)ViewBag.HasPermissionForLocation)
+                        {
+                            <div id="location" class="tab-pane fade">
+                                <div class="form-horizontal">
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-sm-1"></div>
+                                        @Html.LinkToAddNestedForm("Add", "#LocationContainer", ".CustomerLocations", "Locations", typeof(EngagerMark4.ApplicationCore.Customer.Entities.CustomerLocation), new { @class = "btn btn-primary clsAddLocation" })
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="locationTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:10px;">Main</th>
+                                                        <th style="width:110px;">Postal Code</th>
+                                                        <th>Address</th>
+                                                        <th style="width:120px;">City</th>
+                                                        <th style="width:120px;">Country</th>
+                                                        <th class="col-sm-2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="LocationContainer">
+                                                    @*@Html.EditorFor(x => x.Locations)*@
+                                                    @foreach (var location in Model.Locations.Where(x => x.Delete == false))
+                                                    {
+                                                        <tr class="CustomerLocations" tableIndex="Locations_@count.ToString()__">
+                                                            <input type="hidden" id="Locations_@count.ToString()__Id" name="Locations[@count.ToString()].Id" value="@location.Id" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__CustomerId" name="Locations[@count.ToString()].CustomerId" value="@location.CustomerId" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__LocationId" name="Locations[@count.ToString()].LocationId" value="@location.LocationId" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Location_Code" name="Locations[@count.ToString()].Location.Code" value="@location.Location.Code" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Location_Name" name="Locations[@count.ToString()].Location.Name" value="@location.Location.Name" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__ContactPerson" name="Locations[@count.ToString()].ContactPerson" value="@location.ContactPerson" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__ContactNo" name="Locations[@count.ToString()].ContactNo" value="@location.ContactNo" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Fax" name="Locations[@count.ToString()].Fax" value="@location.Fax" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Email" name="Locations[@count.ToString()].Email" value="@location.Email" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Location_Latitude" name="Locations[@count.ToString()].Location.Latitude" value="@location.Location.Latitude" />
+                                                            <input type="hidden" id="Locations_@count.ToString()__Location_Longitude" name="Locations[@count.ToString()].Location.Longitude" value="@location.Location.Longitude" />
+
+                                                            <td>
+                                                                @if (location.Main)
+                                                                {
+                                                                    <input type="checkbox" id="Locations_@count.ToString()__Main" readonly checked name="Locations[@count.ToString()].Main" value="true" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <input type="checkbox" id="Locations_@count.ToString()__Main" readonly name="Locations[@count.ToString()].Main" value="false" />
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Locations_@count.ToString()__Location_PostalCode" name="Locations[@count.ToString()].Location.PostalCode" value="@location.Location.PostalCode" class="form-control" readonly />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Locations_@count.ToString()__Location_Address" name="Locations[@count.ToString()].Location.Address" value="@location.Location.Address" class="form-control" readonly />
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Locations_@count.ToString()__Location_City" name="Locations[@count.ToString()].Location.City" value="@location.Location.City" class="form-control" readonly />
+
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="Locations_@count.ToString()__Location_Country" name="Locations[@count.ToString()].Location.Country" value="@location.Location.Country" class="form-control" readonly />
+                                                            </td>
+                                                            <td class="col-sm-2">
+                                                                <label>
+                                                                    @Html.HiddenFor(m => location.Delete, new { @class = "mark-for-delete" })
+                                                                    <a href="#" class="btn btn-info btnEdit">Edit</a>
+                                                                    @Html.LinkToRemoveNestedForm("Delete", "tr.CustomerLocations", "input.mark-for-delete", new { @class = "btn btn-danger" })
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        count++;
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                        }
+
+                        @if((bool)ViewBag.HasPermissionForVessel)
+                        {
+                            <div id="vessel" class="tab-pane fade">
+                                <div class="form-horizontal">
+                                    <br/>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Vessel</label>
+                                        <div class="col-sm-6" data-role="input-control">
+                                            @Html.DropDownList("Vessels", null, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-1">
+                                        </div>
+                                        @Html.LinkToAddNestedForm("Add", "#VesselContainer", ".CustomerVessels", "VesselList", typeof(EngagerMark4.ApplicationCore.Customer.Entities.CustomerVessel), new { @class = "btn btn-primary clsAddVessel" })
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="table-responsive">
+                                            <table id="vesselTable" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Vessel</th>
+                                                        <th class="col-sm-1">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="VesselContainer">
+                                                    @Html.EditorFor(x => x.VesselList)
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-2"></div>
+            <button type="submit" id="btnSave" value="Save" class="btn btn-primary">Save</button>
+        </div>
+
+    </div>
+}
+@Html.Partial("_ProcessScreen")
+@Html.Partial("_CustomerLocationModal")
+
+
+<script src="~/Scripts/Custom/Customer/Details.js"></script>

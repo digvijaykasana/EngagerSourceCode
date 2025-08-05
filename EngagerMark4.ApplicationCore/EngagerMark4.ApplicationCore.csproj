@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E3EEBC4-863C-41C2-9C07-D9E84BE5AB28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EngagerMark4.ApplicationCore</RootNamespace>
+    <AssemblyName>EngagerMark4.ApplicationCore</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFCache, Version=1.3.3.0, Culture=neutral, PublicKeyToken=46c4868af4307d2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Cache.1.3.3\lib\net46\EFCache.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caches\Cache.cs" />
+    <Compile Include="Caches\EFConfiguration.cs" />
+    <Compile Include="Common\GeneralConfig.cs" />
+    <Compile Include="Cris\Application\ModuleCri.cs" />
+    <Compile Include="Cris\Application\ModulePermissionCri.cs" />
+    <Compile Include="Cris\Application\NotificationCri.cs" />
+    <Compile Include="Cris\Application\PermissionCri.cs" />
+    <Compile Include="Cris\Application\SMTPCri.cs" />
+    <Compile Include="Cris\Application\SystemSettingCri.cs" />
+    <Compile Include="Cris\AuditCri.cs" />
+    <Compile Include="Cris\BaseCri.cs" />
+    <Compile Include="Cris\BlobFileCri.cs" />
+    <Compile Include="Cris\CompanyCri.cs" />
+    <Compile Include="Cris\Configurations\CommonConfigurationCri.cs" />
+    <Compile Include="Cris\Configurations\ConfigurationGroupCri.cs" />
+    <Compile Include="Cris\Configurations\HotelCri.cs" />
+    <Compile Include="Cris\Configurations\LetterheadCri.cs" />
+    <Compile Include="Cris\Configurations\LocationCri.cs" />
+    <Compile Include="Cris\Configurations\VehicleCri.cs" />
+    <Compile Include="Cris\HomeDashboardCri.cs" />
+    <Compile Include="Cris\Jobs\DailySummaryJobByCompanyCri.cs" />
+    <Compile Include="Cris\Jobs\DailySummaryJobByDriverCri.cs" />
+    <Compile Include="Cris\Users\DriverDailyReportCri.cs" />
+    <Compile Include="Cris\Users\MobileUserCri.cs" />
+    <Compile Include="Cris\Users\RoleCri.cs" />
+    <Compile Include="Cris\Users\RolePermissionCri.cs" />
+    <Compile Include="Cris\Users\UserCri.cs" />
+    <Compile Include="Cris\Users\UserCustomerCri.cs" />
+    <Compile Include="Cris\Users\UserRoleCri.cs" />
+    <Compile Include="Cris\Users\UserVehicleCri.cs" />
+    <Compile Include="DataImportViewModel\AgentDataImportViewModel.cs" />
+    <Compile Include="DTOs\NotificatoinDTO.cs" />
+    <Compile Include="DTOs\WorkOrderPassengerDTO.cs" />
+    <Compile Include="Entities\Application\ModulePermission.cs" />
+    <Compile Include="Entities\Application\Function.cs" />
+    <Compile Include="Entities\Application\Notification.cs" />
+    <Compile Include="Entities\Application\PermissionDetails.cs" />
+    <Compile Include="Entities\Application\SMTP.cs" />
+    <Compile Include="Entities\Application\SystemSetting.cs" />
+    <Compile Include="Entities\Audit.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\BasicEntity.cs" />
+    <Compile Include="Entities\Application\Module.cs" />
+    <Compile Include="Entities\BlobFile.cs" />
+    <Compile Include="Entities\BlobFileContent.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\Configurations\CommonConfiguration.cs" />
+    <Compile Include="Entities\Configurations\ConfigurationGroup.cs" />
+    <Compile Include="Entities\Configurations\CustomerVesselViewModel.cs" />
+    <Compile Include="Entities\Configurations\Hotel.cs" />
+    <Compile Include="Entities\Configurations\Letterhead.cs" />
+    <Compile Include="Entities\Configurations\Location.cs" />
+    <Compile Include="Entities\Configurations\Vehicle.cs" />
+    <Compile Include="Entities\SerialNo.cs" />
+    <Compile Include="Entities\Users\ApplicationUser.cs" />
+    <Compile Include="Entities\Users\Mariteam\UserCustomer.cs" />
+    <Compile Include="Entities\Users\Mariteam\UserVehicle.cs" />
+    <Compile Include="Entities\Users\MobileUser.cs" />
+    <Compile Include="Entities\Users\Role.cs" />
+    <Compile Include="Entities\Users\RolePermission.cs" />
+    <Compile Include="Entities\Users\RolePermissionDetails.cs" />
+    <Compile Include="Entities\Users\User.cs" />
+    <Compile Include="Entities\Users\UserRole.cs" />
+    <Compile Include="Excels\ExcelTest.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IRepository\Application\IModulePermissionRepository.cs" />
+    <Compile Include="IRepository\Application\IModuleRepository.cs" />
+    <Compile Include="IRepository\Application\IFunctionRepository.cs" />
+    <Compile Include="IRepository\Application\INotificationRepository.cs" />
+    <Compile Include="IRepository\Application\ISMTPRepository.cs" />
+    <Compile Include="IRepository\Application\ISystemSettingRepository.cs" />
+    <Compile Include="IRepository\Configurations\ICommonConfigurationRepository.cs" />
+    <Compile Include="IRepository\Configurations\IConfigurationGroupRepository.cs" />
+    <Compile Include="IRepository\Configurations\IHotelRepository.cs" />
+    <Compile Include="IRepository\Configurations\ILetterheadRepository.cs" />
+    <Compile Include="IRepository\Configurations\ILocationRepository.cs" />
+    <Compile Include="IRepository\Configurations\IVehicleRepository.cs" />
+    <Compile Include="IRepository\Configurations\IVesselRepository.cs" />
+    <Compile Include="IRepository\IAuditRepository.cs" />
+    <Compile Include="IRepository\IBaseRepository.cs" />
+    <Compile Include="IRepository\IBlobFileRepository.cs" />
+    <Compile Include="IRepository\ICompanyRepository.cs" />
+    <Compile Include="IRepository\Users\IMobileUserRepository.cs" />
+    <Compile Include="IRepository\Users\IRolePermissionRepository.cs" />
+    <Compile Include="IRepository\Users\IRoleRepository.cs" />
+    <Compile Include="IRepository\Users\IUserCustomerRepository.cs" />
+    <Compile Include="IRepository\Users\IUserRepository.cs" />
+    <Compile Include="IRepository\Users\IUserRoleRepository.cs" />
+    <Compile Include="IRepository\Users\IUserVehicleRepository.cs" />
+    <Compile Include="IService\Application\IMailingService.cs" />
+    <Compile Include="IService\Application\IModulePermissionService.cs" />
+    <Compile Include="IService\Application\IModuleService.cs" />
+    <Compile Include="IService\Application\IFunctionService.cs" />
+    <Compile Include="IService\Application\ISMTPService.cs" />
+    <Compile Include="IService\Application\ISystemSettingService.cs" />
+    <Compile Include="IService\Configurations\ICommonConfigurationService.cs" />
+    <Compile Include="IService\Configurations\IConfigurationGroupService.cs" />
+    <Compile Include="IService\Configurations\IHotelService.cs" />
+    <Compile Include="IService\Configurations\ILetterheadService.cs" />
+    <Compile Include="IService\Configurations\ILocationService.cs" />
+    <Compile Include="IService\Configurations\IVehicleService.cs" />
+    <Compile Include="IService\Configurations\IVesselService.cs" />
+    <Compile Include="IService\IBaseService.cs" />
+    <Compile Include="IService\IBlobFileService.cs" />
+    <Compile Include="IService\ICompanyService.cs" />
+    <Compile Include="IService\Users\IMobileUserService.cs" />
+    <Compile Include="IService\Users\IRolePermissionService.cs" />
+    <Compile Include="IService\Users\IRoleService.cs" />
+    <Compile Include="IService\Users\IUserCustomerService.cs" />
+    <Compile Include="IService\Users\IUserRoleService.cs" />
+    <Compile Include="IService\Users\IUserService.cs" />
+    <Compile Include="IService\Users\IUserVehicleService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportViewModels\AngularChartViewModel.cs" />
+    <Compile Include="ReportViewModels\CreditNoteDetailsReportViewModel.cs" />
+    <Compile Include="ReportViewModels\CreditNoteReportViewModel.cs" />
+    <Compile Include="ReportViewModels\InvoiceDetailsReportViewModel.cs" />
+    <Compile Include="ReportViewModels\InvoiceReportViewModel.cs" />
+    <Compile Include="ReportViewModels\MobilePendingSignOffViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EngagerMark4.Common\EngagerMark4.Common.csproj">
+      <Project>{884a9670-ab7c-4861-bfc0-30f949dbeb34}</Project>
+      <Name>EngagerMark4.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\CompanyAddress.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

@@ -1,0 +1,18 @@
+﻿@model EngagerMark4.ApplicationCore.Job.Entities.CheckListTemplateDetail
+@using EngagerMark4.HtmlExtension;
+   
+<tr class="Checklist">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.ChecklistTemplateId)
+    @Html.HiddenFor(x => x.ChecklistId)
+    @Html.HiddenFor(x => x.Checklist.Code)
+    <td>
+        @Html.TextBoxFor(x => x.Checklist.Name, new { @class = "form-control", @readonly = "readonly" })
+    </td>
+    <td class="col-sm-1">
+        <label>
+            @Html.HiddenFor(m => m.Delete, new { @class = "mark-for-delete" })
+            @Html.LinkToRemoveNestedForm("Delete", "tr.Checklist", "input.mark-for-delete", new { @class = "btn btn-danger" })
+        </label>
+    </td>
+</tr>

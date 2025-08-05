@@ -1,0 +1,83 @@
+﻿@model List<EngagerMark4.ApplicationCore.SOP.ViewModels.BilledOrderListInvoiceViewModel>
+@using PagedList.Mvc;
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.ApplicationCore.Cris;
+@using EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders;
+@using EngagerMark4.Common.Configs;
+@{
+    /**/
+
+    //var urlString = Server.UrlEncode("/BilledOrders?CurrentPage=" + Model.PageNumber + "&Column=" + ViewBag.Column + "&OrderBy=" + ViewBag.OrderBy + "&DataType=" + ViewBag.DataType + "&Customers=" + @ViewBag.CustomerId + "&Vessels=" + @ViewBag.VesselId + "&FromDate=" + @ViewBag.FromDate + "&ToDate=" + @ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId + "&SalesInvoiceSummaryNo=" + ViewBag.SalesInvoiceSummaryNo + "&isSearchByRange"  + ViewBag.isSearchByRange + "&StartingSalesInvoiceSummaryNo="+ ViewBag.StartingSalesInvoiceSummaryNo+ "&EndingSalesInvoiceSummaryNo=" + ViewBag.EndingSalesInvoiceSummaryNo);
+    var urlHeader = "&Customers=" + ViewBag.CustomerId + "&Vessels=" + ViewBag.VesselId + "&FromDate=" + ViewBag.FromDate + "&ToDate=" + ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId + "&SalesInvoiceSummaryNo=" + ViewBag.SalesInvoiceSummaryNo;
+    //int pageCount = (ApplicationConfig.PAGE_SIZE * Model.PageNumber) - 50;
+}
+<input id="headerParameters" value="@urlHeader" class="hidden" />
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered" id="tblBilledOrder">
+        <thead>
+            <tr>
+                <th class="text-left" style="font-size:12px;"></th>
+                <th class="text-left" style="font-size:12px;">Previews</th>
+                <th class="text-left" style="font-size:12px;">Invoice No</th>
+                <th class="text-left" style="font-size:12px;">Company Name</th>
+                <th class="text-left" style="font-size:12px;">Vessel</th>
+                <th class="text-left" style="font-size:12px;">Status</th>
+                <th class="text-left" style="font-size:12px;">Created By</th>
+                <th class="text-left" style="font-size:12px;">Created</th>
+                <th class="text-left" style="font-size:12px;">Modified By</th>
+                <th class="text-left" style="font-size:12px;">Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entity in Model)
+            {
+                //pageCount++;w
+            <tr id="@entity.salesInvoiceSummary.Id">
+                <td style="font-size:12px;">
+                    <input type="checkbox" class="invoices" name="invoiceIds" value="@entity.salesInvoiceSummary.Id" />
+                </td>
+                <td style="font-size:12px;">
+                    <a class="lnkDownloadInvoice btn btn-primary btn-block" invoiceNo="@entity.salesInvoiceSummary.ReferenceNo">Invoice</a>
+
+                    @if (entity.DiscountPercent > 0 || entity.DiscountAmt > 0)
+                    {
+                        <a class="lnkDownloadCN btn btn-primary btn-block" invoiceNo="@entity.salesInvoiceSummary.ReferenceNo">Credit Note</a>
+                    }
+
+                </td>
+                <td style="font-size:12px;"><a href="GenerateInvoice?Customers=@entity.salesInvoiceSummary.CustomerId&Vessels=@entity.salesInvoiceSummary.VesselId&FromDate=&ToDate=&Status=0&SalesInvoiceSummaryNo=@entity.salesInvoiceSummary.ReferenceNo&DNNo=@entity.salesInvoiceSummary.DNNo&InvoiceDate=@entity.salesInvoiceSummary.InvoiceDate.Value.ToString("dd/MM/yyyy")" target="_blank"> @Html.DisplayFor(m => entity.salesInvoiceSummary.ReferenceNo) </a></td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.CustomerName)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.VesselName)</td>
+                <td id="statusTD_@entity.salesInvoiceSummary.Id" style="background-color: @entity.salesInvoiceSummary.StatusColor; color: white; font-size:12px;">
+
+                    @Html.DisplayFor(m => entity.salesInvoiceSummary.Status)
+
+                </td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.CreatedByName)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.CreatedStr)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.ModifiedByName)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.salesInvoiceSummary.ModifiedStr)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("List", new { CurrentPage = page, Column = ViewBag.Column, OrderBy = ViewBag.OrderBy, DataType = ViewBag.DataType, Customers = ViewBag.CustomerId, Vessels = ViewBag.VesselId, FromDate = ViewBag.FromDate, ToDate = ViewBag.ToDate, Status = ViewBag.Status, DriverId = ViewBag.DriverId,  SalesInvoiceSummaryNo = ViewBag.SalesInvoiceSummaryNo, isSearchByRange = ViewBag.isSearchByRange, StartingSalesInvoiceSummaryNo = ViewBag.StartingSalesInvoiceSummaryNo, EndingSalesInvoiceSummaryNo = ViewBag.EndingSalesInvoiceSummaryNo  }))*@
+
+@Html.Partial("_DeleteDialog")
+@Html.Partial("_ProcessScreen")
+
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        var currentId = "@ViewBag.CurrentId";
+        if (currentId == null || currentId == "") {
+            currentId = 0;
+        }
+        location.href = "#" + currentId;
+    });
+</script>
+
+<script src="~/Scripts/Custom/BilledOrders/List.js"></script>

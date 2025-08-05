@@ -1,0 +1,121 @@
+﻿@model PagedList.IPagedList<EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders.WorkOrder>
+@using PagedList.Mvc;
+@using EngagerMark4.HtmlExtension;
+@using EngagerMark4.ApplicationCore.Cris;
+@using EngagerMark4.ApplicationCore.SOP.Entities.WorkOrders;
+@using EngagerMark4.Common.Configs;
+
+@{
+    var urlString = Server.UrlEncode("/GenerateInvoice?CurrentPage=" + Model.PageNumber + "&Column=" + ViewBag.Column + "&OrderBy=" + ViewBag.OrderBy + "&DataType=" + ViewBag.DataType + "&Customers=" + ViewBag.CustomerId + "&Vessels=" + ViewBag.VesselId + "&FromDate=" + ViewBag.FromDate + "&ToDate=" + ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId + "&SalesInvoiceSummaryNo=" + ViewBag.SalesInvoiceSummaryNo);
+    var urlHeader = "&Customers=" + ViewBag.CustomerId + "&Vessels=" + ViewBag.VesselId + "&FromDate=" + ViewBag.FromDate + "&ToDate=" + ViewBag.ToDate + "&Status=" + ViewBag.Status + "&DriverId=" + ViewBag.DriverId + "&SalesInvoiceSummaryNo=" + ViewBag.SalesInvoiceSummaryNo;
+    int pageCount = (400 * Model.PageNumber) - 400;
+}
+
+<input id="headerParameters" value="@urlHeader" class="hidden" />
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered" id="tblAccountingOrder">
+        <thead>
+            <tr>
+                <th style="width:10px;"><input type="checkbox" id="checkAll" /></th>
+                <th class="text-left" style="font-size:12px;">No.</th>
+                <th class="text-left" style="font-size:12px;width:100px;"><a href="#" class="sorter" column="ShortText2" orderBy='@BaseCri.GetOrderString("ShortText2",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()"> Invoice No. / Credit Note No. </a></th>
+                <th class="text-left" style="font-size:12px;width:100px;"><a href="#" class="sorter" column="ReferenceNoNumber" orderBy='@BaseCri.GetOrderString("ReferenceNoNumber",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.Int64.ToString()">Work Order No.</a></th>
+                <th class="text-left" style="font-size:12px;">Company Name</th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="ShortText1" orderBy='@BaseCri.GetOrderString("ShortText1",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Vessel</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="PickUpdateDate" orderBy='@BaseCri.GetOrderString("PickUpdateDate",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.DateTime.ToString()">Pick up Date Time</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="PickUpPoint" orderBy='@BaseCri.GetOrderString("PickUpPoint",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Pick up Point</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="DropPoint" orderBy='@BaseCri.GetOrderString("DropPoint",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Drop Off Point</a></th>
+                <th class="text-left" style="font-size:12px;"><a href="#" class="sorter" column="Drivers" orderBy='@BaseCri.GetOrderString("Drivers",ViewBag.Column,ViewBag.OrderBy)' dataType="@BaseCri.DataType.String.ToString()">Drivers</a></th>
+                <th class="text-left" style="font-size:12px;">Invoicing  Details</th>
+                <th class="text-left" style="font-size:12px;">CreditNote Details</th>
+                <th class="text-left" style="font-size:12px;">Order Status</th>
+                <th class="text-left" style="font-size:12px;">Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entity in Model)
+            {
+                pageCount++;
+            <tr>
+                <td>
+                    @if (ViewBag.SalesInvoiceNo != null && ((string)ViewBag.SalesInvoiceNo).Equals(entity.SummaryInvoiceNo))
+                    {
+                        <input type="checkbox" id="wo_@entity.Id" class="workOrders" name="workOrderIds" value="@entity.Id" checked />
+                        <input type="checkbox" id="cn_@entity.Id" class="creditnotes" name="creditNoteDetailIds" creditNoteId="@entity.CreditNoteId" value="@entity.CreditNoteId" style="visibility:collapse;" checked />
+                    }
+                    else
+                    {
+                        <input type="checkbox" class="workOrders" name="workOrderIds" value="@entity.Id" />
+                        <input type="checkbox" id="cn_@entity.Id" class="creditnotes" name="creditNoteIds" creditNoteId="@entity.CreditNoteId" value="@entity.CreditNoteId" style="visibility:collapse;" />
+                    }
+                </td>
+                <td class="text-center" style="font-size:12px;">
+                    @pageCount.
+                </td>
+                <td style="font-size:12px;">
+                    @Html.DisplayFor(m => entity.SummaryInvoiceNo)
+                </td>
+                <td style="font-size:12px; vertical-align:auto">
+                    <a href="~/WorkOrder/Details/@entity.Id?returnUrl=@urlString">
+                        @Html.DisplayFor(m => entity.RefereneceNo)
+                    </a>
+                </td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.ShortText4)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.ShortText1)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.PickUpDateStr)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.PickUpPoint)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.DropPoint)</td>
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.Drivers)</td>
+                <td style="font-size:12px;">
+                    @if (entity.InvoiceId != null)
+                    {
+                        <a href="~/SalesInvoice/Details/@entity.InvoiceId?returnUrl=@urlString">
+                            INV Details
+                        </a>
+                    }
+                </td>
+                <td style="font-size:12px;">
+                    @if (entity.CreditNoteId != null)
+                    {
+                        <a href="~/CreditNote/Details/@entity.CreditNoteId?returnUrl=@urlString">
+                            CN Details
+                        </a>
+                    }
+                </td>
+                <td style="background-color: @entity.StatusColor; color: white; font-size:12px;">
+                    @if (entity.InvoiceId != null)
+                    {
+                        <label id="status_@entity.Id">@entity.Status</label>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(m => entity.Status)
+                    }
+
+                </td>
+
+                <td style="font-size:12px;">@Html.DisplayFor(m => entity.CreatedStr)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @*@Html.PagedListPager(Model, page => Url.Action("List", new { CurrentPage = page, Customers = ViewBag.CustomerId, Vessels = ViewBag.VesselId, FromDate = ViewBag.FromDate, ToDate = ViewBag.ToDate, Status = ViewBag.Status }))*@
+    @Html.PagedListPager(Model, page => Url.Action("List", new { CurrentPage = page, Column = ViewBag.Column, OrderBy = ViewBag.OrderBy, DataType = ViewBag.DataType, Customers = ViewBag.CustomerId, Vessels = ViewBag.VesselId, FromDate = ViewBag.FromDate, ToDate = ViewBag.ToDate, Status = ViewBag.Status, DriverId = ViewBag.DriverId, SalesInvoiceSummaryNo = ViewBag.SalesInvoiceSummaryNo }))
+    @Html.Partial("_DeleteDialog")
+    @Html.Partial("_ProcessScreen")
+
+    <script type="text/javascript">
+    $(document).ready(function (e) {
+        var currentId = "@ViewBag.CurrentId";
+        if (currentId == null || currentId == "") {
+            currentId = 0;
+        }
+        location.href = "#" + currentId;
+    });
+    </script>
+
+    <script src="~/Scripts/Custom/GenerateInvoice/List.js"></script>
+
