@@ -1,4 +1,4 @@
-ame: SonarCloud Analysis (.NET Framework)
+name: SonarCloud Analysis (.NET Framework)
 
 on:
   push:
